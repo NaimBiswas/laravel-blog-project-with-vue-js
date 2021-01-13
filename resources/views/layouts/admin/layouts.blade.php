@@ -15,11 +15,11 @@
 
     </head>
 
-    <body class="hold-transition sidebar-mini">
+    <body class="hold-transition sidebar-mini sidebar-mini dark-mode">
         <!-- Site wrapper -->
         <div class="wrapper">
             <!-- Navbar -->
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand main-header navbar navbar-expand navbar-dark">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
