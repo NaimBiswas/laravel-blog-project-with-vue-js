@@ -143,12 +143,9 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-
-
                                 <form action="{{ route('logout') }}"
                                     method="POST">
                                     @csrf
-
                                     <a href="{{ route('logout') }}"
                                         class="nav-link"
                                         onclick="event.preventDefault();
@@ -160,8 +157,6 @@
                                         </p>
                                     </a>
                                 </form>
-
-
                             </li>
                         </ul>
                     </nav>
