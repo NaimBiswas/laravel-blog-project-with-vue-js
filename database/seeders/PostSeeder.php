@@ -6,7 +6,6 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use phpDocumentor\Reflection\Types\Boolean;
 
 class PostSeeder extends Seeder
 {
@@ -17,10 +16,10 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        $title = $faker->unique()->sentence();
+        $faker = Faker::create(Post::class);
 
-        foreach (range(1, 25) as $index) {
+        for ($i = 1; $i <= 20; $i++) {
+            $title = $faker->unique()->sentence();
             Post::create([
                 "user_id"     => 1,
                 "category_id" => rand(1, 9),
