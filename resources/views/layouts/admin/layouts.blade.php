@@ -7,7 +7,7 @@
             content="width=device-width, initial-scale=1">
         <title>AdminLTE 3 | Blank Page</title>
 
-        <!-- Google Font: Source Sans Pro -->
+        {{-- <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome -->
@@ -16,6 +16,12 @@
         <!-- Theme style -->
         <link rel="stylesheet"
             href="../../dist/css/adminlte.min.css">
+     --}}
+        <link rel="stylesheet"
+            href="{{ mix('css/app.css') }}">
+
+
+
     </head>
 
     <body class="hold-transition sidebar-mini">
@@ -1039,8 +1045,8 @@
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
-
-        <!-- jQuery -->
+        <script src="{{ mix('js/app.js') }}"></script>
+        {{-- <!-- jQuery -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
         <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1048,9 +1054,11 @@
         <script src="../../dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
-        <!-- Code injected by live-server -->
+        <!-- Code injected by live-server -->--}}
+
         <script type="text/javascript">
-            // <![CDATA[  <-- For SVG support
+            //
+        <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
 		(function () {
 			function refreshCSS() {
