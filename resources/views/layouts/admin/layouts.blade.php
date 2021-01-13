@@ -192,7 +192,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            Start creating your amazing application!
+                            @yield('content')
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
