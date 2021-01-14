@@ -54,11 +54,11 @@
 </template>
 
 <script>
-import Button from '../../../../../vendor/laravel/jetstream/stubs/inertia/resources/js/Jetstream/Button.vue';
+
 export default {
     name: "category"
 };
-        Button
+
 </script>
 
 <style></style>
