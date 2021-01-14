@@ -1904,7 +1904,7 @@ var routes = [{
   component: dashboard
 }];
 var router = createRouter({
-  history: createWeHasbHistory(),
+  history: createWebHashHistory(),
   routes: routes
 });
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
