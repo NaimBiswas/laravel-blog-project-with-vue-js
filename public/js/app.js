@@ -1926,11 +1926,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category"
@@ -37878,28 +37873,6 @@ var staticRenderFns = [
                     type: "email",
                     id: "inputEmail3",
                     placeholder: "Email"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-sm-2 col-form-label",
-                  attrs: { for: "inputPassword3" }
-                },
-                [_vm._v("Password")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-10" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "password",
-                    id: "inputPassword3",
-                    placeholder: "Password"
                   }
                 })
               ])
