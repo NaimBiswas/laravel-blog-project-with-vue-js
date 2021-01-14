@@ -37854,7 +37854,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-body" }, [
       _c("div", { staticClass: "card card-info" }, [
         _c("div", { staticClass: "card-header" }, [
-          _c("h3", { staticClass: "card-title" }, [_vm._v("Horizontal Form")])
+          _c("h3", { staticClass: "card-title" }, [
+            _vm._v("Enter Your Category Name")
+          ])
         ]),
         _vm._v(" "),
         _c("form", { staticClass: "form-horizontal" }, [
