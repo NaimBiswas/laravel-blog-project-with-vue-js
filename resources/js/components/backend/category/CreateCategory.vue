@@ -42,7 +42,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn  btn-outline-success btn-md text-uppercase">AdD Category</button>
-                  <button type="submit" class="btn btn-default float-right">Cancel</button>
+                  <router-link to="/category" type="submit" class="btn btn-default float-right">Cancel</router-link>
                 </div>
                 <!-- /.card-footer -->
               </form>

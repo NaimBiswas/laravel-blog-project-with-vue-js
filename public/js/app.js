@@ -37799,7 +37799,41 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(1)
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "card card-info" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("form", { staticClass: "form-horizontal" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "card-footer" },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn  btn-outline-success btn-md text-uppercase",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("AdD Category")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-default float-right",
+                    attrs: { to: "/category", type: "submit" }
+                  },
+                  [_vm._v("Cancel")]
+                )
+              ],
+              1
+            )
+          ])
+        ])
+      ])
     ])
   ])
 }
@@ -37834,58 +37868,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [
+        _vm._v("Enter Your Category Name")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-body" }, [
-      _c("div", { staticClass: "card card-info" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _c("h3", { staticClass: "card-title" }, [
-            _vm._v("Enter Your Category Name")
-          ])
-        ]),
+      _c("div", { staticClass: "form-group row" }, [
+        _c(
+          "label",
+          { staticClass: "col-sm-2 col-form-label", attrs: { for: "catname" } },
+          [_vm._v("Category Name:")]
+        ),
         _vm._v(" "),
-        _c("form", { staticClass: "form-horizontal" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-sm-2 col-form-label",
-                  attrs: { for: "catname" }
-                },
-                [_vm._v("Category Name:")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-10" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "email",
-                    id: "catname",
-                    placeholder: "Enter Your Category Name"
-                  }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-footer" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn  btn-outline-success btn-md text-uppercase",
-                attrs: { type: "submit" }
-              },
-              [_vm._v("AdD Category")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default float-right",
-                attrs: { type: "submit" }
-              },
-              [_vm._v("Cancel")]
-            )
-          ])
+        _c("div", { staticClass: "col-sm-10" }, [
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "email",
+              id: "catname",
+              placeholder: "Enter Your Category Name"
+            }
+          })
         ])
       ])
     ])
