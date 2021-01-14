@@ -186,6 +186,7 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            <example-component></example-component>
                             @yield('content')
                         </div>
                         <!-- /.card-body -->
