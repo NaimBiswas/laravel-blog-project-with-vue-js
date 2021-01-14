@@ -1,5 +1,5 @@
 export const routes = [
 
-        //  {path: '/dashboard', component: dashboard },
+        //   {path: '/dashboard', component: dashboard },
 
 ];
