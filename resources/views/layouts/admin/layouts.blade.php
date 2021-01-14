@@ -30,7 +30,7 @@
                             role="button"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="../../index3.html"
+                        <a href="{{ route('dashboard') }}"
                             class="nav-link">Home</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
@@ -62,7 +62,7 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="../../index3.html"
+                <a href="{{ route('dashboard') }}"
                     class="brand-link">
                     <img src="{{ asset('asset') }}/img/AdminLTELogo.png"
                         alt="AdminLTE Logo"
