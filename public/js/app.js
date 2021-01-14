@@ -37763,7 +37763,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/create-category" } }, [
+                  _c("router-link", { attrs: { to: "/createcategory" } }, [
                     _vm._v("Create Category")
                   ])
                 ],
@@ -37897,7 +37897,7 @@ var render = function() {
             {
               staticClass:
                 "text-uppercase btn btn-info btn-md float-right text-white",
-              attrs: { to: "/create-category" }
+              attrs: { to: "/createcategory" }
             },
             [_vm._v("Add Category")]
           )

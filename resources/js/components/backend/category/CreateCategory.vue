@@ -11,7 +11,7 @@
                             <li class="breadcrumb-item">
                                 <span>Category</span>
                             </li>
-                            <li><router-link to="/create-category" >Create Category</router-link></li>
+                            <li><router-link to="/createcategory" >Create Category</router-link></li>
                         </ol>
                     </div>
                 </div>
