@@ -6,9 +6,7 @@ window.Vue = require('vue').default;
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-const routes = [
-//  {path: '/dashboard', component: dashboard },
-];
+import { routes } from 'routes.js';
 const router = createRouter({
 
      history: createWebHashHistory(),

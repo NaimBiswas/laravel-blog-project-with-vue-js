@@ -1894,16 +1894,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
-var routes = [//  {path: '/dashboard', component: dashboard },
-];
+
 var router = createRouter({
   history: createWebHashHistory(),
-  routes: routes
+  routes: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
 });
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 var app = new Vue({
