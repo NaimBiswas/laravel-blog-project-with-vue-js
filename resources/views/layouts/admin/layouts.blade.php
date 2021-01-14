@@ -12,7 +12,12 @@
             href="{{ mix('css/app.css') }}">
 
 
+        <style>
+            a.nav-link.router-link-exact-active.router-link-active {
+                background: #af0000;
+            }
 
+        </style>
     </head>
 
     <body class="hold-transition sidebar-mini sidebar-mini dark-mode">
