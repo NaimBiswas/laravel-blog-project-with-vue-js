@@ -1885,6 +1885,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category"
 });
@@ -37516,7 +37524,13 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("h2", [_vm._v("Hi i am category")])
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-header" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("h2", [_vm._v("Hi i am category")])
+        ])
+      ])
     ])
   }
 ]

@@ -18,7 +18,15 @@
             </div>
             <!-- /.container-fluid -->
         </section>
-        <h2>Hi i am category</h2>
+        <div class="card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+
+                 <h2>Hi i am category</h2>
+            </div>
+        </div>
     </div>
 </template>
 
