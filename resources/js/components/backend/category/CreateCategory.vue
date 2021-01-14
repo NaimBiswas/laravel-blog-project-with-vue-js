@@ -41,7 +41,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Ad Category</button>
+                  <button type="submit" class="btn  btn-outline-success btn-md text-uppercase">AdD Category</button>
                   <button type="submit" class="btn btn-default float-right">Cancel</button>
                 </div>
                 <!-- /.card-footer -->

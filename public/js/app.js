@@ -37870,8 +37870,11 @@ var staticRenderFns = [
           _c("div", { staticClass: "card-footer" }, [
             _c(
               "button",
-              { staticClass: "btn btn-info", attrs: { type: "submit" } },
-              [_vm._v("Ad Category")]
+              {
+                staticClass: "btn  btn-outline-success btn-md text-uppercase",
+                attrs: { type: "submit" }
+              },
+              [_vm._v("AdD Category")]
             ),
             _vm._v(" "),
             _c(
