@@ -17,7 +17,8 @@
 
     <body class="hold-transition sidebar-mini sidebar-mini dark-mode">
         <!-- Site wrapper -->
-        <div class="wrapper">
+        <div class="wrapper"
+            id="app">
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand main-header navbar navbar-expand navbar-dark">
                 <!-- Left navbar links -->
