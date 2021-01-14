@@ -1917,15 +1917,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category"
@@ -37861,9 +37852,9 @@ var staticRenderFns = [
                 "label",
                 {
                   staticClass: "col-sm-2 col-form-label",
-                  attrs: { for: "inputEmail3" }
+                  attrs: { for: "catname" }
                 },
-                [_vm._v("Email")]
+                [_vm._v("Category Name:")]
               ),
               _vm._v(" "),
               _c("div", { staticClass: "col-sm-10" }, [
@@ -37871,30 +37862,10 @@ var staticRenderFns = [
                   staticClass: "form-control",
                   attrs: {
                     type: "email",
-                    id: "inputEmail3",
-                    placeholder: "Email"
+                    id: "catname",
+                    placeholder: "Enter Your Category Name"
                   }
                 })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c("div", { staticClass: "offset-sm-2 col-sm-10" }, [
-                _c("div", { staticClass: "form-check" }, [
-                  _c("input", {
-                    staticClass: "form-check-input",
-                    attrs: { type: "checkbox", id: "exampleCheck2" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-check-label",
-                      attrs: { for: "exampleCheck2" }
-                    },
-                    [_vm._v("Remember me")]
-                  )
-                ])
               ])
             ])
           ]),
@@ -37903,7 +37874,7 @@ var staticRenderFns = [
             _c(
               "button",
               { staticClass: "btn btn-info", attrs: { type: "submit" } },
-              [_vm._v("Sign in")]
+              [_vm._v("Ad Category")]
             ),
             _vm._v(" "),
             _c(
