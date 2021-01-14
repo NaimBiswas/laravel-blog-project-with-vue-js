@@ -1958,8 +1958,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "routes": () => /* binding */ routes
 /* harmony export */ });
-var routes = [//   {path: '/dashboard', component: dashboard },
-];
+/* harmony import */ var _components_backend_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/backend/dashboard/Dashboard */ "./resources/js/components/backend/dashboard/Dashboard.vue");
+
+var routes = [{
+  path: '/dashboard',
+  component: _components_backend_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_0__.default
+}];
 
 /***/ }),
 
