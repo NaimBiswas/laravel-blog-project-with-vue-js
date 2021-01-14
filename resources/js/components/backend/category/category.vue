@@ -18,8 +18,9 @@
             <!-- /.container-fluid -->
         </section>
         <div class="card">
-            <div class="card-header">
-
+            <div class="card-header flex card-tools ">
+                <h5 class="text-uppercase" style="display:inline">Categoires</h5>
+                <button class="text-uppercase btn btn-info btn-md float-right text-white">Add Category</button>
             </div>
             <div class="card-body">
 
@@ -30,9 +31,11 @@
 </template>
 
 <script>
+import Button from '../../../../../vendor/laravel/jetstream/stubs/inertia/resources/js/Jetstream/Button.vue';
 export default {
     name: "category"
 };
+        Button
 </script>
 
 <style></style>
