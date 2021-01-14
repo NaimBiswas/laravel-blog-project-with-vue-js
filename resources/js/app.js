@@ -7,7 +7,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/dashboard', component: dashboard },
+//  {path: '/dashboard', component: dashboard },
 ];
 const router = createRouter({
 
