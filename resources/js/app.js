@@ -7,10 +7,11 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import { routes } from './routes/routes';
-const router = createRouter({
+const router = new VueRouter({
 
-     history: createWebHashHistory(),
+
     routes,
+    mode:'history',
 });
 
 

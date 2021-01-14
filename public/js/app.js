@@ -1901,9 +1901,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
 
-var router = createRouter({
-  history: createWebHashHistory(),
-  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_1__.routes
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
+  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_1__.routes,
+  mode: 'history'
 });
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 var app = new Vue({
