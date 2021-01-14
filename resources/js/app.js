@@ -15,7 +15,7 @@ const routes = [
 ];
 const router = createRouter({
 
-    history: createWebHistory(),
+    history: createWeHasbHistory(),
     routes,
 });
 
@@ -41,4 +41,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router,
 });

@@ -1909,7 +1909,7 @@ var routes = [{
   component: dashboard
 }];
 var router = createRouter({
-  history: createWebHistory(),
+  history: createWeHasbHistory(),
   routes: routes
 });
 /**
@@ -1930,7 +1930,8 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  router: router
 });
 
 /***/ }),
