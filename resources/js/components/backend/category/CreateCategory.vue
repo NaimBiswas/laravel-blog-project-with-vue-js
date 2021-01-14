@@ -61,4 +61,12 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+    .form-control:focus {
+        color: #fdfeff;
+        background-color: #394046;
+        border-color: #a1cbef;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    }
+</style>
