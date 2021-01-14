@@ -9,4 +9,8 @@ class Category extends Model
 {
     use HasFactory;
     protected $gurded = [];
+    public function posts()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }
