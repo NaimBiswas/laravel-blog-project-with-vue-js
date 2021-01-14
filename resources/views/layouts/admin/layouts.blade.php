@@ -186,6 +186,7 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            <route-view></route-view>
                             @yield('content')
                         </div>
                         <!-- /.card-body -->
