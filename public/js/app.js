@@ -1904,6 +1904,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
+var routes = [{
+  path: '/dashboard',
+  component: dashboard
+}];
+var router = createRouter({
+  history: createWebHistory(),
+  routes: routes
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
