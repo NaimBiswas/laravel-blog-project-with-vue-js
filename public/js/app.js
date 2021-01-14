@@ -37884,7 +37884,7 @@ var render = function() {
             "router-link",
             {
               staticClass:
-                "text-uppercase btn btn-info btn-md float-right text-white",
+                "text-uppercase btn btn-outline-danger btn-md float-right text-white",
               attrs: { to: "/createcategory" }
             },
             [_vm._v("Add Category")]
