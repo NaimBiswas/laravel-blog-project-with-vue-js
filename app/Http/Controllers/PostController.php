@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::get()->all();
+        $post = Post::with('category')->get()->all();
         return $post;
     }
 
