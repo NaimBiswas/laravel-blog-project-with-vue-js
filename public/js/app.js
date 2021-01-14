@@ -1915,9 +1915,9 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
   routes: _routes_routes__WEBPACK_IMPORTED_MODULE_1__.routes,
   mode: 'history'
-});
-Vue.component('home-component', __webpack_require__(/*! ./components/backend/dashboard/Dashboard.vue */ "./resources/js/components/backend/dashboard/Dashboard.vue").default);
-Vue.component('category-component', __webpack_require__(/*! ./components/backend/category/category */ "./resources/js/components/backend/category/category.vue").default);
+}); // Vue.component('home-component', require('./components/backend/dashboard/Dashboard.vue').default);
+// Vue.component('category-component', require('./components/backend/category/category').default);
+
 var app = new Vue({
   el: '#app',
   router: router

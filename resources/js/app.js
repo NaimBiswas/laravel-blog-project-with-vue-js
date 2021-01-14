@@ -16,8 +16,8 @@ const router = new VueRouter({
 
 
 
-Vue.component('home-component', require('./components/backend/dashboard/Dashboard.vue').default);
-Vue.component('category-component', require('./components/backend/category/category').default);
+// Vue.component('home-component', require('./components/backend/dashboard/Dashboard.vue').default);
+// Vue.component('category-component', require('./components/backend/category/category').default);
 
 const app = new Vue({
     el: '#app',
