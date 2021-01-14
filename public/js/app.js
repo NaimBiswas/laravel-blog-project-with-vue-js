@@ -37644,7 +37644,35 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _c("div", { staticClass: "card" }, [
+      _c(
+        "div",
+        { staticClass: "card-header flex card-tools " },
+        [
+          _c(
+            "h5",
+            {
+              staticClass: "text-uppercase",
+              staticStyle: { display: "inline" }
+            },
+            [_vm._v("Categoires")]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "text-uppercase btn btn-info btn-md float-right text-white",
+              attrs: { to: "/create-category" }
+            },
+            [_vm._v("Add Category")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(1)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -37660,27 +37688,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header flex card-tools " }, [
-        _c(
-          "h5",
-          { staticClass: "text-uppercase", staticStyle: { display: "inline" } },
-          [_vm._v("Categoires")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "text-uppercase btn btn-info btn-md float-right text-white"
-          },
-          [_vm._v("Add Category")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("h2", [_vm._v("Hi i am category")])
-      ])
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h2", [_vm._v("Hi i am category")])
     ])
   }
 ]

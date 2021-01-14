@@ -20,7 +20,7 @@
         <div class="card">
             <div class="card-header flex card-tools ">
                 <h5 class="text-uppercase" style="display:inline">Categoires</h5>
-                <button class="text-uppercase btn btn-info btn-md float-right text-white">Add Category</button>
+                <router-link to="/create-category" class="text-uppercase btn btn-info btn-md float-right text-white">Add Category</router-link>
             </div>
             <div class="card-body">
 
