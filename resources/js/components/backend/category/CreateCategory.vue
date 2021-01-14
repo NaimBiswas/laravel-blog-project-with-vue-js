@@ -9,9 +9,9 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item">
-                                <span>Category</span>
+                                <a>Category</a>
                             </li>
-                            <li><router-link to="/createcategory" >Create Category</router-link></li>
+                            <li class="breadcrumb-item active"><span >Create Category</span></li>
                         </ol>
                     </div>
                 </div>
