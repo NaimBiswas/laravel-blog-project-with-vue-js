@@ -1894,7 +1894,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/routes */ "./resources/js/routes/routes.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
@@ -1903,7 +1903,7 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
 
 var router = createRouter({
   history: createWebHashHistory(),
-  routes: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_1__.routes
 });
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 var app = new Vue({
@@ -1956,6 +1956,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/routes/routes.js":
+/*!***************************************!*\
+  !*** ./resources/js/routes/routes.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "routes": () => /* binding */ routes
+/* harmony export */ });
+var routes = [//  {path: '/dashboard', component: dashboard },
+];
 
 /***/ }),
 

@@ -6,7 +6,7 @@ window.Vue = require('vue').default;
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-import { routes } from 'routes.js';
+import { routes } from './routes/routes';
 const router = createRouter({
 
      history: createWebHashHistory(),
