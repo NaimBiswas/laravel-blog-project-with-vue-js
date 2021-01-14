@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-header flex card-tools ">
                 <h5 class="text-uppercase" style="display:inline">Add Category</h5>
-                <router-link to="/category" class="text-uppercase btn btn-info btn-md float-right text-white">Go Back</router-link>
+                <router-link to="/category" class="text-uppercase btn btn-outline-info btn-md float-right text-white">Go Back</router-link>
             </div>
             <div class="card-body">
                 <div class="card card-info">

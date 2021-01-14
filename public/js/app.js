@@ -37790,7 +37790,7 @@ var render = function() {
             "router-link",
             {
               staticClass:
-                "text-uppercase btn btn-info btn-md float-right text-white",
+                "text-uppercase btn btn-outline-info btn-md float-right text-white",
               attrs: { to: "/category" }
             },
             [_vm._v("Go Back")]
