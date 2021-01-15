@@ -12,10 +12,9 @@ window.Form = Form;
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 
-import Swal from 'sweetalert2';
-import swl from 'sweetalert2/dist/sweetalert2.js';
+// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
-import 'sweetalert2/src/sweetalert2.scss';
 
 window.Swal = Swal;
 const Toast = Swal.mixin({
