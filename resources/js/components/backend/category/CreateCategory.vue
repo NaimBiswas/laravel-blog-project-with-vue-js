@@ -50,6 +50,7 @@
                     id="catname"
                     placeholder="Enter Your Category Name"
                     name="name"
+                    :class="{ 'is-invalid': form.errors.has('name') }"
                   />
                   <has-error :form="form" field="name"></has-error>
                 </div>
