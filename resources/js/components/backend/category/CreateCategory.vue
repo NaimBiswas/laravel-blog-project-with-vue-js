@@ -93,6 +93,7 @@
 </template>
 
 <script>
+
 export default {
   name: "category",
 
@@ -112,7 +113,13 @@ export default {
       this.form.status = false;
     },
     addCategory() {
-      this.form.post("/savecategory");
+      this.form.post("/savecategory")
+            .then(function(data){
+                  Toast.fire({
+                     icon: 'success',
+                     title: 'Category successfully created',
+                 });
+             });
       this.form.name = '';
       this.form.status = false;
     },
@@ -128,4 +135,5 @@ export default {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
+
 </style>
