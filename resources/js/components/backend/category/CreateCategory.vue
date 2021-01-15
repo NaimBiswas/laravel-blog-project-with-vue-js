@@ -35,7 +35,7 @@
                   <div class="form-group row">
                     <label for="catname" class="col-sm-2 col-form-label">Category Name:</label>
                     <div class="col-sm-10">
-                      <input v-model="name" type="text" class="form-control" id="catname" placeholder="Enter Your Category Name" name="name">
+                      <input v-model="form.name" type="text" class="form-control" id="catname" placeholder="Enter Your Category Name" name="name">
                     </div>
                   </div>
                 </div>
@@ -62,6 +62,7 @@ export default {
        return {
            form: new Form({
              name: '',
+             state: true,
            })
        }
    },

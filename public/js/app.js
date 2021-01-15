@@ -1921,7 +1921,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: new Form({
-        name: ''
+        name: '',
+        state: true
       })
     };
   }
@@ -39280,8 +39281,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.name,
-                        expression: "name"
+                        value: _vm.form.name,
+                        expression: "form.name"
                       }
                     ],
                     staticClass: "form-control",
@@ -39291,13 +39292,13 @@ var render = function() {
                       placeholder: "Enter Your Category Name",
                       name: "name"
                     },
-                    domProps: { value: _vm.name },
+                    domProps: { value: _vm.form.name },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.name = $event.target.value
+                        _vm.$set(_vm.form, "name", $event.target.value)
                       }
                     }
                   })
