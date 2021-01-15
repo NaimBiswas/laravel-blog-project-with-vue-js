@@ -1929,9 +1929,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: new Form({
         name: '',
-        status: true
+        status: false
       })
     };
+  },
+  methods: {
+    active: function active() {
+      this.form.status = true;
+    },
+    deactive: function deactive() {
+      this.form.status = false;
+    }
   }
 });
 
@@ -39325,18 +39333,18 @@ var render = function() {
                 _c("div", { staticClass: "col-sm-10 flex" }, [
                   _vm.form.status
                     ? _c(
-                        "button",
+                        "a",
                         {
                           staticClass: "btn btn-success btn-md",
-                          attrs: { type: "" }
+                          on: { click: _vm.deactive }
                         },
                         [_vm._v("Active")]
                       )
                     : _c(
-                        "button",
+                        "a",
                         {
                           staticClass: "btn btn-warning btn-md",
-                          attrs: { type: "" }
+                          on: { click: _vm.active }
                         },
                         [_vm._v("Deactive")]
                       )
