@@ -49,7 +49,7 @@ Vue.use(Vuex);
 
 import StoreData from './store/store';
 const store = new Vuex.Store(
- StoreData
+    StoreData,
 );
 
 const app = new Vue({

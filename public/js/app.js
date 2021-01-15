@@ -2035,7 +2035,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "category",
   computed: {
     hop: function hop() {
-      this.$store.state.data;
+      return this.$store.getters.test;
     }
   }
 });
@@ -43631,7 +43631,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("h2", [_vm._v("Hi i am category " + _vm._s(_vm.hop))])
+        _c("h2", [_vm._v("Hi i am  " + _vm._s(_vm.hop))])
       ])
     ])
   ])
