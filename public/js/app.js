@@ -1920,7 +1920,9 @@ __webpack_require__.r(__webpack_exports__);
   name: "category",
   data: function data() {
     return {
-      name: ''
+      form: new Form({
+        name: ''
+      })
     };
   }
 });

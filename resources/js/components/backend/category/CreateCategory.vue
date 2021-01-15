@@ -60,7 +60,9 @@ export default {
     name: "category",
    data() {
        return {
-           name: '',
+           form: new Form({
+             name: '',
+           })
        }
    },
 };
