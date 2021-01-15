@@ -6,8 +6,11 @@ window.Vue = require('vue').default;
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-
-
+// V form
+import { Form, HasError, AlertError } from 'vform';
+window.Form = Form;
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 
 
 
