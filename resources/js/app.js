@@ -14,9 +14,10 @@ Vue.component(AlertError.name, AlertError);
 
 // import Swal from 'sweetalert2';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-
+import toastr from 'toastr';
 
 window.Swal = Swal;
+window.toastr = toastr;
 const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
