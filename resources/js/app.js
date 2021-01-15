@@ -12,7 +12,11 @@ window.Form = Form;
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 
+import SweetAlert from 'sweetalert2';
+import swl from 'sweetalert2/dist/sweetalert2.js';
 
+import 'sweetalert2/src/sweetalert2.scss';
+Vue.use(SweetAlert);
 
 
 
