@@ -1953,20 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -6643,7 +6629,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n    color: #fdfeff;\n    background-color: #394046;\n    border-color: #a1cbef;\n    outline: 0;\n    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n  color: #fdfeff;\n  background-color: #394046;\n  border-color: #a1cbef;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39194,7 +39180,7 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _c(
         "div",
-        { staticClass: "card-header flex card-tools " },
+        { staticClass: "card-header flex card-tools" },
         [
           _c(
             "h5",
@@ -39202,7 +39188,7 @@ var render = function() {
               staticClass: "text-uppercase",
               staticStyle: { display: "inline" }
             },
-            [_vm._v("\n                Add Category\n            ")]
+            [_vm._v("Add Category")]
           ),
           _vm._v(" "),
           _c(
@@ -39348,9 +39334,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title pt-2" }, [
-        _vm._v(
-          "\n                        Enter Your Category Name\n                    "
-        )
+        _vm._v("Enter Your Category Name")
       ])
     ])
   },
@@ -39362,14 +39346,10 @@ var staticRenderFns = [
       _c(
         "button",
         {
-          staticClass: "btn  btn-outline-success btn-md text-uppercase",
+          staticClass: "btn btn-outline-success btn-md text-uppercase",
           attrs: { type: "submit" }
         },
-        [
-          _vm._v(
-            "\n                            AdD Category\n                        "
-          )
-        ]
+        [_vm._v("\n              AdD Category\n            ")]
       ),
       _vm._v(" "),
       _c(
@@ -39378,11 +39358,7 @@ var staticRenderFns = [
           staticClass: "btn btn-default float-right",
           attrs: { type: "reset" }
         },
-        [
-          _vm._v(
-            "\n                            Cancel\n                        "
-          )
-        ]
+        [_vm._v("\n              Cancel\n            ")]
       )
     ])
   }
