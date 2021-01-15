@@ -2031,13 +2031,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   mounted: function mounted() {
     this.$store.dispatch("getCategories");
   },
   computed: {
-    category: function category() {
+    categories: function categories() {
       return this.$store.getters.allCategory;
     }
   }
@@ -2252,9 +2275,7 @@ __webpack_require__.r(__webpack_exports__);
     getCategories: function getCategories(data) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
         data.commit("fatchCategoires", response.data.categories);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     }
   },
   mutations: {
@@ -43626,7 +43647,7 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _c(
         "div",
-        { staticClass: "card-header flex card-tools " },
+        { staticClass: "card-header flex card-tools" },
         [
           _c(
             "h5",
@@ -43651,7 +43672,44 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("h2", [_vm._v("Hi i am  " + _vm._s(_vm.category))])
+        _c(
+          "table",
+          { staticClass: "table table-control table-bordered text-center" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.categories, function(category, index) {
+              return _c("tr", { key: index }, [
+                _c("td", [_vm._v(_vm._s(category["id"]))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(category["name"]))]),
+                _vm._v(" "),
+                _c("td", [
+                  category["status"] == 1
+                    ? _c(
+                        "button",
+                        { staticClass: "btn btn-outline-success btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye mr-2" }),
+                          _vm._v("Active")
+                        ]
+                      )
+                    : _c(
+                        "button",
+                        { staticClass: "btn btn-outline-warning btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
+                          _vm._v("Deactive")
+                        ]
+                      )
+                ]),
+                _vm._v(" "),
+                _vm._m(2, true)
+              ])
+            })
+          ],
+          2
+        )
       ])
     ])
   ])
@@ -43663,6 +43721,34 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [
       _c("h1", [_vm._v("Categories")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("ID.")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Name")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Status")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Action")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn btn-warning btn-lg" }, [
+        _c("i", { staticClass: "fas fa-pen" })
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-danger btn-lg" }, [
+        _c("i", { staticClass: "fas fa-trash-alt" })
+      ])
     ])
   }
 ]

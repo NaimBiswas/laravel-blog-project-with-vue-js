@@ -10,7 +10,7 @@ export default {
                 .then(function(response){
                     data.commit("fatchCategoires", response.data.categories);
                 }).catch((error) => {
-                    console.log(error);
+
                 });
         }
     },
