@@ -33,6 +33,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
         "admin-lte": "^3.1.0-rc",
+        "sweetalert2": "^10.13.0",
         "vform": "^1.0.1",
         "vue-router": "^3.4.9"
     }
