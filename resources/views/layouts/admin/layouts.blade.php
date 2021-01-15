@@ -193,7 +193,6 @@
 
         <script type="text/javascript">
             //
-            <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
         (function () {
             function refreshCSS() {
@@ -227,7 +226,7 @@
 	else {
         console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
 	}
-	 ]]>
+
         </script>
 
     </body>
