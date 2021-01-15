@@ -2129,9 +2129,7 @@ window.Toast = Toast;
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
   routes: _routes_routes__WEBPACK_IMPORTED_MODULE_4__.routes,
   mode: 'history'
-}); // Vue.component('home-component', require('./components/backend/dashboard/Dashboard.vue').default);
-// Vue.component('category-component', require('./components/backend/category/category').default);
-
+});
 var app = new Vue({
   el: '#app',
   router: router
