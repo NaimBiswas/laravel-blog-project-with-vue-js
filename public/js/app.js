@@ -1941,10 +1941,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = false;
     },
     addCategory: function addCategory() {
-      this.form.post('/savecategory').then(function (_ref) {
-        var data = _ref.data;
-        console.log(data);
-      });
+      this.form.post('/savecategory');
     }
   }
 });

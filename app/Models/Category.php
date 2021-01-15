@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $gurded = [];
+    protected $fillable = ['name', 'slug', 'status'];
     public function posts()
     {
         return $this->hasMany(Post::class);

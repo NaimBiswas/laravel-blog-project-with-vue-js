@@ -27,5 +27,5 @@ Route::group(['middlewire' => 'auth'], function () {
 
     Route::get('/post', [PostController::class, 'index'])->name('post');
     Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
-    Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
 });
+Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');

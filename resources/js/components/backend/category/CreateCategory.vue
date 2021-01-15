@@ -85,7 +85,6 @@ export default {
         },
         addCategory(){
            this.form.post('/savecategory')
-            .then(({ data }) => { console.log(data) })
 
         },
      },
