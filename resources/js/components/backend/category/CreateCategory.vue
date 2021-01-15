@@ -82,6 +82,9 @@ export default {
          deactive(){
             this.form.status = false;
         },
+        addCategory(){
+
+        },
      },
 
 };

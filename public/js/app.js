@@ -1939,7 +1939,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     deactive: function deactive() {
       this.form.status = false;
-    }
+    },
+    addCategory: function addCategory() {}
   }
 });
 
