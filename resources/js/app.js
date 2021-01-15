@@ -44,7 +44,8 @@ const router = new VueRouter({
     mode:'history',
 });
 
-
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
 
 const app = new Vue({
