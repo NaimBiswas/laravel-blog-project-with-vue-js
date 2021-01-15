@@ -41,8 +41,8 @@
                   <div class="form-group row">
                     <label for="catname" class="col-sm-2 col-form-label">Status:</label>
                     <div class="col-sm-10 flex">
-                      <button type="" class="btn btn-success btn-md">Active</button>
-                      <button type="" class="btn btn-warning btn-md">Deactive</button>
+                      <button v-if="form.status" type="" class="btn btn-success btn-md">Active</button>
+                      <button v-else  type="" class="btn btn-warning btn-md">Deactive</button>
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default {
        return {
            form: new Form({
              name: '',
-             state: true,
+             status: true,
            })
         }
      },

@@ -1929,7 +1929,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: new Form({
         name: '',
-        state: true
+        status: true
       })
     };
   }
@@ -39312,10 +39312,39 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(2)
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-2 col-form-label",
+                    attrs: { for: "catname" }
+                  },
+                  [_vm._v("Status:")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-10 flex" }, [
+                  _vm.form.status
+                    ? _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-success btn-md",
+                          attrs: { type: "" }
+                        },
+                        [_vm._v("Active")]
+                      )
+                    : _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-warning btn-md",
+                          attrs: { type: "" }
+                        },
+                        [_vm._v("Deactive")]
+                      )
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _vm._m(2)
           ])
         ])
       ])
@@ -39356,32 +39385,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title pt-2" }, [
         _vm._v("Enter Your Category Name")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group row" }, [
-      _c(
-        "label",
-        { staticClass: "col-sm-2 col-form-label", attrs: { for: "catname" } },
-        [_vm._v("Status:")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-10 flex" }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-success btn-md", attrs: { type: "" } },
-          [_vm._v("Active")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-warning btn-md", attrs: { type: "" } },
-          [_vm._v("Deactive")]
-        )
       ])
     ])
   },
