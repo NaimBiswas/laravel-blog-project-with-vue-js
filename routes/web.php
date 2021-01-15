@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use BaconQrCode\Renderer\Path\Path;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,6 @@ Route::group(['middlewire' => 'auth'], function () {
 
     Route::get('/post', [PostController::class, 'index'])->name('post');
     // Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
+    Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
+    Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
 });
-Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
-Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
