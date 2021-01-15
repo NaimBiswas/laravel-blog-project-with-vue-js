@@ -66,8 +66,8 @@ export default {
              name: '',
              state: true,
            })
-       }
-   },
+        }
+     },
 };
 
 </script>
