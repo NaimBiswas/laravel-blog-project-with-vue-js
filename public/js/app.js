@@ -1972,6 +1972,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     addCategory: function addCategory() {
       this.form.post("/savecategory");
+      this.form.name = '';
+      this.form.status = false;
     }
   }
 });

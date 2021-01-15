@@ -111,6 +111,8 @@ export default {
     },
     addCategory() {
       this.form.post("/savecategory");
+      this.form.name = '';
+      this.form.status = false;
     },
   },
 };
