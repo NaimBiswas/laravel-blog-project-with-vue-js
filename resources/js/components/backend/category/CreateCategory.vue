@@ -30,7 +30,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form @submit.prevent="addCategory" class="form-horizontal">
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="catname" class="col-sm-2 col-form-label">Category Name:</label>

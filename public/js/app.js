@@ -39279,82 +39279,94 @@ var render = function() {
         _c("div", { staticClass: "card card-info" }, [
           _vm._m(1),
           _vm._v(" "),
-          _c("form", { staticClass: "form-horizontal" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-sm-2 col-form-label",
-                    attrs: { for: "catname" }
-                  },
-                  [_vm._v("Category Name:")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-10" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.name,
-                        expression: "form.name"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "catname",
-                      placeholder: "Enter Your Category Name",
-                      name: "name"
+          _c(
+            "form",
+            {
+              staticClass: "form-horizontal",
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addCategory($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-2 col-form-label",
+                      attrs: { for: "catname" }
                     },
-                    domProps: { value: _vm.form.name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                    [_vm._v("Category Name:")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-10" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.name,
+                          expression: "form.name"
                         }
-                        _vm.$set(_vm.form, "name", $event.target.value)
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "catname",
+                        placeholder: "Enter Your Category Name",
+                        name: "name"
+                      },
+                      domProps: { value: _vm.form.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "name", $event.target.value)
+                        }
                       }
-                    }
-                  })
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-2 col-form-label",
+                      attrs: { for: "catname" }
+                    },
+                    [_vm._v("Status:")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-10 flex" }, [
+                    _vm.form.status
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success btn-md",
+                            on: { click: _vm.deactive }
+                          },
+                          [_vm._v("Active")]
+                        )
+                      : _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-warning btn-md",
+                            on: { click: _vm.active }
+                          },
+                          [_vm._v("Deactive")]
+                        )
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-sm-2 col-form-label",
-                    attrs: { for: "catname" }
-                  },
-                  [_vm._v("Status:")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-10 flex" }, [
-                  _vm.form.status
-                    ? _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-success btn-md",
-                          on: { click: _vm.deactive }
-                        },
-                        [_vm._v("Active")]
-                      )
-                    : _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-warning btn-md",
-                          on: { click: _vm.active }
-                        },
-                        [_vm._v("Deactive")]
-                      )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(2)
-          ])
+              _vm._m(2)
+            ]
+          )
         ])
       ])
     ])
