@@ -43,8 +43,8 @@
                   <button v-else class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash mr-2"></i>Deactive</button>
               </td>
               <td>
-                  <button class="btn btn-warning btn-lg" ><i class="fas fa-pen"></i></button>
-                  <button class="btn btn-danger btn-lg" ><i class="fas fa-trash-alt"></i></button>
+                  <button class="btn btn-warning btn-lg mr-2" ><i class="fas fa-pen"></i></button>
+                  <button class="btn btn-danger btn-lg mr-2" ><i class="fas fa-trash-alt"></i></button>
               </td>
             </tr>
 

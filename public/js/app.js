@@ -43744,11 +43744,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", [
-      _c("button", { staticClass: "btn btn-warning btn-lg" }, [
+      _c("button", { staticClass: "btn btn-warning btn-lg mr-2" }, [
         _c("i", { staticClass: "fas fa-pen" })
       ]),
       _vm._v(" "),
-      _c("button", { staticClass: "btn btn-danger btn-lg" }, [
+      _c("button", { staticClass: "btn btn-danger btn-lg mr-2" }, [
         _c("i", { staticClass: "fas fa-trash-alt" })
       ])
     ])
