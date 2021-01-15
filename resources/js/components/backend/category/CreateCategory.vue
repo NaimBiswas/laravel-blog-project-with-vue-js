@@ -64,6 +64,7 @@
 
 
 
+
 export default {
     name: "category",
 
@@ -83,6 +84,8 @@ export default {
             this.form.status = false;
         },
         addCategory(){
+           this.form.post('/savecategory')
+            .then(({ data }) => { console.log(data) })
 
         },
      },
