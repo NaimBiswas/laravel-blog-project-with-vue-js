@@ -51,6 +51,7 @@
                     placeholder="Enter Your Category Name"
                     name="name"
                   />
+                  <has-error :form="form" field="name"></has-error>
                 </div>
               </div>
               <div class="form-group row">
