@@ -43682,7 +43682,9 @@ var render = function() {
               return _c("tr", { key: index }, [
                 _c("td", [_vm._v(_vm._s(category["id"]))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(category["name"]))]),
+                _c("td", { staticClass: "h5" }, [
+                  _vm._v(_vm._s(category["name"]))
+                ]),
                 _vm._v(" "),
                 _c("td", [
                   category["status"] == 1

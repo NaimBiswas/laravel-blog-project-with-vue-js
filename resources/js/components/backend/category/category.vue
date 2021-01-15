@@ -36,8 +36,8 @@
           </tr>
 
             <tr v-for="(category, index) in categories" :key="index">
-              <td>{{ category['id'] }}</td>
-              <td>{{ category['name'] }}</td>
+              <td  >{{ category['id'] }}</td>
+              <td class="h5">{{ category['name'] }}</td>
               <td>
                   <button v-if="category['status'] == 1" class="btn btn-outline-success btn-lg"><i class="fas fa-eye mr-2"></i>Active</button>
                   <button v-else class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash mr-2"></i>Deactive</button>
