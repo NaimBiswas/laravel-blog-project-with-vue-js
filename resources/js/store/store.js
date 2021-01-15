@@ -1,10 +1,28 @@
+import axios from "axios";
+
 export default {
-    state: {
-      data:  'test test',
+     state: {
+      categoires: [],
     },
+    actions: {
+        getCategories(data) {
+            axios.get("/get-categoy")
+                .then(function(response){
+                    data.commit("fatchCategoires", response.data.categories);
+                }).catch((error) => {
+                    console.log(error);
+                });
+        }
+    },
+    mutations: {
+        fatchCategoires(state, data) {
+            return state.categoires = data;
+        },
+    },
+
     getters: {
-        test(state) {
-            return state.data;
+        allCategory(state) {
+            return state.categoires;
       }
     },
 };

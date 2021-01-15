@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group(['middlewire' => 'auth'], function () {
 
     Route::get('/post', [PostController::class, 'index'])->name('post');
-    Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
+    // Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
 });
 Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
+Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');

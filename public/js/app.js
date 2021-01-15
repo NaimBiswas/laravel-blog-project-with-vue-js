@@ -2033,9 +2033,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
+  mounted: function mounted() {
+    this.$store.dispatch("getCategories");
+  },
   computed: {
-    hop: function hop() {
-      return this.$store.getters.test;
+    category: function category() {
+      return this.$store.getters.allCategory;
     }
   }
 });
@@ -2238,13 +2241,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
-    data: 'test test'
+    categoires: []
+  },
+  actions: {
+    getCategories: function getCategories(data) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
+        data.commit("fatchCategoires", response.data.categories);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mutations: {
+    fatchCategoires: function fatchCategoires(state, data) {
+      return state.categoires = data;
+    }
   },
   getters: {
-    test: function test(state) {
-      return state.data;
+    allCategory: function allCategory(state) {
+      return state.categoires;
     }
   }
 });
@@ -43631,7 +43651,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("h2", [_vm._v("Hi i am  " + _vm._s(_vm.hop))])
+        _c("h2", [_vm._v("Hi i am  " + _vm._s(_vm.category))])
       ])
     ])
   ])

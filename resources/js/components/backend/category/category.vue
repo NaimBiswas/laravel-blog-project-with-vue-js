@@ -24,7 +24,7 @@
             </div>
             <div class="card-body">
 
-                 <h2>Hi i am  {{ hop }}</h2>
+                 <h2>Hi i am  {{ category }}</h2>
 
             </div>
         </div>
@@ -35,9 +35,12 @@
 
 export default {
     name: "category",
+    mounted(){
+      this.$store.dispatch("getCategories")
+    },
     computed:{
-        hop(){
-           return this.$store.getters.test;
+        category(){
+           return this.$store.getters.allCategory;
         },
 
     },
