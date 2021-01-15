@@ -1917,7 +1917,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "category"
+  name: "category",
+  data: function data() {
+    return {
+      name: ''
+    };
+  }
 });
 
 /***/ }),

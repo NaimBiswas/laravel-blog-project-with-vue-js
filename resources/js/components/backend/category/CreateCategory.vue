@@ -55,8 +55,14 @@
 
 <script>
 
+
 export default {
-    name: "category"
+    name: "category",
+   data() {
+       return {
+           name: '',
+       }
+   },
 };
 
 </script>
