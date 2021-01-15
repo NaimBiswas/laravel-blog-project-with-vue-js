@@ -1923,12 +1923,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
     return {
       form: new Form({
-        name: '',
+        name: "",
         status: false
       })
     };
@@ -1941,7 +1985,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = false;
     },
     addCategory: function addCategory() {
-      this.form.post('/savecategory');
+      this.form.post("/savecategory");
     }
   }
 });
@@ -39158,7 +39202,7 @@ var render = function() {
               staticClass: "text-uppercase",
               staticStyle: { display: "inline" }
             },
-            [_vm._v("Add Category")]
+            [_vm._v("\n                Add Category\n            ")]
           ),
           _vm._v(" "),
           _c(
@@ -39304,7 +39348,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title pt-2" }, [
-        _vm._v("Enter Your Category Name")
+        _vm._v(
+          "\n                        Enter Your Category Name\n                    "
+        )
       ])
     ])
   },
@@ -39319,7 +39365,11 @@ var staticRenderFns = [
           staticClass: "btn  btn-outline-success btn-md text-uppercase",
           attrs: { type: "submit" }
         },
-        [_vm._v("AdD Category")]
+        [
+          _vm._v(
+            "\n                            AdD Category\n                        "
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -39328,7 +39378,11 @@ var staticRenderFns = [
           staticClass: "btn btn-default float-right",
           attrs: { type: "reset" }
         },
-        [_vm._v("Cancel")]
+        [
+          _vm._v(
+            "\n                            Cancel\n                        "
+          )
+        ]
       )
     ])
   }
