@@ -2030,8 +2030,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "category"
+  name: "category",
+  computed: {
+    hop: function hop() {
+      this.$store.state.data;
+    }
+  }
 });
 
 /***/ }),
@@ -2136,12 +2142,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
 
 Vue.use((vuex__WEBPACK_IMPORTED_MODULE_5___default()));
 
-var store = new (vuex__WEBPACK_IMPORTED_MODULE_5___default().Store)({
-  data: _store_store__WEBPACK_IMPORTED_MODULE_6__.default
-});
+var store = new (vuex__WEBPACK_IMPORTED_MODULE_5___default().Store)(_store_store__WEBPACK_IMPORTED_MODULE_6__.default);
 var app = new Vue({
   el: '#app',
-  router: router
+  router: router,
+  store: store
 });
 
 /***/ }),
@@ -2233,7 +2238,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  state: {
+    data: 'test test'
+  },
+  getters: {
+    test: function test(state) {
+      return state.data;
+    }
+  }
+});
 
 /***/ }),
 
@@ -43616,7 +43630,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(1)
+      _c("div", { staticClass: "card-body" }, [
+        _c("h2", [_vm._v("Hi i am category " + _vm._s(_vm.hop))])
+      ])
     ])
   ])
 }
@@ -43627,14 +43643,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [
       _c("h1", [_vm._v("Categories")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("h2", [_vm._v("Hi i am category")])
     ])
   }
 ]

@@ -47,12 +47,13 @@ const router = new VueRouter({
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
-import data from './store/store';
-const store = new Vuex.Store({
-    data,
-});
+import StoreData from './store/store';
+const store = new Vuex.Store(
+ StoreData
+);
 
 const app = new Vue({
     el: '#app',
     router,
+    store: store,
 });
