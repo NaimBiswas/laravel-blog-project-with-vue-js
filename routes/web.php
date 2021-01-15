@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,5 @@ Route::group(['middlewire' => 'auth'], function () {
 
     Route::get('/post', [PostController::class, 'index'])->name('post');
     Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
+    Route::resource('category', [CategoryController::class]);
 });
