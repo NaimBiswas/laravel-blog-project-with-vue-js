@@ -108,7 +108,7 @@ export default {
           ) {
             swalWithBootstrapButtons.fire(
               "Cancelled",
-              "Your imaginary file is safe :)",
+              "Thank You For Change Your decession :)",
               "error"
             );
           }
