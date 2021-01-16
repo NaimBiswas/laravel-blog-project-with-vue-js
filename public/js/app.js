@@ -2106,21 +2106,20 @@ __webpack_require__.r(__webpack_exports__);
         result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire("Cancelled", "Thank You For Change Your decession :)", "error");
         }
-      }); //   axios
-      //     .delete("remove-category/" + id)
-      //     .then((response) => {
-      //       Toast.fire({
-      //         icon: "success",
-      //         title: "Category Deleted Success",
-      //       });
-      //       this.$store.dispatch("getCategories");
-      //     })
-      //     .catch((error) => {
-      //       Toast.fire({
-      //         icon: "warning",
-      //         title: error,
-      //       });
-      //     });
+      });
+      axios["delete"]("remove-category/" + id).then(function (response) {
+        Toast.fire({
+          icon: "success",
+          title: "Category Deleted Success"
+        });
+
+        _this.$store.dispatch("getCategories");
+      })["catch"](function (error) {
+        Toast.fire({
+          icon: "warning",
+          title: error
+        });
+      });
     },
     isShowing: function isShowing() {
       return this.categories.length < 1;
@@ -44079,7 +44078,7 @@ var render = function() {
                     _c(
                       "router-link",
                       {
-                        staticClass: "btn btn-warning btn-lg mr-2",
+                        staticClass: "btn btn-outline-warning btn-lg mr-2",
                         attrs: { to: "/editecategory/" + category.id }
                       },
                       [_c("i", { staticClass: "fas fa-pen" })]
@@ -44088,7 +44087,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-danger btn-lg mr-2",
+                        staticClass: "btn btn-outline-danger btn-lg mr-2",
                         on: {
                           click: function($event) {
                             return _vm.removeCategory(category["id"])

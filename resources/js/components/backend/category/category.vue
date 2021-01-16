@@ -51,12 +51,12 @@
               </button>
             </td>
             <td>
-              <router-link :to="`/editecategory/${ category.id }`"  class="btn btn-warning btn-lg mr-2">
+              <router-link :to="`/editecategory/${ category.id }`"  class="btn btn-outline-warning btn-lg mr-2">
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
                 @click="removeCategory(category['id'])"
-                class="btn btn-danger btn-lg mr-2"
+                class="btn btn-outline-danger btn-lg mr-2"
               >
                 <i class="fas fa-trash-alt"></i>
               </button>
@@ -113,21 +113,21 @@ export default {
             );
           }
         });
-    //   axios
-    //     .delete("remove-category/" + id)
-    //     .then((response) => {
-    //       Toast.fire({
-    //         icon: "success",
-    //         title: "Category Deleted Success",
-    //       });
-    //       this.$store.dispatch("getCategories");
-    //     })
-    //     .catch((error) => {
-    //       Toast.fire({
-    //         icon: "warning",
-    //         title: error,
-    //       });
-    //     });
+      axios
+        .delete("remove-category/" + id)
+        .then((response) => {
+          Toast.fire({
+            icon: "success",
+            title: "Category Deleted Success",
+          });
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          Toast.fire({
+            icon: "warning",
+            title: error,
+          });
+        });
     },
 
     isShowing() {
