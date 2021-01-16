@@ -1978,6 +1978,11 @@ __webpack_require__.r(__webpack_exports__);
           icon: 'success',
           title: 'Category successfully created'
         });
+      })["catch"](function (error) {
+        Toast.fire({
+          icon: 'warning',
+          title: error
+        });
       });
       this.form.name = '';
       this.form.status = false;

@@ -94,6 +94,7 @@
 
 <script>
 
+
 export default {
   name: "category",
 
@@ -118,8 +119,13 @@ export default {
                   Toast.fire({
                      icon: 'success',
                      title: 'Category successfully created',
-                 });
-             });
+                 })
+            }).catch((error) => {
+                Toast.fire({
+                    icon: 'warning',
+                    title: error,
+                })
+            });
       this.form.name = '';
       this.form.status = false;
     },
