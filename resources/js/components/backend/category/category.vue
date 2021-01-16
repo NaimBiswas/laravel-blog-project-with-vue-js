@@ -139,4 +139,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+button.swal2-confirm.btn.btn-success {
+    margin-left: 10px;
+
+    font-size: 20px;
+}
+button.swal2-cancel.btn.btn-danger{
+    font-size: 20px;
+}
+</style>
