@@ -36,20 +36,33 @@
             <td>Created At</td>
           </tr>
 
-            <tr v-for="(category, index) in categories" :key="index">
-              <td  >{{ category['id'] }}</td>
-              <td class="h5">{{ category['name'] }}</td>
-              <td>
-                  <button v-if="category['status'] == 1" class="btn btn-outline-success btn-lg"><i class="fas fa-eye mr-2"></i>Active</button>
-                  <button v-else class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash mr-2"></i>Deactive</button>
-              </td>
-              <td>
-                  <button class="btn btn-warning btn-lg mr-2" ><i class="fas fa-pen"></i></button>
-                  <button class="btn btn-danger btn-lg mr-2" ><i class="fas fa-trash-alt"></i></button>
-              </td>
-              <td>{{ category['created_at'] }}</td>
-            </tr>
-
+          <tr v-for="(category, index) in categories" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td class="h5">{{ category["name"] }}</td>
+            <td>
+              <button
+                v-if="category['status'] == 1"
+                class="btn btn-outline-success btn-lg"
+              >
+                <i class="fas fa-eye mr-2"></i>Active
+              </button>
+              <button v-else class="btn btn-outline-warning btn-lg">
+                <i class="fas fa-eye-slash mr-2"></i>Deactive
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-warning btn-lg mr-2">
+                <i class="fas fa-pen"></i>
+              </button>
+              <button
+                @click="removeCategory(category['id'])"
+                class="btn btn-danger btn-lg mr-2"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+            <td>{{ category["created_at"] }}</td>
+          </tr>
         </table>
       </div>
     </div>
@@ -59,6 +72,24 @@
 <script>
 export default {
   name: "category",
+  methods: {
+    removeCategory(id) {
+      axios
+        .delete("remove-category/" + id)
+        .then((response) => {
+          Toast.fire({
+            icon: "success",
+            title: "Category Deleted Success",
+          });
+             this.$store.dispatch("getCategories");
+        }).catch((error) => {
+          Toast.fire({
+            icon: "warning",
+            title: error,
+          });
+        });
+    },
+  },
   mounted() {
     this.$store.dispatch("getCategories");
   },

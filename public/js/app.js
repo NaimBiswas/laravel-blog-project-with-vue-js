@@ -2061,8 +2061,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
+  methods: {
+    removeCategory: function removeCategory(id) {
+      var _this = this;
+
+      axios["delete"]("remove-category/" + id).then(function (response) {
+        Toast.fire({
+          icon: "success",
+          title: "Category Deleted Success"
+        });
+
+        _this.$store.dispatch("getCategories");
+      })["catch"](function (error) {
+        Toast.fire({
+          icon: "warning",
+          title: error
+        });
+      });
+    }
+  },
   mounted: function mounted() {
     this.$store.dispatch("getCategories");
   },
@@ -43687,7 +43719,7 @@ var render = function() {
             _vm._v(" "),
             _vm._l(_vm.categories, function(category, index) {
               return _c("tr", { key: index }, [
-                _c("td", [_vm._v(_vm._s(category["id"]))]),
+                _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
                 _c("td", { staticClass: "h5" }, [
                   _vm._v(_vm._s(category["name"]))
@@ -43700,7 +43732,7 @@ var render = function() {
                         { staticClass: "btn btn-outline-success btn-lg" },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-2" }),
-                          _vm._v("Active")
+                          _vm._v("Active\n            ")
                         ]
                       )
                     : _c(
@@ -43708,12 +43740,27 @@ var render = function() {
                         { staticClass: "btn btn-outline-warning btn-lg" },
                         [
                           _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
-                          _vm._v("Deactive")
+                          _vm._v("Deactive\n            ")
                         ]
                       )
                 ]),
                 _vm._v(" "),
-                _vm._m(2, true),
+                _c("td", [
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger btn-lg mr-2",
+                      on: {
+                        click: function($event) {
+                          return _vm.removeCategory(category["id"])
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-trash-alt" })]
+                  )
+                ]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(category["created_at"]))])
               ])
@@ -43754,14 +43801,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("button", { staticClass: "btn btn-warning btn-lg mr-2" }, [
-        _c("i", { staticClass: "fas fa-pen" })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-danger btn-lg mr-2" }, [
-        _c("i", { staticClass: "fas fa-trash-alt" })
-      ])
+    return _c("button", { staticClass: "btn btn-warning btn-lg mr-2" }, [
+      _c("i", { staticClass: "fas fa-pen" })
     ])
   }
 ]
