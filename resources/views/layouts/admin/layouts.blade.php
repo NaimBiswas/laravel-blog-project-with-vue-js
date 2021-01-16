@@ -17,6 +17,10 @@
                 background: #af0000;
             }
 
+            .main-header {
+                box-shadow: 4px 5px 18px 1px #151515c4;
+            }
+
         </style>
     </head>
 
