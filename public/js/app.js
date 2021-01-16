@@ -2079,7 +2079,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   methods: {
@@ -43738,14 +43737,7 @@ var render = function() {
                   category["status"] == 1
                     ? _c(
                         "button",
-                        {
-                          staticClass: "btn btn-outline-success btn-lg",
-                          on: {
-                            click: function($event) {
-                              return _vm.deActive(category["id"])
-                            }
-                          }
-                        },
+                        { staticClass: "btn btn-outline-success btn-lg" },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-2" }),
                           _vm._v("Active\n            ")

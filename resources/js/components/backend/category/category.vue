@@ -41,7 +41,6 @@
             <td class="h5">{{ category["name"] }}</td>
             <td>
               <button
-                @click="deActive(category['id'])"
                 v-if="category['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
