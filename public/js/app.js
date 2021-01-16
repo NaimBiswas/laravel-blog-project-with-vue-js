@@ -2074,6 +2074,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   methods: {
@@ -2093,6 +2096,9 @@ __webpack_require__.r(__webpack_exports__);
           title: error
         });
       });
+    },
+    isShowing: function isShowing() {
+      console.log(this.categories.length > 1);
     }
   },
   mounted: function mounted() {
@@ -43764,7 +43770,20 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(category["created_at"]))])
               ])
-            })
+            }),
+            _vm._v(" "),
+            _vm.isShowing()
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticClass: "text-center text-uppercase text-danger h4",
+                      attrs: { colspan: "5" }
+                    },
+                    [_vm._v("No category Found!")]
+                  )
+                ])
+              : _vm._e()
           ],
           2
         )

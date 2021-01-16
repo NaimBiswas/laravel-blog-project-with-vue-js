@@ -36,7 +36,7 @@
             <td>Created At</td>
           </tr>
 
-          <tr v-for="(category, index) in categories" :key="index">
+          <tr   v-for="(category, index) in categories" :key="index">
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
             <td>
@@ -63,6 +63,9 @@
             </td>
             <td>{{ category["created_at"] }}</td>
           </tr>
+          <tr v-if="isShowing()">
+              <td class="text-center text-uppercase text-danger h4" colspan="5">No category Found!</td>
+          </tr>
         </table>
       </div>
     </div>
@@ -88,6 +91,10 @@ export default {
             title: error,
           });
         });
+    },
+
+    isShowing(){
+      console.log(this.categories.length > 1);
     },
   },
   mounted() {
