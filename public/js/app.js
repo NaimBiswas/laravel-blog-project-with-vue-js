@@ -43852,22 +43852,33 @@ var render = function() {
                       )
                 ]),
                 _vm._v(" "),
-                _c("td", [
-                  _vm._m(2, true),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger btn-lg mr-2",
-                      on: {
-                        click: function($event) {
-                          return _vm.removeCategory(category["id"])
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-warning btn-lg mr-2",
+                        attrs: { to: "editecategoy" }
+                      },
+                      [_c("i", { staticClass: "fas fa-pen" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger btn-lg mr-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.removeCategory(category["id"])
+                          }
                         }
-                      }
-                    },
-                    [_c("i", { staticClass: "fas fa-trash-alt" })]
-                  )
-                ]),
+                      },
+                      [_c("i", { staticClass: "fas fa-trash-alt" })]
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(category["created_at"]))])
               ])
@@ -43915,14 +43926,6 @@ var staticRenderFns = [
       _c("td", [_vm._v("Action")]),
       _vm._v(" "),
       _c("td", [_vm._v("Created At")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-warning btn-lg mr-2" }, [
-      _c("i", { staticClass: "fas fa-pen" })
     ])
   }
 ]

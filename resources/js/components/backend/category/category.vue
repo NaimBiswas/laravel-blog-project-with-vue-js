@@ -51,9 +51,9 @@
               </button>
             </td>
             <td>
-              <button class="btn btn-warning btn-lg mr-2">
+              <router-link to="editecategoy" class="btn btn-warning btn-lg mr-2">
                 <i class="fas fa-pen"></i>
-              </button>
+              </router-link>
               <button
                 @click="removeCategory(category['id'])"
                 class="btn btn-danger btn-lg mr-2"
