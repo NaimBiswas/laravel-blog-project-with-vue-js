@@ -2230,8 +2230,7 @@ var swalWithBootstrapButtons = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED
   },
   buttonsStyling: false
 });
-Vue.window(swalWithBootstrapButtons);
-window.Toast = Toast;
+window.swalWithBootstrapButtons = swalWithBootstrapButtons;
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
   routes: _routes_routes__WEBPACK_IMPORTED_MODULE_4__.routes,

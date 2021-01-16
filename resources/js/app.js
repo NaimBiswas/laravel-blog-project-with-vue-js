@@ -37,11 +37,9 @@ const swalWithBootstrapButtons = Swal.mixin({
   buttonsStyling: false
 })
 
-Vue.window(swalWithBootstrapButtons);
 
 
-
-window.Toast = Toast;
+window.swalWithBootstrapButtons = swalWithBootstrapButtons;
 
 
 
