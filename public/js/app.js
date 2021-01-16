@@ -2095,26 +2095,32 @@ __webpack_require__.r(__webpack_exports__);
         reverseButtons: true
       }).then(function (result) {
         if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+          axios["delete"]("remove-category/" + id).then(function (response) {
+            toastr.success('category Deleted Success');
+          });
+          swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
+
+          _this.$store.dispatch("getCategories");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire("Cancelled", "Your imaginary file is safe :)", "error");
         }
-      });
-      axios["delete"]("remove-category/" + id).then(function (response) {
-        Toast.fire({
-          icon: "success",
-          title: "Category Deleted Success"
-        });
-
-        _this.$store.dispatch("getCategories");
-      })["catch"](function (error) {
-        Toast.fire({
-          icon: "warning",
-          title: error
-        });
-      });
+      }); //   axios
+      //     .delete("remove-category/" + id)
+      //     .then((response) => {
+      //       Toast.fire({
+      //         icon: "success",
+      //         title: "Category Deleted Success",
+      //       });
+      //       this.$store.dispatch("getCategories");
+      //     })
+      //     .catch((error) => {
+      //       Toast.fire({
+      //         icon: "warning",
+      //         title: error,
+      //       });
+      //     });
     },
     isShowing: function isShowing() {
       return this.categories.length < 1;
@@ -6831,7 +6837,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n    margin-left: 10px;\n\n    font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger{\n    font-size: 20px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n    margin-left: 10px;\n\n    font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger{\n    font-size: 20px;\n}\n.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {\n    background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n    background-color: #343a40e6;\n    color: #e9ecef;\n    padding-bottom: 40px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

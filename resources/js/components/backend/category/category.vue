@@ -91,11 +91,17 @@ export default {
         })
         .then((result) => {
           if (result.isConfirmed) {
-            swalWithBootstrapButtons.fire(
-              "Deleted!",
-              "Your file has been deleted.",
-              "success"
-            );
+              axios
+                 .delete("remove-category/" + id)
+                 .then((response) => {
+                   toastr.success('category Deleted Success');
+                 });
+                swalWithBootstrapButtons.fire(
+                    "Deleted!",
+                "Category Has Been Deleted.",
+                "success"
+                );
+                this.$store.dispatch("getCategories");
           } else if (
             /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
@@ -107,21 +113,21 @@ export default {
             );
           }
         });
-      axios
-        .delete("remove-category/" + id)
-        .then((response) => {
-          Toast.fire({
-            icon: "success",
-            title: "Category Deleted Success",
-          });
-          this.$store.dispatch("getCategories");
-        })
-        .catch((error) => {
-          Toast.fire({
-            icon: "warning",
-            title: error,
-          });
-        });
+    //   axios
+    //     .delete("remove-category/" + id)
+    //     .then((response) => {
+    //       Toast.fire({
+    //         icon: "success",
+    //         title: "Category Deleted Success",
+    //       });
+    //       this.$store.dispatch("getCategories");
+    //     })
+    //     .catch((error) => {
+    //       Toast.fire({
+    //         icon: "warning",
+    //         title: error,
+    //       });
+    //     });
     },
 
     isShowing() {
@@ -147,5 +153,13 @@ button.swal2-confirm.btn.btn-success {
 }
 button.swal2-cancel.btn.btn-danger{
     font-size: 20px;
+}
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+    background: rgb(0 71 202 / 38%);
+}
+.dark-mode .swal2-popup {
+    background-color: #343a40e6;
+    color: #e9ecef;
+    padding-bottom: 40px;
 }
 </style>
