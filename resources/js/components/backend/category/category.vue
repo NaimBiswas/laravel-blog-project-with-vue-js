@@ -51,7 +51,7 @@
               </button>
             </td>
             <td>
-              <router-link to="editecategoy" class="btn btn-warning btn-lg mr-2">
+              <router-link :to="`/editecategory/${ category.id }`"  class="btn btn-warning btn-lg mr-2">
                 <i class="fas fa-pen"></i>
               </router-link>
               <button

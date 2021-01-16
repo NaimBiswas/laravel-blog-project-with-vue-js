@@ -30,6 +30,6 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);
-    Route::patch('/status-update/{id}', [CategoryController::class, 'update']);
+    Route::get('/editecategory/{id}', [CategoryController::class, 'update']);
 });
 Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');

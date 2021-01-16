@@ -2153,8 +2153,131 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'eidtecategory'
+  name: 'editecategory',
+  data: function data() {
+    return {
+      form: new Form({
+        name: "",
+        status: false
+      })
+    };
+  },
+  methods: {
+    active: function active() {
+      this.form.status = true;
+    },
+    deactive: function deactive() {
+      this.form.status = false;
+    } // addCategory() {
+    //   this.form.post("/savecategory")
+    //         .then(function(data){
+    //               Toast.fire({
+    //                  icon: 'success',
+    //                  title: 'Category successfully created',
+    //              })
+    //         }).catch((error) => {
+    //             Toast.fire({
+    //                 icon: 'warning',
+    //                 title: error,
+    //             })
+    //         });
+    //   this.form.name = '';
+    //   this.form.status = false;
+    // },
+
+  }
 });
 
 /***/ }),
@@ -2350,7 +2473,7 @@ var routes = [{
   path: '/createcategory',
   component: _components_backend_category_CreateCategory__WEBPACK_IMPORTED_MODULE_2__.default
 }, {
-  path: '/editecategoy',
+  path: '/editecategory/:id',
   component: _components_backend_category_editecategory__WEBPACK_IMPORTED_MODULE_3__.default
 }];
 
@@ -43957,7 +44080,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "btn btn-warning btn-lg mr-2",
-                        attrs: { to: "editecategoy" }
+                        attrs: { to: "/editecategory/" + category.id }
                       },
                       [_c("i", { staticClass: "fas fa-pen" })]
                     ),
@@ -44049,9 +44172,190 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c(
+        "div",
+        { staticClass: "card-header flex card-tools" },
+        [
+          _c(
+            "h5",
+            {
+              staticClass: "text-uppercase",
+              staticStyle: { display: "inline" }
+            },
+            [_vm._v("Update Category")]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "text-uppercase btn btn-outline-info btn-md float-right text-white",
+              attrs: { to: "/category" }
+            },
+            [_vm._v("Go Back")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "card card-danger" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("h3", { staticClass: "card-title pt-2" }, [
+              _vm._v("Update Category Info.")
+            ]),
+            _vm._v(
+              "\n          " + _vm._s(this.$route.params.id) + "\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("form", { staticClass: "form-horizontal" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-2 col-form-label",
+                    attrs: { for: "catname" }
+                  },
+                  [_vm._v("Category Name:")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-sm-10" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.name,
+                          expression: "form.name"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      class: { "is-invalid": _vm.form.errors.has("name") },
+                      attrs: {
+                        type: "text",
+                        id: "catname",
+                        placeholder: "Enter Your Category Name",
+                        name: "name"
+                      },
+                      domProps: { value: _vm.form.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "name", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("has-error", {
+                      attrs: { form: _vm.form, field: "name" }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-2 col-form-label",
+                    attrs: { for: "catname" }
+                  },
+                  [_vm._v("Status:")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-10 flex" }, [
+                  _vm.form.status
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-success btn-md",
+                          on: { click: _vm.deactive }
+                        },
+                        [_vm._v("Active")]
+                      )
+                    : _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-warning btn-md",
+                          on: { click: _vm.active }
+                        },
+                        [_vm._v("Deactive")]
+                      )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", [_vm._v("Categories")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+              _c("li", { staticClass: "breadcrumb-item" }, [
+                _c("a", [_vm._v("Category")])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "breadcrumb-item active" }, [
+                _c("span", [_vm._v("Update Category")])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-success btn-md text-uppercase",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("\n              AdD Category\n            ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default float-right",
+          attrs: { type: "reset" }
+        },
+        [_vm._v("\n              Cancel\n            ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
