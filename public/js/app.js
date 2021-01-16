@@ -43435,7 +43435,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "card card-info" }, [
+        _c("div", { staticClass: "card card-danger" }, [
           _vm._m(1),
           _vm._v(" "),
           _c(

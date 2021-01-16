@@ -30,7 +30,7 @@
         >
       </div>
       <div class="card-body">
-        <div class="card card-info">
+        <div class="card card-danger">
           <div class="card-header">
             <h3 class="card-title pt-2">Enter Your Category Name</h3>
           </div>
