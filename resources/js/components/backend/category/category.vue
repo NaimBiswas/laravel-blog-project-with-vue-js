@@ -36,11 +36,12 @@
             <td>Created At</td>
           </tr>
 
-          <tr   v-for="(category, index) in categories" :key="index">
+          <tr v-for="(category, index) in categories" :key="index">
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
             <td>
               <button
+                @click="deActive(category['id'])"
                 v-if="category['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
@@ -64,7 +65,9 @@
             <td>{{ category["created_at"] }}</td>
           </tr>
           <tr v-if="isShowing()">
-              <td class="text-center text-uppercase text-danger h4" colspan="5">No category Found!</td>
+            <td class="text-center text-uppercase text-danger h4" colspan="5">
+              No category Found!
+            </td>
           </tr>
         </table>
       </div>
@@ -84,8 +87,9 @@ export default {
             icon: "success",
             title: "Category Deleted Success",
           });
-             this.$store.dispatch("getCategories");
-        }).catch((error) => {
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
           Toast.fire({
             icon: "warning",
             title: error,
@@ -93,8 +97,8 @@ export default {
         });
     },
 
-    isShowing(){
-      console.log(this.categories.length > 1);
+    isShowing() {
+      return this.categories.length < 1;
     },
   },
   mounted() {

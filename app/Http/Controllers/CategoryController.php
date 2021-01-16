@@ -80,7 +80,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category = Category::find($category);
+        $category->status = $request->true;
+        $category->save();
     }
 
     /**

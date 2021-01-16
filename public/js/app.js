@@ -2077,6 +2077,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   methods: {
@@ -2098,7 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     isShowing: function isShowing() {
-      console.log(this.categories.length > 1);
+      return this.categories.length < 1;
     }
   },
   mounted: function mounted() {
@@ -43735,7 +43738,14 @@ var render = function() {
                   category["status"] == 1
                     ? _c(
                         "button",
-                        { staticClass: "btn btn-outline-success btn-lg" },
+                        {
+                          staticClass: "btn btn-outline-success btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.deActive(category["id"])
+                            }
+                          }
+                        },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-2" }),
                           _vm._v("Active\n            ")
@@ -43780,7 +43790,7 @@ var render = function() {
                       staticClass: "text-center text-uppercase text-danger h4",
                       attrs: { colspan: "5" }
                     },
-                    [_vm._v("No category Found!")]
+                    [_vm._v("\n            No category Found!\n          ")]
                   )
                 ])
               : _vm._e()
