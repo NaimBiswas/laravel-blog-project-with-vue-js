@@ -33,6 +33,7 @@
             <td>Name</td>
             <td>Status</td>
             <td>Action</td>
+            <td>Created At</td>
           </tr>
 
             <tr v-for="(category, index) in categories" :key="index">
@@ -46,6 +47,7 @@
                   <button class="btn btn-warning btn-lg mr-2" ><i class="fas fa-pen"></i></button>
                   <button class="btn btn-danger btn-lg mr-2" ><i class="fas fa-trash-alt"></i></button>
               </td>
+              <td>{{ category['created_at'] }}</td>
             </tr>
 
         </table>

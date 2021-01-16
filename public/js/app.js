@@ -2059,6 +2059,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   mounted: function mounted() {
@@ -43711,7 +43713,9 @@ var render = function() {
                       )
                 ]),
                 _vm._v(" "),
-                _vm._m(2, true)
+                _vm._m(2, true),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(category["created_at"]))])
               ])
             })
           ],
@@ -43741,7 +43745,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", [_vm._v("Status")]),
       _vm._v(" "),
-      _c("td", [_vm._v("Action")])
+      _c("td", [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Created At")])
     ])
   },
   function() {
