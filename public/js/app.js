@@ -2085,6 +2085,23 @@ __webpack_require__.r(__webpack_exports__);
     removeCategory: function removeCategory(id) {
       var _this = this;
 
+      swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+        } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire("Cancelled", "Your imaginary file is safe :)", "error");
+        }
+      });
       axios["delete"]("remove-category/" + id).then(function (response) {
         Toast.fire({
           icon: "success",
@@ -2206,6 +2223,14 @@ var Toast = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default
     toast.addEventListener('mouseleave', (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().resumeTimer));
   }
 });
+var swalWithBootstrapButtons = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+});
+Vue.window(swalWithBootstrapButtons);
 window.Toast = Toast;
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
