@@ -29,6 +29,9 @@
       <div class="card-body">
         <table class="table table-control table-bordered text-center">
           <tr>
+              <td>
+                  <input type="checkbox" class="form-control">
+              </td>
             <td>ID.</td>
             <td>Name</td>
             <td>Status</td>
@@ -37,6 +40,7 @@
           </tr>
 
           <tr v-for="(category, index) in categories" :key="index">
+              <td></td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
             <td>
