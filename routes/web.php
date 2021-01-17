@@ -31,5 +31,6 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);
     Route::get('/editecategory/{id}', [CategoryController::class, 'update']);
+    Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit']);
 });
 Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
