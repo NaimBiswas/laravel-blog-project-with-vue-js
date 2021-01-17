@@ -44137,7 +44137,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "btn btn-outline-warning btn-lg mr-2",
-                        attrs: { to: "/editecategory/" + category.created_at }
+                        attrs: { to: "/editecategory/" + category.slug }
                       },
                       [_c("i", { staticClass: "fas fa-pen" })]
                     ),
