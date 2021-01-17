@@ -44274,7 +44274,7 @@ var render = function() {
               _vm._v("Update Category Info.")
             ]),
             _vm._v(
-              "\n          " + _vm._s(this.$route.params.id) + "\n        "
+              "\n          " + _vm._s(this.$route.params.slug) + "\n        "
             )
           ]),
           _vm._v(" "),

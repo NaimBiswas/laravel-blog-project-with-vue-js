@@ -33,7 +33,7 @@
         <div class="card card-danger">
           <div class="card-header">
             <h3 class="card-title pt-2">Update Category Info.</h3>
-            {{ this.$route.params.id }}
+            {{ this.$route.params.slug }}
           </div>
           <!-- /.card-header -->
           <!-- form start -->
