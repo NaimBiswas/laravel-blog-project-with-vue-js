@@ -124,7 +124,7 @@ export default {
       this.form.status = false;
     },
     updateCategory(){
-        axios.patch('').then((response)=> {
+        axios.patch('update-category/' + this.$route.params.slug ).then((response)=> {
 
         }).catch((error) => {
            toastr.success(error);

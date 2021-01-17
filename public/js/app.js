@@ -2284,7 +2284,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = false;
     },
     updateCategory: function updateCategory() {
-      axios.patch('').then(function (response) {})["catch"](function (error) {
+      axios.patch('update-category/' + this.$route.params.slug).then(function (response) {})["catch"](function (error) {
         toastr.success(error);
       });
     } // addCategory() {
