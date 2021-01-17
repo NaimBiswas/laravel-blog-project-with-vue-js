@@ -44,7 +44,7 @@
           </tr>
 
           <tr v-for="(category, index) in categories" :key="index">
-              <td class="form-control">
+              <td class="">
                   <input type="checkbox" >
               </td>
             <td>{{ index + 1 }}</td>
