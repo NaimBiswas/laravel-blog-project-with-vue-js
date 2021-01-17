@@ -68,8 +68,8 @@ class CategoryController extends Controller
      */
     public function edit($slug)
     {
-        $category = Category::find($slug)->where('slug', $slug);
-        dd($category);
+        $category = Category::where('slug', $slug)->get();
+        return $category;
     }
 
     /**
