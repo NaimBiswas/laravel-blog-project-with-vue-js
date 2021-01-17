@@ -105,6 +105,13 @@ export default {
     };
   },
   methods: {
+      getCategory(){
+        axios.get('/fatch-category/'+ this.$route.params.slug).then((response)=>{
+
+        }).catch((error)=>{
+          toastr.danger(error);
+        });
+      },
     active() {
       this.form.status = true;
     },

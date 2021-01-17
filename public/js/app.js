@@ -2271,6 +2271,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    getCategory: function getCategory() {
+      axios.get('/fatch-category/' + this.$route.params.slug).then(function (response) {})["catch"](function (error) {
+        toastr.danger(error);
+      });
+    },
     active: function active() {
       this.form.status = true;
     },
