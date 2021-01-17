@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 class CategoryController extends Controller
 {
@@ -85,20 +87,15 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
 
         ]);
         $category = Category::find($slug);
-        if ($request->name) {
-            $category->name = $request->name;
-            $category->slug = Str::slug($request->name);
-            $category->save();
-        }
-        if ($request->status) {
 
-            $category->status = $request->status;
-            $category->save();
-        }
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->status = $request->status;
+        $category->update();
     }
 
     /**
