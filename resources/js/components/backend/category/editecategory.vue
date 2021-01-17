@@ -109,8 +109,9 @@ export default {
   },
   methods: {
       getCategory(){
+        const  this_ = this;
         axios.get('/fatch-category/'+ this.$route.params.slug).then((response)=>{
-
+            this_.form.fill(response.data.category[0]);
         }).catch((error)=>{
           toastr.danger(error);
         });
