@@ -69,7 +69,7 @@ class CategoryController extends Controller
     public function edit($slug)
     {
         $category = Category::where('slug', $slug)->get();
-        return $category;
+        return response()->json(['category' => $category]);
     }
 
     /**
