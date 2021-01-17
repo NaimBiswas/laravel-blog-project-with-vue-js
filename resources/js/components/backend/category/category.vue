@@ -51,7 +51,7 @@
               </button>
             </td>
             <td>
-              <router-link :to="`/editecategory/${ category.id }`"  class="btn btn-outline-warning btn-lg mr-2">
+              <router-link   :to="`/editecategory/${ category.created_at }`" class="btn btn-outline-warning btn-lg mr-2">
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
