@@ -2089,8 +2089,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
+  data: function data() {
+    return {
+      categoryIds: []
+    };
+  },
   methods: {
     removeCategory: function removeCategory(id) {
       var _this = this;
@@ -2106,7 +2113,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.isConfirmed) {
           axios["delete"]("remove-category/" + id).then(function (response) {
-            toastr.success('category Deleted Success');
+            toastr.success("category Deleted Success");
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
@@ -6995,7 +7002,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n    margin-left: 10px;\n\n    font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger{\n    font-size: 20px;\n}\n.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {\n    background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n    background-color: #343a40e6;\n    color: #e9ecef;\n    padding-bottom: 40px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n  margin-left: 10px;\n\n  font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger {\n  font-size: 20px;\n}\n.swal2-container.swal2-backdrop-show,\n.swal2-container.swal2-noanimation {\n  background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n  background-color: #343a40e6;\n  color: #e9ecef;\n  padding-bottom: 40px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -44056,7 +44063,46 @@ var render = function() {
             _vm._v(" "),
             _vm._l(_vm.categories, function(category, index) {
               return _c("tr", { key: index }, [
-                _vm._m(2, true),
+                _c("td", {}, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.categoryIds,
+                        expression: "categoryIds"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      value: category.id,
+                      checked: Array.isArray(_vm.categoryIds)
+                        ? _vm._i(_vm.categoryIds, category.id) > -1
+                        : _vm.categoryIds
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.categoryIds,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = category.id,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.categoryIds = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.categoryIds = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.categoryIds = $$c
+                        }
+                      }
+                    }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
@@ -44167,12 +44213,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", [_vm._v("Created At")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", {}, [_c("input", { attrs: { type: "checkbox" } })])
   }
 ]
 render._withStripped = true

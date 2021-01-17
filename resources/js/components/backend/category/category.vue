@@ -29,13 +29,12 @@
       <div class="card-body">
         <table class="table table-control table-bordered text-center">
           <tr>
-              <td>
-                 <div class="icheck-success d-inline">
-                        <input type="checkbox" id="checkboxSuccess1">
-                        <label for="checkboxSuccess1">
-                        </label>
-                      </div>
-              </td>
+            <td>
+              <div class="icheck-success d-inline">
+                <input type="checkbox" id="checkboxSuccess1" />
+                <label for="checkboxSuccess1"> </label>
+              </div>
+            </td>
             <td>ID.</td>
             <td>Name</td>
             <td>Status</td>
@@ -44,9 +43,9 @@
           </tr>
 
           <tr v-for="(category, index) in categories" :key="index">
-              <td class="">
-                  <input type="checkbox" >
-              </td>
+            <td class="">
+              <input type="checkbox" :value="category.id" v-model="categoryIds" />
+            </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
             <td>
@@ -61,7 +60,10 @@
               </button>
             </td>
             <td>
-              <router-link   :to="`/editecategory/${ category.created_at }`" class="btn btn-outline-warning btn-lg mr-2">
+              <router-link
+                :to="`/editecategory/${category.created_at}`"
+                class="btn btn-outline-warning btn-lg mr-2"
+              >
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
@@ -87,6 +89,11 @@
 <script>
 export default {
   name: "category",
+  data() {
+      return {
+          categoryIds:[],
+      }
+  },
   methods: {
     removeCategory(id) {
       swalWithBootstrapButtons
@@ -101,17 +108,15 @@ export default {
         })
         .then((result) => {
           if (result.isConfirmed) {
-              axios
-                 .delete("remove-category/" + id)
-                 .then((response) => {
-                   toastr.success('category Deleted Success');
-                 });
-                swalWithBootstrapButtons.fire(
-                    "Deleted!",
-                "Category Has Been Deleted.",
-                "success"
-                );
-                this.$store.dispatch("getCategories");
+            axios.delete("remove-category/" + id).then((response) => {
+              toastr.success("category Deleted Success");
+            });
+            swalWithBootstrapButtons.fire(
+              "Deleted!",
+              "Category Has Been Deleted.",
+              "success"
+            );
+            this.$store.dispatch("getCategories");
           } else if (
             /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
@@ -157,19 +162,20 @@ export default {
 
 <style>
 button.swal2-confirm.btn.btn-success {
-    margin-left: 10px;
+  margin-left: 10px;
 
-    font-size: 20px;
+  font-size: 20px;
 }
-button.swal2-cancel.btn.btn-danger{
-    font-size: 20px;
+button.swal2-cancel.btn.btn-danger {
+  font-size: 20px;
 }
-.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
-    background: rgb(0 71 202 / 38%);
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
+  background: rgb(0 71 202 / 38%);
 }
 .dark-mode .swal2-popup {
-    background-color: #343a40e6;
-    color: #e9ecef;
-    padding-bottom: 40px;
+  background-color: #343a40e6;
+  color: #e9ecef;
+  padding-bottom: 40px;
 }
 </style>
