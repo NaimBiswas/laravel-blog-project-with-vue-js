@@ -104,6 +104,9 @@ export default {
       }),
     };
   },
+  mounted() {
+      this.getCategory();
+  },
   methods: {
       getCategory(){
         axios.get('/fatch-category/'+ this.$route.params.slug).then((response)=>{

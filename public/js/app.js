@@ -2270,6 +2270,9 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
+  mounted: function mounted() {
+    this.getCategory();
+  },
   methods: {
     getCategory: function getCategory() {
       axios.get('/fatch-category/' + this.$route.params.slug).then(function (response) {})["catch"](function (error) {
