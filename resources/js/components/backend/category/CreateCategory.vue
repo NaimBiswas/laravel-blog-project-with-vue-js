@@ -115,16 +115,11 @@ export default {
     },
     addCategory() {
       this.form.post("/savecategory")
-            .then(function(data){
-                  Toast.fire({
-                     icon: 'success',
-                     title: 'Category successfully created',
-                 })
+            .then((response) =>{
+                 toastr.info('Category successfully created');
+
             }).catch((error) => {
-                Toast.fire({
-                    icon: 'warning',
-                    title: error,
-                })
+                toastr.info(error);
             });
       this.form.name = '';
       this.form.status = false;

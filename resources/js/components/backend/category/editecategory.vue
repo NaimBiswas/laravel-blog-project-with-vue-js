@@ -79,7 +79,7 @@
                 type="submit"
                 class="btn btn-outline-success btn-md text-uppercase"
               >
-                AdD Category
+                UPdate Category
               </button>
               <button type="reset" class="btn btn-default float-right">
                 Cancel
@@ -124,7 +124,11 @@ export default {
       this.form.status = false;
     },
     updateCategory(){
+        axios.patch('').then((response)=> {
 
+        }).catch((error) => {
+           toastr.success(error);
+        });
     },
     // addCategory() {
     //   this.form.post("/savecategory")

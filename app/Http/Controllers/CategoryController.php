@@ -42,11 +42,12 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|unique:categories,name|min:3'
         ]);
-        Category::create([
+        $category =      Category::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
             'status' => $request->status,
         ]);
+        return $category;
     }
 
     /**
