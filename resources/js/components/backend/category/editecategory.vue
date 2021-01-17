@@ -37,7 +37,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-  <form  class="form-horizontal">
+  <form  class="form-horizontal" @sebmit.prevent="updateCategory()">
             <div class="card-body">
               <div class="form-group row">
                 <label for="catname" class="col-sm-2 col-form-label"
@@ -122,6 +122,9 @@ export default {
     },
     deactive() {
       this.form.status = false;
+    },
+    updateCategory(){
+
     },
     // addCategory() {
     //   this.form.post("/savecategory")
