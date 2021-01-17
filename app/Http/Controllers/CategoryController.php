@@ -68,8 +68,10 @@ class CategoryController extends Controller
      */
     public function edit($slug)
     {
-        $category = Category::where('slug', $slug)->get();
-        return response()->json(['category' => $category]);
+        $category = Category::where('slug', $slug)->first();
+        return response()->json([
+            'category' => $category,
+        ]);
     }
 
     /**

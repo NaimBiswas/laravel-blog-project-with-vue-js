@@ -2277,7 +2277,8 @@ __webpack_require__.r(__webpack_exports__);
     getCategory: function getCategory() {
       var this_ = this;
       axios.get('/fatch-category/' + this.$route.params.slug).then(function (response) {
-        this_.form.fill(response.data.category[0]);
+        console.log(response.data.category);
+        this_.form.fill(response.data.category);
       })["catch"](function (error) {
         toastr.danger(error);
       });

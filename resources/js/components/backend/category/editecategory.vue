@@ -111,7 +111,8 @@ export default {
       getCategory(){
         const  this_ = this;
         axios.get('/fatch-category/'+ this.$route.params.slug).then((response)=>{
-            this_.form.fill(response.data.category[0]);
+            console.log(response.data.category);
+            this_.form.fill(response.data.category);
         }).catch((error)=>{
           toastr.danger(error);
         });
