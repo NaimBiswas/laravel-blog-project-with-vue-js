@@ -2083,6 +2083,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   methods: {
@@ -44050,7 +44056,7 @@ var render = function() {
             _vm._v(" "),
             _vm._l(_vm.categories, function(category, index) {
               return _c("tr", { key: index }, [
-                _c("td"),
+                _vm._m(2, true),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
@@ -44144,10 +44150,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "checkbox" }
-        })
+        _c("div", { staticClass: "icheck-success d-inline" }, [
+          _c("input", { attrs: { type: "checkbox", id: "checkboxSuccess1" } }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "checkboxSuccess1" } })
+        ])
       ]),
       _vm._v(" "),
       _c("td", [_vm._v("ID.")]),
@@ -44159,6 +44166,14 @@ var staticRenderFns = [
       _c("td", [_vm._v("Action")]),
       _vm._v(" "),
       _c("td", [_vm._v("Created At")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "form-control" }, [
+      _c("input", { attrs: { type: "checkbox" } })
     ])
   }
 ]

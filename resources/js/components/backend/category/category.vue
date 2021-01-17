@@ -30,7 +30,11 @@
         <table class="table table-control table-bordered text-center">
           <tr>
               <td>
-                  <input type="checkbox" class="form-control">
+                 <div class="icheck-success d-inline">
+                        <input type="checkbox" id="checkboxSuccess1">
+                        <label for="checkboxSuccess1">
+                        </label>
+                      </div>
               </td>
             <td>ID.</td>
             <td>Name</td>
@@ -40,7 +44,9 @@
           </tr>
 
           <tr v-for="(category, index) in categories" :key="index">
-              <td></td>
+              <td class="form-control">
+                  <input type="checkbox" >
+              </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
             <td>
