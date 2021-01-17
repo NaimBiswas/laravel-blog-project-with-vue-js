@@ -66,9 +66,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($slug)
     {
-        //
+        $category = Category::find($slug)->where('slug', $slug);
+        dd($category);
     }
 
     /**
