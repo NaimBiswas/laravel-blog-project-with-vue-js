@@ -7,6 +7,6 @@ export const routes = [
           {path: '/dashboard', component: dashboard },
           {path: '/category', component: category },
           { path: '/createcategory', component: createcategory },
-          {path: '/editecategory/:id', component: EditeCategory}
+          {path: '/editecategory/:slug', component: EditeCategory}
 
 ];

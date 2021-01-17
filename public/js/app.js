@@ -2489,7 +2489,7 @@ var routes = [{
   path: '/createcategory',
   component: _components_backend_category_CreateCategory__WEBPACK_IMPORTED_MODULE_2__.default
 }, {
-  path: '/editecategory/:id',
+  path: '/editecategory/:slug',
   component: _components_backend_category_editecategory__WEBPACK_IMPORTED_MODULE_3__.default
 }];
 
