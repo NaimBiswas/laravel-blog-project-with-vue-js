@@ -37,7 +37,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-  <form  class="form-horizontal" @sebmit.prevent="updateCategory()">
+  <form  class="form-horizontal" @submit.prevent="updateCategory()">
             <div class="card-body">
               <div class="form-group row">
                 <label for="catname" class="col-sm-2 col-form-label"
@@ -95,10 +95,11 @@
 
 <script>
 export default {
-    name:'editecategory',
+
  data() {
     return {
       form: new Form({
+          id: null,
         name: "",
         status: false,
       }),
@@ -111,10 +112,9 @@ export default {
       getCategory(){
         const  this_ = this;
         axios.get('/fatch-category/'+ this.$route.params.slug).then((response)=>{
-            console.log(response.data.category);
             this_.form.fill(response.data.category);
         }).catch((error)=>{
-          toastr.danger(error);
+          toastr.info(error);
         });
       },
     active() {
@@ -124,10 +124,10 @@ export default {
       this.form.status = false;
     },
     updateCategory(){
-        axios.patch('update-category/' + this.$route.params.slug ).then((response)=> {
-
+        this.form.post('/update-category/'+ this.form.id).then((response)=> {
+            toastr.info('Category Update Success');
         }).catch((error) => {
-           toastr.success(error);
+           toastr.warning(error);
         });
     },
     // addCategory() {

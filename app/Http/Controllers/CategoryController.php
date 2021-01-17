@@ -47,7 +47,6 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->name),
             'status' => $request->status,
         ]);
-        return $category;
     }
 
     /**
@@ -82,11 +81,24 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        $category = Category::find($id);
-        $category->status = $request->true;
-        $category->update();
+
+        $request->validate([
+            'name' => 'required|min:3'
+
+        ]);
+        $category = Category::find($slug);
+        if ($request->name) {
+            $category->name = $request->name;
+            $category->slug = Str::slug($request->name);
+            $category->save();
+        }
+        if ($request->status) {
+
+            $category->status = $request->status;
+            $category->save();
+        }
     }
 
     /**

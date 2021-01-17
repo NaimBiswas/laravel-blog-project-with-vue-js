@@ -2255,10 +2255,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'editecategory',
   data: function data() {
     return {
       form: new Form({
+        id: null,
         name: "",
         status: false
       })
@@ -2271,10 +2271,9 @@ __webpack_require__.r(__webpack_exports__);
     getCategory: function getCategory() {
       var this_ = this;
       axios.get('/fatch-category/' + this.$route.params.slug).then(function (response) {
-        console.log(response.data.category);
         this_.form.fill(response.data.category);
       })["catch"](function (error) {
-        toastr.danger(error);
+        toastr.info(error);
       });
     },
     active: function active() {
@@ -2284,8 +2283,10 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = false;
     },
     updateCategory: function updateCategory() {
-      axios.patch('update-category/' + this.$route.params.slug).then(function (response) {})["catch"](function (error) {
-        toastr.success(error);
+      this.form.post('/update-category/' + this.form.id).then(function (response) {
+        toastr.info('Category Update Success');
+      })["catch"](function (error) {
+        toastr.warning(error);
       });
     } // addCategory() {
     //   this.form.post("/savecategory")
@@ -44294,7 +44295,7 @@ var render = function() {
             {
               staticClass: "form-horizontal",
               on: {
-                sebmit: function($event) {
+                submit: function($event) {
                   $event.preventDefault()
                   return _vm.updateCategory()
                 }
