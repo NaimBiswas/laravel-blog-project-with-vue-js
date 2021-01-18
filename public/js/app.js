@@ -45376,7 +45376,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "btn btn-outline-warning btn-lg mr-2",
-                        attrs: { to: "/editecategory/" + tag.slug }
+                        attrs: { to: "/update-tag/" + tag.slug }
                       },
                       [_c("i", { staticClass: "fas fa-pen" })]
                     ),

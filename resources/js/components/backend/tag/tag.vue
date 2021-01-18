@@ -61,7 +61,7 @@
             </td>
             <td>
               <router-link
-                :to="`/editecategory/${tag.slug}`"
+                :to="`/update-tag/${tag.slug}`"
                 class="btn btn-outline-warning btn-lg mr-2"
               >
                 <i class="fas fa-pen"></i>
