@@ -44878,7 +44878,7 @@ var render = function() {
                 "text-uppercase btn btn-outline-danger btn-md float-right text-white",
               attrs: { to: "/create-tag" }
             },
-            [_vm._v("Add Tag")]
+            [_vm._v("Add New Tag")]
           )
         ],
         1

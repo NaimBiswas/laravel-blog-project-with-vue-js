@@ -23,7 +23,7 @@
         <router-link
           to="/create-tag"
           class="text-uppercase btn btn-outline-danger btn-md float-right text-white"
-          >Add Tag</router-link
+          >Add New Tag</router-link
         >
       </div>
       <div class="card-body">
