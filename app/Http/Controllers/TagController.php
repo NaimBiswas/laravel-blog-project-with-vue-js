@@ -80,9 +80,11 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, $slug)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3|max:15',
+        ]);
     }
 
     /**
