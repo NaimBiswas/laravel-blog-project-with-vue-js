@@ -72,7 +72,7 @@
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
-                @click="removeTag(tag['id'])"
+                @click="removeTag(tag['slug'])"
                 class="btn btn-outline-danger btn-lg mr-2"
               >
                 <i class="fas fa-trash-alt"></i>
@@ -108,7 +108,7 @@ export default {
     isShowing() {
       return this.tags.length < 1;
     },
-    removeTag(id) {
+    removeTag(slug) {
       swalWithBootstrapButtons
         .fire({
           title: "Are you sure?",
@@ -121,8 +121,8 @@ export default {
         })
         .then((result) => {
           if (result.isConfirmed) {
-            axios.delete("remove-category/" + id).then((response) => {
-              toastr.success("category Deleted Success");
+            axios.delete("/delete-tag/" + slug).then((response) => {
+              toastr.success("Tag Deleted Success");
             });
             swalWithBootstrapButtons.fire(
               "Deleted!",

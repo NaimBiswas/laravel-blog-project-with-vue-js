@@ -2613,7 +2613,7 @@ __webpack_require__.r(__webpack_exports__);
     isShowing: function isShowing() {
       return this.tags.length < 1;
     },
-    removeTag: function removeTag(id) {
+    removeTag: function removeTag(slug) {
       var _this = this;
 
       swalWithBootstrapButtons.fire({
@@ -2626,8 +2626,8 @@ __webpack_require__.r(__webpack_exports__);
         reverseButtons: true
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios["delete"]("remove-category/" + id).then(function (response) {
-            toastr.success("category Deleted Success");
+          axios["delete"]("/delete-tag/" + slug).then(function (response) {
+            toastr.success("Tag Deleted Success");
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
@@ -45418,7 +45418,7 @@ var render = function() {
                         staticClass: "btn btn-outline-danger btn-lg mr-2",
                         on: {
                           click: function($event) {
-                            return _vm.removeTag(tag["id"])
+                            return _vm.removeTag(tag["slug"])
                           }
                         }
                       },
