@@ -67,7 +67,7 @@ class TagController extends Controller
      */
     public function edit($slug)
     {
-        $tag = Tag::where('slug', $slug)->fist();
+        $tag = Tag::where('slug', $slug)->first();
         return response()->json([
             'tag' => $tag,
         ]);
