@@ -114,7 +114,9 @@ methods: {
            toastr.success('Tag Added Success');
         }).catch((error) =>{
             toastr.info(error);
-        })
+        });
+        this.form.name = "";
+        this.form.status = false;
     },
 },
 

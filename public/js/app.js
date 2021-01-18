@@ -2485,6 +2485,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         toastr.info(error);
       });
+      this.form.name = "";
+      this.form.status = false;
     }
   }
 });
