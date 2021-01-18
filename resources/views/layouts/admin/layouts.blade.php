@@ -9,7 +9,8 @@
 
 
         <link rel="stylesheet"
-            href="{{ mix('css/app.css') }}">
+            href="{{ mix('css/app.css')
+             }}">
 
 
         <style>
@@ -91,7 +92,7 @@
                         </div>
                         <div class="info">
                             <a href="#"
-                                class="d-block">Alexander Pierce</a>
+                                class="d-block">{{ Auth::user()->name }}</a>
                         </div>
                     </div>
 
