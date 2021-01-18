@@ -81,7 +81,7 @@
             <td>{{ tag["created_at"] }}</td>
           </tr>
           <tr v-if="isShowing()">
-            <td class="text-center text-uppercase text-danger h4" colspan="5">
+            <td class="text-center text-uppercase text-danger h4" colspan="6">
               No Tag Found!
             </td>
           </tr>

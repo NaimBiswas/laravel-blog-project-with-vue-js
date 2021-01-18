@@ -45509,7 +45509,7 @@ var render = function() {
                     "td",
                     {
                       staticClass: "text-center text-uppercase text-danger h4",
-                      attrs: { colspan: "5" }
+                      attrs: { colspan: "6" }
                     },
                     [_vm._v("\n            No Tag Found!\n          ")]
                   )
