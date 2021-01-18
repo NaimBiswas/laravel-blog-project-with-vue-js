@@ -2808,16 +2808,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
-    categoires: []
+    categoires: [],
+    tag: []
   },
   actions: {
     getCategories: function getCategories(data) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
         data.commit("fatchCategoires", response.data.categories);
       })["catch"](function (error) {});
+    },
+    getTags: function getTags() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('').then(function (response) {})["catch"](function (error) {});
     }
   },
   mutations: {

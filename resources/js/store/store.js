@@ -1,8 +1,10 @@
 import axios from "axios";
+import { get } from "jquery";
 
 export default {
      state: {
-      categoires: [],
+        categoires: [],
+         tag:[],
     },
     actions: {
         getCategories(data) {
@@ -12,6 +14,13 @@ export default {
                 }).catch((error) => {
 
                 });
+        },
+        getTags() {
+            axios.get('').then((response) => {
+
+            }).catch((error) => {
+
+            });
         }
     },
     mutations: {
