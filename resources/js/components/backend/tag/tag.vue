@@ -67,7 +67,7 @@
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
-                @click="removeCategory(tag['id'])"
+                @click="removeTag(tag['id'])"
                 class="btn btn-outline-danger btn-lg mr-2"
               >
                 <i class="fas fa-trash-alt"></i>

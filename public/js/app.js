@@ -45387,7 +45387,7 @@ var render = function() {
                         staticClass: "btn btn-outline-danger btn-lg mr-2",
                         on: {
                           click: function($event) {
-                            return _vm.removeCategory(tag["id"])
+                            return _vm.removeTag(tag["id"])
                           }
                         }
                       },
