@@ -131,7 +131,7 @@ export default {
               "Category Has Been Deleted.",
               "success"
             );
-            this.$store.dispatch("getCategories");
+            this.$store.dispatch("getTags");
           } else if (
             /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
