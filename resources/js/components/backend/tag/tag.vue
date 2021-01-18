@@ -101,6 +101,9 @@ data() {
 
     }
 },
+mounted:{
+
+},
 methods: {
     isShowing(){
 

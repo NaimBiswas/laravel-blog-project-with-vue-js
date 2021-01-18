@@ -2604,6 +2604,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
+  mounted: {},
   methods: {
     isShowing: function isShowing() {}
   }
