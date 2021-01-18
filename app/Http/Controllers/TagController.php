@@ -88,8 +88,9 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy($slug)
     {
-        //
+        $tag = Tag::where('slug', $slug)->first();
+        $tag->destroy();
     }
 }
