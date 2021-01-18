@@ -47,7 +47,7 @@
               <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ category["name"] | subStrign }}</td>
+            <td class="h5">{{ category["name"] | subStrign(5) }}</td>
             <td>
               <button
                 v-if="category['status'] == 1"

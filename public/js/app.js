@@ -44121,7 +44121,7 @@ var render = function() {
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
                 _c("td", { staticClass: "h5" }, [
-                  _vm._v(_vm._s(_vm._f("subStrign")(category["name"])))
+                  _vm._v(_vm._s(_vm._f("subStrign")(category["name"], 5)))
                 ]),
                 _vm._v(" "),
                 _c("td", [

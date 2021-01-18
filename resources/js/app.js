@@ -59,6 +59,8 @@ const store = new Vuex.Store(
     StoreData,
 );
 
+
+
 const app = new Vue({
     el: '#app',
     router,
