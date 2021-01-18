@@ -96,7 +96,16 @@
 
 <script>
 export default {
+data() {
+    return {
 
+    }
+},
+methods: {
+    isShowing(){
+
+    }
+},
 }
 </script>
 
