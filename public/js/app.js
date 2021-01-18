@@ -2466,7 +2466,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      form: new From({
+      form: new Form({
         name: '',
         status: false
       })
@@ -2474,10 +2474,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     deactive: function deactive() {
-      this.form.status = true;
+      this.form.status = false;
     },
     active: function active() {
-      this.form.status = false;
+      this.form.status = true;
     }
   }
 });

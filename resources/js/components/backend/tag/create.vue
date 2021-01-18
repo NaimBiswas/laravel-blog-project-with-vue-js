@@ -96,7 +96,7 @@
 export default {
 data() {
     return {
-        form: new From({
+        form: new Form({
            name: '',
            status: false,
         }),
@@ -104,10 +104,10 @@ data() {
 },
 methods: {
     deactive(){
-      this.form.status = true;
+      this.form.status = false;
     },
     active(){
-        this.form.status = false;
+        this.form.status = true;
     }
 },
 
