@@ -15,7 +15,7 @@ export default {
 
                 });
         },
-        getTags() {
+        getTags(tag) {
             axios.get('/index-tag').then((response) => {
                 tag.commit('fetchTags', response.data.tags);
             }).catch((error) => {

@@ -42,15 +42,15 @@
             <td>Created At</td>
           </tr>
 
-          <tr v-for="(category, index) in categories" :key="index">
+          <tr v-for="(tag, index) in tags" :key="index">
             <td class="">
-              <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
+              <input type="checkbox" :value="tag.id" v-model="TagIDS" id="checkboxSuccess1" />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ category["name"]}}</td>
+            <td class="h5">{{ tag["name"]}}</td>
             <td>
               <button
-                v-if="category['status'] == 1"
+                v-if="tag['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
                 <i class="fas fa-eye mr-2"></i>Active
@@ -61,19 +61,19 @@
             </td>
             <td>
               <router-link
-                :to="`/editecategory/${category.slug}`"
+                :to="`/editecategory/${tag.slug}`"
                 class="btn btn-outline-warning btn-lg mr-2"
               >
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
-                @click="removeCategory(category['id'])"
+                @click="removeCategory(tag['id'])"
                 class="btn btn-outline-danger btn-lg mr-2"
               >
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
-            <td>{{ category["created_at"] }}</td>
+            <td>{{ tag["created_at"] }}</td>
           </tr>
           <tr v-if="isShowing()">
             <td class="text-center text-uppercase text-danger h4" colspan="5">
@@ -98,7 +98,7 @@ mounted(){
 },
 computed:{
     tags(){
-       return this.$store.getters.fetchTags();
+       return this.$store.getters.AllTags;
 
     }
 },

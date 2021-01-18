@@ -2601,7 +2601,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     tags: function tags() {
-      return this.$store.getters.fetchTags();
+      return this.$store.getters.AllTags;
     }
   },
   methods: {
@@ -2823,7 +2823,7 @@ __webpack_require__.r(__webpack_exports__);
         data.commit("fatchCategoires", response.data.categories);
       })["catch"](function (error) {});
     },
-    getTags: function getTags() {
+    getTags: function getTags(tag) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/index-tag').then(function (response) {
         tag.commit('fetchTags', response.data.tags);
       })["catch"](function (error) {
@@ -45300,7 +45300,7 @@ var render = function() {
           [
             _vm._m(1),
             _vm._v(" "),
-            _vm._l(_vm.categories, function(category, index) {
+            _vm._l(_vm.tags, function(tag, index) {
               return _c("tr", { key: index }, [
                 _c("td", {}, [
                   _c("input", {
@@ -45308,35 +45308,35 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.categoryIds,
-                        expression: "categoryIds"
+                        value: _vm.TagIDS,
+                        expression: "TagIDS"
                       }
                     ],
                     attrs: { type: "checkbox", id: "checkboxSuccess1" },
                     domProps: {
-                      value: category.id,
-                      checked: Array.isArray(_vm.categoryIds)
-                        ? _vm._i(_vm.categoryIds, category.id) > -1
-                        : _vm.categoryIds
+                      value: tag.id,
+                      checked: Array.isArray(_vm.TagIDS)
+                        ? _vm._i(_vm.TagIDS, tag.id) > -1
+                        : _vm.TagIDS
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.categoryIds,
+                        var $$a = _vm.TagIDS,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = category.id,
+                          var $$v = tag.id,
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
-                            $$i < 0 && (_vm.categoryIds = $$a.concat([$$v]))
+                            $$i < 0 && (_vm.TagIDS = $$a.concat([$$v]))
                           } else {
                             $$i > -1 &&
-                              (_vm.categoryIds = $$a
+                              (_vm.TagIDS = $$a
                                 .slice(0, $$i)
                                 .concat($$a.slice($$i + 1)))
                           }
                         } else {
-                          _vm.categoryIds = $$c
+                          _vm.TagIDS = $$c
                         }
                       }
                     }
@@ -45345,12 +45345,10 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
-                _c("td", { staticClass: "h5" }, [
-                  _vm._v(_vm._s(category["name"]))
-                ]),
+                _c("td", { staticClass: "h5" }, [_vm._v(_vm._s(tag["name"]))]),
                 _vm._v(" "),
                 _c("td", [
-                  category["status"] == 1
+                  tag["status"] == 1
                     ? _c(
                         "button",
                         { staticClass: "btn btn-outline-success btn-lg" },
@@ -45376,7 +45374,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "btn btn-outline-warning btn-lg mr-2",
-                        attrs: { to: "/editecategory/" + category.slug }
+                        attrs: { to: "/editecategory/" + tag.slug }
                       },
                       [_c("i", { staticClass: "fas fa-pen" })]
                     ),
@@ -45387,7 +45385,7 @@ var render = function() {
                         staticClass: "btn btn-outline-danger btn-lg mr-2",
                         on: {
                           click: function($event) {
-                            return _vm.removeCategory(category["id"])
+                            return _vm.removeCategory(tag["id"])
                           }
                         }
                       },
@@ -45397,7 +45395,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(category["created_at"]))])
+                _c("td", [_vm._v(_vm._s(tag["created_at"]))])
               ])
             }),
             _vm._v(" "),
