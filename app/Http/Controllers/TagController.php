@@ -91,6 +91,6 @@ class TagController extends Controller
     public function destroy($slug)
     {
         $tag = Tag::where('slug', $slug)->first();
-        $tag->destroy();
+        return $tag->delete();
     }
 }
