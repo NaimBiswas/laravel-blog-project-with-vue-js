@@ -133,7 +133,7 @@
                             <li class="nav-item">
                                 <router-link to="/category"
                                     class="nav-link">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <i class="nav-icon fas fa-feather-alt"></i>
                                     <p>
                                         Catgories
 
