@@ -102,6 +102,7 @@ export default {
           id: null,
         name: "",
         status: false,
+        slug: '',
       }),
     };
   },
@@ -128,7 +129,7 @@ export default {
         this.form.post('/update-tag/'+ this.form.slug).then((response)=> {
 
             toastr.info('Category Update Success');
-            this_.$router.push("/category");
+            this_.$router.push("/tag");
 
         }).catch((error) => {
            toastr.warning(error);

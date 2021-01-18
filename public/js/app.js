@@ -2758,7 +2758,8 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         id: null,
         name: "",
-        status: false
+        status: false,
+        slug: ''
       })
     };
   },
@@ -2784,7 +2785,7 @@ __webpack_require__.r(__webpack_exports__);
       var this_ = this;
       this.form.post('/update-tag/' + this.form.slug).then(function (response) {
         toastr.info('Category Update Success');
-        this_.$router.push("/category");
+        this_.$router.push("/tag");
       })["catch"](function (error) {
         toastr.warning(error);
       });
