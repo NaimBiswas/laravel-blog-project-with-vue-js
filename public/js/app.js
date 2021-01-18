@@ -2537,17 +2537,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: '/dashboard',
+  path: "/dashboard",
   component: _components_backend_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_0__.default
 }, {
-  path: '/category',
+  path: "/category",
   component: _components_backend_category_category__WEBPACK_IMPORTED_MODULE_1__.default
 }, {
-  path: '/createcategory',
+  path: "/createcategory",
   component: _components_backend_category_CreateCategory__WEBPACK_IMPORTED_MODULE_2__.default
 }, {
-  path: '/editecategory/:slug',
+  path: "/editecategory/:slug",
   component: _components_backend_category_editecategory__WEBPACK_IMPORTED_MODULE_3__.default
+}, {
+  path: "/tag",
+  component: _components_backend_tag_tag__WEBPACK_IMPORTED_MODULE_4__.default
+}, {
+  path: "/create-tag",
+  component: _components_backend_tag_create__WEBPACK_IMPORTED_MODULE_5__.default
+}, {
+  path: "/update-tag",
+  component: _components_backend_tag_update__WEBPACK_IMPORTED_MODULE_6__.default
 }];
 
 /***/ }),
