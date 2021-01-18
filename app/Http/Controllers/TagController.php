@@ -85,6 +85,12 @@ class TagController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:15',
         ]);
+
+        $tag = Tag::where('slug', $slug)->first();
+        $tag->name = $request->name;
+        $tag->slug = Str::slug($request->name);
+        $tag->status = $request->status;
+        $tag->update();
     }
 
     /**
