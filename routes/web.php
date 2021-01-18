@@ -38,5 +38,6 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::get('/index-tag', [TagController::class, 'index']);
     Route::delete('/delete-tag/{slug}', [TagController::class, 'destroy']);
     Route::get('fetch-tag/{slug}', [TagController::class, 'edit']);
+    Route::get('update-tag/{slug}', [TagController::class, 'update']);
 });
 Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
