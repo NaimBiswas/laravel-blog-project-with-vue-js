@@ -2824,9 +2824,11 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {});
     },
     getTags: function getTags() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('index-tag').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/index-tag').then(function (response) {
         tag.commit('fetchTags', response.data.tags);
-      })["catch"](function (error) {});
+      })["catch"](function (error) {
+        toastr.warning(error);
+      });
     }
   },
   mutations: {

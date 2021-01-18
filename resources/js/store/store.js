@@ -16,10 +16,10 @@ export default {
                 });
         },
         getTags() {
-            axios.get('index-tag').then((response) => {
+            axios.get('/index-tag').then((response) => {
                 tag.commit('fetchTags', response.data.tags);
             }).catch((error) => {
-
+                toastr.warning(error);
             });
         }
     },
