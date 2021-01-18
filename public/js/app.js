@@ -2769,7 +2769,7 @@ __webpack_require__.r(__webpack_exports__);
     getTag: function getTag() {
       var this_ = this;
       axios.get('/fetch-tag/' + this.$route.params.slug).then(function (response) {
-        this_.form.fill(response.data.tags);
+        this_.form.fill(response.data.tag);
       })["catch"](function (error) {
         toastr.info(error);
       });

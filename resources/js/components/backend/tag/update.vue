@@ -112,7 +112,7 @@ export default {
       getTag(){
         const  this_ = this;
         axios.get('/fetch-tag/'+ this.$route.params.slug).then((response)=>{
-            this_.form.fill(response.data.tags);
+            this_.form.fill(response.data.tag);
         }).catch((error)=>{
           toastr.info(error);
         });
