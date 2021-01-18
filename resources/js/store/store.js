@@ -4,7 +4,7 @@ import { get } from "jquery";
 export default {
      state: {
         categoires: [],
-         tag:[],
+         tags:[],
     },
     actions: {
         getCategories(data) {
@@ -17,7 +17,7 @@ export default {
         },
         getTags() {
             axios.get('').then((response) => {
-
+                tag.commit('fetchTags', response.data.tags);
             }).catch((error) => {
 
             });
@@ -27,11 +27,17 @@ export default {
         fatchCategoires(state, data) {
             return state.categoires = data;
         },
+        fetchTags(state,tag){
+            return state.tags = tag;
+        }
     },
 
     getters: {
         allCategory(state) {
             return state.categoires;
-      }
+        },
+        AllTags(state) {
+            return state.tags;
+        }
     },
 };

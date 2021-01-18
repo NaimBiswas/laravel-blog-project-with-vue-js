@@ -2815,7 +2815,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
     categoires: [],
-    tag: []
+    tags: []
   },
   actions: {
     getCategories: function getCategories(data) {
@@ -2824,17 +2824,25 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {});
     },
     getTags: function getTags() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('').then(function (response) {})["catch"](function (error) {});
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('').then(function (response) {
+        tag.commit('fetchTags', response.data.tags);
+      })["catch"](function (error) {});
     }
   },
   mutations: {
     fatchCategoires: function fatchCategoires(state, data) {
       return state.categoires = data;
+    },
+    fetchTags: function fetchTags(state, tag) {
+      return state.tags = tag;
     }
   },
   getters: {
     allCategory: function allCategory(state) {
       return state.categoires;
+    },
+    AllTags: function AllTags(state) {
+      return state.tags;
     }
   }
 });
