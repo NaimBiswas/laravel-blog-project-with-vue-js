@@ -94,7 +94,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+        TagIDS: [],
+    };
   },
   mounted() {
     this.$store.dispatch("getTags");
