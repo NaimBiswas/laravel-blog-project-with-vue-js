@@ -2478,6 +2478,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     active: function active() {
       this.form.status = true;
+    },
+    addTag: function addTag() {
+      this.form.post('').then(function (response) {
+        toastr.success('Tag Added Success');
+      })["catch"](function (error) {
+        toastr.danger(error);
+      });
     }
   }
 });

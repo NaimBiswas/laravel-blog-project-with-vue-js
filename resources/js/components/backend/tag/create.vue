@@ -108,8 +108,16 @@ methods: {
     },
     active(){
         this.form.status = true;
+    },
+    addTag(){
+        this.form.post('').then((response) =>{
+           toastr.success('Tag Added Success');
+        }).catch((error) =>{
+            toastr.danger(error);
+        });
     }
 },
+
 
 }
 </script>
