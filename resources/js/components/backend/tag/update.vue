@@ -79,7 +79,7 @@
                 type="submit"
                 class="btn btn-outline-success btn-md text-uppercase"
               >
-                UPdate Category
+                UPdate Tag
               </button>
               <button type="reset" class="btn btn-default float-right">
                 Cancel

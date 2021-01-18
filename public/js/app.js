@@ -45943,7 +45943,7 @@ var staticRenderFns = [
           staticClass: "btn btn-outline-success btn-md text-uppercase",
           attrs: { type: "submit" }
         },
-        [_vm._v("\n              UPdate Category\n            ")]
+        [_vm._v("\n              UPdate Tag\n            ")]
       ),
       _vm._v(" "),
       _c(
