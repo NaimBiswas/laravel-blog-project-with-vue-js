@@ -2605,7 +2605,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    isShowing: function isShowing() {}
+    isShowing: function isShowing() {
+      return this.tags.length < 1;
+    }
   }
 });
 
