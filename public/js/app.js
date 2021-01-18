@@ -2480,10 +2480,10 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = true;
     },
     addTag: function addTag() {
-      this.form.post('store-tag').then(function (response) {
+      this.form.post('/store-tag').then(function (response) {
         toastr.success('Tag Added Success');
       })["catch"](function (error) {
-        toastr.danger(error);
+        toastr.info(error);
       });
     }
   }

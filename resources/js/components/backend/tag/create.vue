@@ -110,12 +110,12 @@ methods: {
         this.form.status = true;
     },
     addTag(){
-        this.form.post('store-tag').then((response) =>{
+        this.form.post('/store-tag').then((response) =>{
            toastr.success('Tag Added Success');
         }).catch((error) =>{
-            toastr.danger(error);
-        });
-    }
+            toastr.info(error);
+        })
+    },
 },
 
 
