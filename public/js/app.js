@@ -2614,18 +2614,28 @@ __webpack_require__.r(__webpack_exports__);
       return this.tags.length < 1;
     },
     removeTag: function removeTag(id) {
-      Swal.fire({
+      var _this = this;
+
+      swalWithBootstrapButtons.fire({
         title: "Are you sure?",
-        text: "You will not be able to recover this imaginary file!",
+        text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, keep it"
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
       }).then(function (result) {
-        if (result.value) {
-          Swal.fire("Deleted!", "Your imaginary file has been deleted.", "success");
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+        if (result.isConfirmed) {
+          axios["delete"]("remove-category/" + id).then(function (response) {
+            toastr.success("category Deleted Success");
+          });
+          swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
+
+          _this.$store.dispatch("getCategories");
+        } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire("Cancelled", "Thank You For Change Your decession :)", "error");
         }
       });
     }
