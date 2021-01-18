@@ -1,5 +1,97 @@
 <template>
+    <div class="">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Tags</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">
+                <router-link to="/tag" href="#">Tag</router-link>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <div class="card">
+      <div class="card-header flex card-tools">
+        <h5 class="text-uppercase" style="display: inline">Tags</h5>
+        <router-link
+          to="/create-tag"
+          class="text-uppercase btn btn-outline-danger btn-md float-right text-white"
+          >Add Tag</router-link
+        >
+      </div>
+      <div class="card-body">
+        <table class="table table-control table-bordered text-center">
+          <tr>
+            <td>
+              <div class="icheck-success d-inline">
+                <input type="checkbox" id="checkboxSuccess1" />
+                <label for="checkboxSuccess1"> </label>
+              </div>
+            </td>
+            <td>ID.</td>
+            <td>Name</td>
+            <td>Status</td>
+            <td>Action</td>
+            <td>Created At</td>
+          </tr>
 
+          <!-- <tr v-for="(category, index) in categories" :key="index">
+            <td class="">
+              <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
+            </td>
+            <td>{{ index + 1 }}</td>
+            <td class="h5">{{ category["name"]}}</td>
+            <td>
+              <button
+                v-if="category['status'] == 1"
+                class="btn btn-outline-success btn-lg"
+              >
+                <i class="fas fa-eye mr-2"></i>Active
+              </button>
+              <button v-else class="btn btn-outline-warning btn-lg">
+                <i class="fas fa-eye-slash mr-2"></i>Deactive
+              </button>
+            </td>
+            <td>
+              <router-link
+                :to="`/editecategory/${category.slug}`"
+                class="btn btn-outline-warning btn-lg mr-2"
+              >
+                <i class="fas fa-pen"></i>
+              </router-link>
+              <button
+                @click="removeCategory(category['id'])"
+                class="btn btn-outline-danger btn-lg mr-2"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+            <td>{{ category["created_at"] }}</td>
+          </tr> -->
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr v-if="isShowing()">
+            <td class="text-center text-uppercase text-danger h4" colspan="5">
+              No Tag Found!
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

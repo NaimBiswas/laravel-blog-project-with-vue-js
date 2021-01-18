@@ -2373,6 +2373,98 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -44734,9 +44826,134 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", {}, [
+    _c("section", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+              _c(
+                "li",
+                { staticClass: "breadcrumb-item" },
+                [
+                  _c("router-link", { attrs: { to: "/tag", href: "#" } }, [
+                    _vm._v("Tag")
+                  ])
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c(
+        "div",
+        { staticClass: "card-header flex card-tools" },
+        [
+          _c(
+            "h5",
+            {
+              staticClass: "text-uppercase",
+              staticStyle: { display: "inline" }
+            },
+            [_vm._v("Tags")]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "text-uppercase btn btn-outline-danger btn-md float-right text-white",
+              attrs: { to: "/create-tag" }
+            },
+            [_vm._v("Add Tag")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c(
+          "table",
+          { staticClass: "table table-control table-bordered text-center" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _vm.isShowing()
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticClass: "text-center text-uppercase text-danger h4",
+                      attrs: { colspan: "5" }
+                    },
+                    [_vm._v("\n            No Tag Found!\n          ")]
+                  )
+                ])
+              : _vm._e()
+          ]
+        )
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Tags")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [
+        _c("div", { staticClass: "icheck-success d-inline" }, [
+          _c("input", { attrs: { type: "checkbox", id: "checkboxSuccess1" } }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "checkboxSuccess1" } })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("td", [_vm._v("ID.")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Name")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Status")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Created At")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td"),
+      _vm._v(" "),
+      _c("td"),
+      _vm._v(" "),
+      _c("td"),
+      _vm._v(" "),
+      _c("td"),
+      _vm._v(" "),
+      _c("td"),
+      _vm._v(" "),
+      _c("td")
+    ])
+  }
+]
 render._withStripped = true
 
 
