@@ -2791,7 +2791,7 @@ var routes = [{
   path: "/create-tag",
   component: _components_backend_tag_create__WEBPACK_IMPORTED_MODULE_5__.default
 }, {
-  path: "/update-tag",
+  path: "/update-tag/:slug",
   component: _components_backend_tag_update__WEBPACK_IMPORTED_MODULE_6__.default
 }];
 

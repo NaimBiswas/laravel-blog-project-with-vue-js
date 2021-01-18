@@ -12,5 +12,5 @@ export const routes = [
     { path: "/editecategory/:slug", component: EditeCategory },
     { path: "/tag", component: Tag },
     { path: "/create-tag", component: CreateTag },
-    { path: "/update-tag", component: UpdateTag }
+    { path: "/update-tag/:slug", component: UpdateTag }
 ];
