@@ -149,4 +149,24 @@ export default {
 </script>
 
 <style>
+button.swal2-confirm.btn.btn-success {
+  margin-left: 10px;
+
+  font-size: 20px;
+}
+button.swal2-cancel.btn.btn-danger {
+  font-size: 20px;
+}
+.swal2-container.swal2-noanimation {
+  background: rgb(0 71 202 / 38%);
+}
+.dark-mode .swal2-popup {
+  background-color: #343a40e6;
+  color: #e9ecef;
+  padding-bottom: 40px;
+}
+#checkboxSuccess1{
+    height:22px;
+    width: 25px;
+}
 </style>
