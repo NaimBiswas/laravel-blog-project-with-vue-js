@@ -4,15 +4,15 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Categories</h1>
+            <h1>Tag</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a>Category</a>
+                <a>Tag</a>
               </li>
               <li class="breadcrumb-item active">
-                <span>Create Category</span>
+                <span>Create Tag</span>
               </li>
             </ol>
           </div>
@@ -22,9 +22,9 @@
     </section>
     <div class="card">
       <div class="card-header flex card-tools">
-        <h5 class="text-uppercase" style="display: inline">Add Category</h5>
+        <h5 class="text-uppercase" style="display: inline">Add New Tag</h5>
         <router-link
-          to="/category"
+          to="/tag"
           class="text-uppercase btn btn-outline-info btn-md float-right text-white"
           >Go Back</router-link
         >
@@ -32,15 +32,15 @@
       <div class="card-body">
         <div class="card card-danger">
           <div class="card-header">
-            <h3 class="card-title pt-2">Enter Your Category Name</h3>
+            <h3 class="card-title pt-2">Enter Your Tag Name</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form @submit.prevent="addCategory" class="form-horizontal">
+          <form @submit.prevent="addTag" class="form-horizontal">
             <div class="card-body">
               <div class="form-group row">
                 <label for="catname" class="col-sm-2 col-form-label"
-                  >Category Name:</label
+                  >Tag Name:</label
                 >
                 <div class="col-sm-10">
                   <input
@@ -48,7 +48,7 @@
                     type="text"
                     class="form-control"
                     id="catname"
-                    placeholder="Enter Your Category Name"
+                    placeholder="Enter Your Tag Name"
                     name="name"
                     :class="{ 'is-invalid': form.errors.has('name') }"
                   />
@@ -78,7 +78,7 @@
                 type="submit"
                 class="btn btn-outline-success btn-md text-uppercase"
               >
-                AdD Category
+                AdD New Tag
               </button>
               <button type="reset" class="btn btn-default float-right">
                 Cancel
@@ -94,6 +94,22 @@
 
 <script>
 export default {
+data() {
+    return {
+        form: new From({
+           name: '',
+           status: false,
+        }),
+    };
+},
+methods: {
+    deactive(){
+      this.form.status = true;
+    },
+    active(){
+        this.form.status = false;
+    }
+},
 
 }
 </script>

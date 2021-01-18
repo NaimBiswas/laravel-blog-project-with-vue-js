@@ -2463,7 +2463,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      form: new From({
+        name: '',
+        status: false
+      })
+    };
+  },
+  methods: {
+    deactive: function deactive() {
+      this.form.status = true;
+    },
+    active: function active() {
+      this.form.status = false;
+    }
+  }
+});
 
 /***/ }),
 
@@ -44994,7 +45011,7 @@ var render = function() {
               staticClass: "text-uppercase",
               staticStyle: { display: "inline" }
             },
-            [_vm._v("Add Category")]
+            [_vm._v("Add New Tag")]
           ),
           _vm._v(" "),
           _c(
@@ -45002,7 +45019,7 @@ var render = function() {
             {
               staticClass:
                 "text-uppercase btn btn-outline-info btn-md float-right text-white",
-              attrs: { to: "/category" }
+              attrs: { to: "/tag" }
             },
             [_vm._v("Go Back")]
           )
@@ -45021,7 +45038,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
-                  return _vm.addCategory($event)
+                  return _vm.addTag($event)
                 }
               }
             },
@@ -45034,7 +45051,7 @@ var render = function() {
                       staticClass: "col-sm-2 col-form-label",
                       attrs: { for: "catname" }
                     },
-                    [_vm._v("Category Name:")]
+                    [_vm._v("Tag Name:")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -45055,7 +45072,7 @@ var render = function() {
                         attrs: {
                           type: "text",
                           id: "catname",
-                          placeholder: "Enter Your Category Name",
+                          placeholder: "Enter Your Tag Name",
                           name: "name"
                         },
                         domProps: { value: _vm.form.name },
@@ -45125,18 +45142,16 @@ var staticRenderFns = [
     return _c("section", { staticClass: "content-header" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row mb-2" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("h1", [_vm._v("Categories")])
-          ]),
+          _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Tag")])]),
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-6" }, [
             _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
               _c("li", { staticClass: "breadcrumb-item" }, [
-                _c("a", [_vm._v("Category")])
+                _c("a", [_vm._v("Tag")])
               ]),
               _vm._v(" "),
               _c("li", { staticClass: "breadcrumb-item active" }, [
-                _c("span", [_vm._v("Create Category")])
+                _c("span", [_vm._v("Create Tag")])
               ])
             ])
           ])
@@ -45150,7 +45165,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title pt-2" }, [
-        _vm._v("Enter Your Category Name")
+        _vm._v("Enter Your Tag Name")
       ])
     ])
   },
@@ -45165,7 +45180,7 @@ var staticRenderFns = [
           staticClass: "btn btn-outline-success btn-md text-uppercase",
           attrs: { type: "submit" }
         },
-        [_vm._v("\n              AdD Category\n            ")]
+        [_vm._v("\n              AdD New Tag\n            ")]
       ),
       _vm._v(" "),
       _c(
