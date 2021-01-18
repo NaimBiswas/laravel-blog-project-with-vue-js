@@ -2607,7 +2607,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     isShowing: function isShowing() {
       return this.tags.length < 1;
-    }
+    },
+    removeTag: function removeTag(id) {}
   }
 });
 

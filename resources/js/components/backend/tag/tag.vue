@@ -105,6 +105,9 @@ computed:{
 methods: {
     isShowing(){
         return this.tags.length < 1;
+    },
+    removeTag(id){
+
     }
 },
 }
