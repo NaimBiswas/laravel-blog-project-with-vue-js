@@ -124,8 +124,12 @@ export default {
       this.form.status = false;
     },
     updateCategory(){
+        let this_ = this;
         this.form.post('/update-category/'+ this.form.id).then((response)=> {
+
             toastr.info('Category Update Success');
+            this_.$router.push("/category");
+
         }).catch((error) => {
            toastr.warning(error);
         });

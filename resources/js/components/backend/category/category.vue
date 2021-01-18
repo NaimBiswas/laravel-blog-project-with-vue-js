@@ -44,7 +44,7 @@
 
           <tr v-for="(category, index) in categories" :key="index">
             <td class="">
-              <input type="checkbox" :value="category.id" v-model="categoryIds" />
+              <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
             </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"] }}</td>
@@ -176,5 +176,9 @@ button.swal2-cancel.btn.btn-danger {
   background-color: #343a40e6;
   color: #e9ecef;
   padding-bottom: 40px;
+}
+#checkboxSuccess1{
+    height:22px;
+    width: 25px;
 }
 </style>
