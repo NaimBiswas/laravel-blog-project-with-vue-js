@@ -2607,6 +2607,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.$store.dispatch('getTags');
   },
+  computed: {
+    tags: function tags() {
+      return this.$store.getters.fetchTags();
+    }
+  },
   methods: {
     isShowing: function isShowing() {}
   }

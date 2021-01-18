@@ -104,6 +104,12 @@ data() {
 mounted(){
     this.$store.dispatch('getTags');
 },
+computed:{
+    tags(){
+       return this.$store.getters.fetchTags();
+
+    }
+},
 methods: {
     isShowing(){
 
