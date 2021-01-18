@@ -75,14 +75,6 @@
             </td>
             <td>{{ category["created_at"] }}</td>
           </tr> -->
-          <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
           <tr v-if="isShowing()">
             <td class="text-center text-uppercase text-danger h4" colspan="5">
               No Tag Found!
