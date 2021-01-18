@@ -65,9 +65,12 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit($slug)
     {
-        //
+        $tag = Tag::where('slug', $slug)->fist();
+        return response()->json([
+            'tag' => $tag,
+        ]);
     }
 
     /**
