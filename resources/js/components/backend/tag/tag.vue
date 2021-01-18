@@ -42,7 +42,7 @@
             <td>Created At</td>
           </tr>
 
-          <!-- <tr v-for="(category, index) in categories" :key="index">
+          <tr v-for="(category, index) in categories" :key="index">
             <td class="">
               <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
             </td>
@@ -74,7 +74,7 @@
               </button>
             </td>
             <td>{{ category["created_at"] }}</td>
-          </tr> -->
+          </tr>
           <tr v-if="isShowing()">
             <td class="text-center text-uppercase text-danger h4" colspan="5">
               No Tag Found!

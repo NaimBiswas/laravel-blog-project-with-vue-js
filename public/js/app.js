@@ -45300,6 +45300,107 @@ var render = function() {
           [
             _vm._m(1),
             _vm._v(" "),
+            _vm._l(_vm.categories, function(category, index) {
+              return _c("tr", { key: index }, [
+                _c("td", {}, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.categoryIds,
+                        expression: "categoryIds"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkboxSuccess1" },
+                    domProps: {
+                      value: category.id,
+                      checked: Array.isArray(_vm.categoryIds)
+                        ? _vm._i(_vm.categoryIds, category.id) > -1
+                        : _vm.categoryIds
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.categoryIds,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = category.id,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.categoryIds = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.categoryIds = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.categoryIds = $$c
+                        }
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", { staticClass: "h5" }, [
+                  _vm._v(_vm._s(category["name"]))
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  category["status"] == 1
+                    ? _c(
+                        "button",
+                        { staticClass: "btn btn-outline-success btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye mr-2" }),
+                          _vm._v("Active\n            ")
+                        ]
+                      )
+                    : _c(
+                        "button",
+                        { staticClass: "btn btn-outline-warning btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
+                          _vm._v("Deactive\n            ")
+                        ]
+                      )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-outline-warning btn-lg mr-2",
+                        attrs: { to: "/editecategory/" + category.slug }
+                      },
+                      [_c("i", { staticClass: "fas fa-pen" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-danger btn-lg mr-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.removeCategory(category["id"])
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fas fa-trash-alt" })]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(category["created_at"]))])
+              ])
+            }),
+            _vm._v(" "),
             _vm.isShowing()
               ? _c("tr", [
                   _c(
@@ -45312,7 +45413,8 @@ var render = function() {
                   )
                 ])
               : _vm._e()
-          ]
+          ],
+          2
         )
       ])
     ])
