@@ -141,6 +141,16 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
+                                <router-link to="/tag"
+                                    class="nav-link">
+                                    <i class="nav-icon fas fa-at"></i>
+                                    <p>
+                                        Tags
+
+                                    </p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
                                 <form action="{{ route('logout') }}"
                                     method="POST">
                                     @csrf
