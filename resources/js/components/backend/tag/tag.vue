@@ -101,8 +101,8 @@ data() {
 
     }
 },
-mounted:{
-
+mounted(){
+    this.$store.dispatch('getTags');
 },
 methods: {
     isShowing(){
