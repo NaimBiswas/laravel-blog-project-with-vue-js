@@ -35,5 +35,6 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit'])->name('fatch-category');
     Route::post('/update-category/{slug}', [CategoryController::class, 'update'])->name('update-category');
     Route::post('/store-tag', [TagController::class, 'store']);
+    Route::get('/index-tag', [TagController::class, 'index']);
 });
 Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
