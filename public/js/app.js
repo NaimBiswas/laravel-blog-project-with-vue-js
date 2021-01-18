@@ -2366,44 +2366,46 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
-/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
-/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
-/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes/routes */ "./resources/js/routes/routes.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.common.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store/store */ "./resources/js/store/store.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _filter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter.js */ "./resources/js/filter.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes/routes */ "./resources/js/routes/routes.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.common.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store/store */ "./resources/js/store/store.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default); // V form
+
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default); // V form
 
 
-window.Form = vform__WEBPACK_IMPORTED_MODULE_1__.Form;
-Vue.component(vform__WEBPACK_IMPORTED_MODULE_1__.HasError.name, vform__WEBPACK_IMPORTED_MODULE_1__.HasError);
-Vue.component(vform__WEBPACK_IMPORTED_MODULE_1__.AlertError.name, vform__WEBPACK_IMPORTED_MODULE_1__.AlertError); // import Swal from 'sweetalert2';
+window.Form = vform__WEBPACK_IMPORTED_MODULE_2__.Form;
+Vue.component(vform__WEBPACK_IMPORTED_MODULE_2__.HasError.name, vform__WEBPACK_IMPORTED_MODULE_2__.HasError);
+Vue.component(vform__WEBPACK_IMPORTED_MODULE_2__.AlertError.name, vform__WEBPACK_IMPORTED_MODULE_2__.AlertError); // import Swal from 'sweetalert2';
 
 
 
-window.Swal = (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default());
-window.toastr = (toastr__WEBPACK_IMPORTED_MODULE_3___default());
-var Toast = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().mixin({
+window.Swal = (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default());
+window.toastr = (toastr__WEBPACK_IMPORTED_MODULE_4___default());
+var Toast = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default().mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
   didOpen: function didOpen(toast) {
-    toast.addEventListener('mouseenter', (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().stopTimer));
-    toast.addEventListener('mouseleave', (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().resumeTimer));
+    toast.addEventListener('mouseenter', (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default().stopTimer));
+    toast.addEventListener('mouseleave', (sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default().resumeTimer));
   }
 });
-var swalWithBootstrapButtons = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_2___default().mixin({
+var swalWithBootstrapButtons = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default().mixin({
   customClass: {
     confirmButton: 'btn btn-success',
     cancelButton: 'btn btn-danger'
@@ -2412,14 +2414,14 @@ var swalWithBootstrapButtons = sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED
 });
 window.swalWithBootstrapButtons = swalWithBootstrapButtons;
 
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
-  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_4__.routes,
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
+  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_5__.routes,
   mode: 'history'
 });
 
-Vue.use((vuex__WEBPACK_IMPORTED_MODULE_5___default()));
+Vue.use((vuex__WEBPACK_IMPORTED_MODULE_6___default()));
 
-var store = new (vuex__WEBPACK_IMPORTED_MODULE_5___default().Store)(_store_store__WEBPACK_IMPORTED_MODULE_6__.default);
+var store = new (vuex__WEBPACK_IMPORTED_MODULE_6___default().Store)(_store_store__WEBPACK_IMPORTED_MODULE_7__.default);
 var app = new Vue({
   el: '#app',
   router: router,
@@ -2471,6 +2473,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/filter.js":
+/*!********************************!*\
+  !*** ./resources/js/filter.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
+vue__WEBPACK_IMPORTED_MODULE_0__.default.filter('subStrign', function (content, length) {
+  return content.substring(0, length);
+});
 
 /***/ }),
 

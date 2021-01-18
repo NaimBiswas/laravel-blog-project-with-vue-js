@@ -4,6 +4,7 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 import VueRouter from 'vue-router';
+import filter from './filter.js';
 Vue.use(VueRouter);
 
 // V form
