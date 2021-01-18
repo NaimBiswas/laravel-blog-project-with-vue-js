@@ -2592,12 +2592,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {};
   },
   mounted: function mounted() {
-    this.$store.dispatch('getTags');
+    this.$store.dispatch("getTags");
   },
   computed: {
     tags: function tags() {
@@ -2610,17 +2615,17 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeTag: function removeTag(id) {
       Swal.fire({
-        title: 'Are you sure?',
-        text: 'You will not be able to recover this imaginary file!',
-        icon: 'warning',
+        title: "Are you sure?",
+        text: "You will not be able to recover this imaginary file!",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, keep it'
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, keep it"
       }).then(function (result) {
         if (result.value) {
-          Swal.fire('Deleted!', 'Your imaginary file has been deleted.', 'success');
+          Swal.fire("Deleted!", "Your imaginary file has been deleted.", "success");
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal.fire('Cancelled', 'Your imaginary file is safe :)', 'error');
+          Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
         }
       });
     }

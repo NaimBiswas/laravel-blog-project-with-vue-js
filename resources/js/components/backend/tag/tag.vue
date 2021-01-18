@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+  <div class="">
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -44,10 +44,15 @@
 
           <tr v-for="(tag, index) in tags" :key="index">
             <td class="">
-              <input type="checkbox" :value="tag.id" v-model="TagIDS" id="checkboxSuccess1" />
+              <input
+                type="checkbox"
+                :value="tag.id"
+                v-model="TagIDS"
+                id="checkboxSuccess1"
+              />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ tag["name"]}}</td>
+            <td class="h5">{{ tag["name"] }}</td>
             <td>
               <button
                 v-if="tag['status'] == 1"
@@ -88,52 +93,44 @@
 
 <script>
 export default {
-data() {
-    return {
-
-    }
-},
-mounted(){
-    this.$store.dispatch('getTags');
-},
-computed:{
-    tags(){
-       return this.$store.getters.AllTags;
-
-    }
-},
-methods: {
-    isShowing(){
-        return this.tags.length < 1;
+  data() {
+    return {};
+  },
+  mounted() {
+    this.$store.dispatch("getTags");
+  },
+  computed: {
+    tags() {
+      return this.$store.getters.AllTags;
     },
-    removeTag(id){
-        Swal.fire({
-  title: 'Are you sure?',
-  text: 'You will not be able to recover this imaginary file!',
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Yes, delete it!',
-  cancelButtonText: 'No, keep it'
-}).then((result) => {
-  if (result.value) {
-    Swal.fire(
-      'Deleted!',
-      'Your imaginary file has been deleted.',
-      'success'
-    )
-  } else if (result.dismiss === Swal.DismissReason.cancel) {
-    Swal.fire(
-      'Cancelled',
-      'Your imaginary file is safe :)',
-      'error'
-    )
-  }
-})
-    }
-},
-}
+  },
+  methods: {
+    isShowing() {
+      return this.tags.length < 1;
+    },
+    removeTag(id) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You will not be able to recover this imaginary file!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, keep it",
+      }).then((result) => {
+        if (result.value) {
+          Swal.fire(
+            "Deleted!",
+            "Your imaginary file has been deleted.",
+            "success"
+          );
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+        }
+      });
+    },
+  },
+};
 </script>
 
 <style>
-
 </style>
