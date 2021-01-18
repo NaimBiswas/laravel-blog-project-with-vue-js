@@ -157,7 +157,7 @@ button.swal2-confirm.btn.btn-success {
 button.swal2-cancel.btn.btn-danger {
   font-size: 20px;
 }
-.swal2-container.swal2-noanimation {
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
   background: rgb(0 71 202 / 38%);
 }
 .dark-mode .swal2-popup {
