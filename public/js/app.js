@@ -2474,7 +2474,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.AllPosts;
     }
   },
-  isShowing: function isShowing() {}
+  methods: {
+    isShowing: function isShowing() {
+      return this.posts.length < 1;
+    }
+  }
 });
 
 /***/ }),
@@ -45774,7 +45778,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
-                _c("td", { staticClass: "h5" }, [_vm._v(_vm._s(post["name"]))]),
+                _c("td", { staticClass: "h5" }, [
+                  _vm._v(_vm._s(post["title"]))
+                ]),
                 _vm._v(" "),
                 _c("td", [
                   post["status"] == 1
@@ -45828,7 +45834,18 @@ var render = function() {
               ])
             }),
             _vm._v(" "),
-            _vm._m(2)
+            _c("tr", [
+              _vm.isShowing()
+                ? _c(
+                    "td",
+                    {
+                      staticClass: "text-center text-uppercase text-danger h4",
+                      attrs: { colspan: "6" }
+                    },
+                    [_vm._v("\n            No post Found!\n          ")]
+                  )
+                : _vm._e()
+            ])
           ],
           2
         )
@@ -45865,21 +45882,6 @@ var staticRenderFns = [
       _c("td", [_vm._v("Action")]),
       _vm._v(" "),
       _c("td", [_vm._v("Created At")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c(
-        "td",
-        {
-          staticClass: "text-center text-uppercase text-danger h4",
-          attrs: { colspan: "6" }
-        },
-        [_vm._v("\n            No post Found!\n          ")]
-      )
     ])
   }
 ]

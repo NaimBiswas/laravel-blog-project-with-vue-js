@@ -52,7 +52,7 @@
               />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ post["name"] }}</td>
+            <td class="h5">{{ post["title"] }}</td>
             <td>
               <button
                 v-if="post['status'] == 1"
@@ -81,7 +81,7 @@
             <td>{{ post["created_at"] }}</td>
           </tr>
           <tr>
-            <td class="text-center text-uppercase text-danger h4" colspan="6">
+            <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="6">
               No post Found!
             </td>
           </tr>
@@ -106,9 +106,11 @@ data() {
          return this.$store.getters.AllPosts;
         },
     },
-    isShowing(){
-
+   methods: {
+        isShowing(){
+        return this.posts.length < 1;
     },
+   },
 };
 </script>
 
