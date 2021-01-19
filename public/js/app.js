@@ -2470,12 +2470,27 @@ __webpack_require__.r(__webpack_exports__);
     removepost: function removepost(slug) {
       var _this = this;
 
-      axios["delete"]("/remove-post/" + slug).then(function (response) {
-        toastr.info('Post Deleted Success');
+      swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios["delete"]("remove-post/" + slug).then(function (response) {
+            toastr.success("category Deleted Success");
+          });
+          swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-        _this.$store.dispatch('getPosts');
-      })["catch"](function (error) {
-        toastr.warning(error);
+          _this.$store.dispatch("getPosts");
+        } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire("Cancelled", "Thank You For Change Your decession :)", "error");
+        }
       });
     }
   }

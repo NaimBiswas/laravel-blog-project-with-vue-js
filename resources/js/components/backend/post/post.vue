@@ -113,12 +113,38 @@ data() {
         return this.posts.length < 1;
     },
     removepost(slug){
-        axios.delete("/remove-post/" + slug).then((response) =>{
-            toastr.info('Post Deleted Success');
-            this.$store.dispatch('getPosts');
-        }).catch((error) =>{
-            toastr.warning(error);
+        swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true,
         })
+        .then((result) => {
+          if (result.isConfirmed) {
+            axios.delete("remove-post/" + slug).then((response) => {
+              toastr.success("category Deleted Success");
+            });
+            swalWithBootstrapButtons.fire(
+              "Deleted!",
+              "Category Has Been Deleted.",
+              "success"
+            );
+            this.$store.dispatch("getPosts");
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              "Cancelled",
+              "Thank You For Change Your decession :)",
+              "error"
+            );
+          }
+        });
     }
    },
 };
