@@ -50,6 +50,9 @@ export default {
         },
         AllTags(state) {
             return state.tags;
+        },
+        AllPosts(state) {
+            return state.tag;
         }
     },
 };

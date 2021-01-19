@@ -3178,6 +3178,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     AllTags: function AllTags(state) {
       return state.tags;
+    },
+    AllPosts: function AllPosts(state) {
+      return state.tag;
     }
   }
 });
