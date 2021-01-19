@@ -93,7 +93,19 @@
 
 <script>
 export default {
+data() {
+    return {
 
+    }
+},
+    mounted() {
+       this.$sote.dispatch('getPosts');
+    },
+    computed:{
+        post(){
+            return $this.getters.AllPosts;
+        }
+    }
 };
 </script>
 
