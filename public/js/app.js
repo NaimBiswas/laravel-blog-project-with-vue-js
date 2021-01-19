@@ -2479,8 +2479,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: new Form({
-        name: "",
-        status: false
+        title: "",
+        status: false,
+        description: '',
+        images: '',
+        category: ''
       })
     };
   },
@@ -2497,7 +2500,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         toastr.info(error);
       });
-      this.form.name = '';
+      this.form.title = '';
       this.form.status = false;
     }
   }
@@ -46201,7 +46204,7 @@ var staticRenderFns = [
             staticClass: "custom-file-label",
             attrs: { for: "exampleInputFile" }
           },
-          [_vm._v("Update")]
+          [_vm._v("Chose File")]
         )
       ])
     ])

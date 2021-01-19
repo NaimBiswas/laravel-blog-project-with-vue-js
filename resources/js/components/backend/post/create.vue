@@ -63,7 +63,7 @@
                      <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Update</label>
+                        <label class="custom-file-label" for="exampleInputFile">Chose File</label>
                       </div>
                     </div>
                   <has-error :form="form" field="images"></has-error>
@@ -125,8 +125,11 @@ export default {
   data() {
     return {
       form: new Form({
-        name: "",
+        title: "",
         status: false,
+        description: '',
+        images: '',
+        category: '',
       }),
     };
   },
@@ -145,7 +148,7 @@ export default {
             }).catch((error) => {
                 toastr.info(error);
             });
-      this.form.name = '';
+      this.form.title = '';
       this.form.status = false;
     },
   },
