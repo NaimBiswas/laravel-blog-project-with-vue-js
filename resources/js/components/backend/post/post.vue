@@ -113,8 +113,9 @@ data() {
         return this.posts.length < 1;
     },
     removepost(slug){
-        axios.get("/remove-post/" + slug).then((response) =>{
-
+        axios.delete("/remove-post/" + slug).then((response) =>{
+            toastr.info('Post Deleted Success');
+            this.$store.dispatch('getPosts');
         }).catch((error) =>{
             toastr.warning(error);
         })

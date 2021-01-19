@@ -2468,7 +2468,13 @@ __webpack_require__.r(__webpack_exports__);
       return this.posts.length < 1;
     },
     removepost: function removepost(slug) {
-      axios.get("/remove-post/" + slug).then(function (response) {})["catch"](function (error) {
+      var _this = this;
+
+      axios["delete"]("/remove-post/" + slug).then(function (response) {
+        toastr.info('Post Deleted Success');
+
+        _this.$store.dispatch('getPosts');
+      })["catch"](function (error) {
         toastr.warning(error);
       });
     }
