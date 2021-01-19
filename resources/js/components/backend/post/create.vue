@@ -55,17 +55,23 @@
                   <has-error :form="form" field="title"></has-error>
                 </div>
               </div>
-               <div class="form-group row">
+              <div class="form-group row">
                 <label for="images" class="col-sm-2 col-form-label"
                   >Post Image:</label
                 >
                 <div class="col-sm-10">
-                     <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="images">
-                        <label class="custom-file-label" for="exampleInputFile">Choose File</label>
-                      </div>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="images"
+                      />
+                      <label class="custom-file-label" for="exampleInputFile"
+                        >Choose File</label
+                      >
                     </div>
+                  </div>
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
@@ -74,23 +80,27 @@
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                     <select class="form-control" id="category" >
-                          <option selected>Select A Category</option>
-                          <option >
-
-                          </option>
-                        </select>
+                  <select class="form-control" id="category">
+                    <option selected>Select A Category</option>
+                    <option></option>
+                  </select>
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
 
-
-               <div class="form-group row">
+              <div class="form-group row">
                 <label for="description" class="col-sm-2 col-form-label"
                   >Post Description:</label
                 >
                 <div class="col-sm-10">
-                  <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="Enter Your Post Description"></textarea>
+                  <textarea
+                    name="description"
+                    class="form-control"
+                    id="description"
+                    cols="30"
+                    rows="10"
+                    placeholder="Enter Your Post Description"
+                  ></textarea>
                   <has-error :form="form" field="description"></has-error>
                 </div>
               </div>
@@ -132,8 +142,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: "category",
 
@@ -142,20 +150,20 @@ export default {
       form: new Form({
         title: "",
         status: false,
-        description: '',
-        images: '',
-        category: '',
+        description: "",
+        images: "",
+        category: "",
       }),
     };
   },
-    mounted() {
-       this.$store.dispatch("getPosts");
+  mounted() {
+    this.$store.dispatch("getPosts");
+  },
+  computed: {
+    posts() {
+      return this.$store.getters.AllPosts;
     },
-    computed:{
-        posts(){
-         return this.$store.getters.AllPosts;
-        },
-    },
+  },
   methods: {
     active() {
       this.form.status = true;
@@ -164,14 +172,15 @@ export default {
       this.form.status = false;
     },
     addCategory() {
-      this.form.post("/store-post")
-            .then((response) =>{
-                 toastr.info('Category successfully created');
-
-            }).catch((error) => {
-                toastr.info(error);
-            });
-      this.form.title = '';
+      this.form
+        .post("/store-post")
+        .then((response) => {
+          toastr.info("Category successfully created");
+        })
+        .catch((error) => {
+          toastr.info(error);
+        });
+      this.form.title = "";
       this.form.status = false;
     },
   },
@@ -186,5 +195,4 @@ export default {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
-
 </style>

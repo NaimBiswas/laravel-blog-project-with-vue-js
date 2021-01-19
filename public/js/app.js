@@ -2489,6 +2489,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -2496,9 +2506,9 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         status: false,
-        description: '',
-        images: '',
-        category: ''
+        description: "",
+        images: "",
+        category: ""
       })
     };
   },
@@ -2519,11 +2529,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     addCategory: function addCategory() {
       this.form.post("/store-post").then(function (response) {
-        toastr.info('Category successfully created');
+        toastr.info("Category successfully created");
       })["catch"](function (error) {
         toastr.info(error);
       });
-      this.form.title = '';
+      this.form.title = "";
       this.form.status = false;
     }
   }
@@ -7880,7 +7890,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n  color: #fdfeff;\n  background-color: #394046;\n  border-color: #a1cbef;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n  color: #fdfeff;\n  background-color: #394046;\n  border-color: #a1cbef;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
