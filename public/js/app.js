@@ -46030,12 +46030,12 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        class: { "is-invalid": _vm.form.errors.has("name") },
+                        class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
                           id: "catname",
-                          placeholder: "Enter Your Category Name",
-                          name: "name"
+                          placeholder: "Enter Your Posst Title",
+                          name: "title"
                         },
                         domProps: { value: _vm.form.name },
                         on: {
@@ -46049,7 +46049,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("has-error", {
-                        attrs: { form: _vm.form, field: "name" }
+                        attrs: { form: _vm.form, field: "title" }
                       })
                     ],
                     1

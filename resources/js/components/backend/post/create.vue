@@ -48,11 +48,11 @@
                     type="text"
                     class="form-control"
                     id="catname"
-                    placeholder="Enter Your Category Name"
-                    name="name"
-                    :class="{ 'is-invalid': form.errors.has('name') }"
+                    placeholder="Enter Your Posst Title"
+                    name="title"
+                    :class="{ 'is-invalid': form.errors.has('title') }"
                   />
-                  <has-error :form="form" field="name"></has-error>
+                  <has-error :form="form" field="title"></has-error>
                 </div>
               </div>
                <div class="form-group row">
