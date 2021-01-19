@@ -2479,6 +2479,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     isShowing: function isShowing() {
       return this.posts.length < 1;
+    },
+    removepost: function removepost(slug) {
+      axios.get("/remove-post/" + slug).then(function (response) {})["catch"](function (error) {
+        toastr.warning(error);
+      });
     }
   }
 });

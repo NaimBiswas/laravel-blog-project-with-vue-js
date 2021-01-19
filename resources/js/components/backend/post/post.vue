@@ -112,6 +112,13 @@ data() {
         isShowing(){
         return this.posts.length < 1;
     },
+    removepost(slug){
+        axios.get("/remove-post/" + slug).then((response) =>{
+
+        }).catch((error) =>{
+            toastr.warning(error);
+        })
+    }
    },
 };
 </script>
