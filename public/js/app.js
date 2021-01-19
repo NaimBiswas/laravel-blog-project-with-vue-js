@@ -2474,6 +2474,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -46088,6 +46104,30 @@ var render = function() {
                       staticClass: "col-sm-2 col-form-label",
                       attrs: { for: "catname" }
                     },
+                    [_vm._v("Post Categroy:")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-10" },
+                    [
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("has-error", {
+                        attrs: { form: _vm.form, field: "images" }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-2 col-form-label",
+                      attrs: { for: "catname" }
+                    },
                     [_vm._v("Post Description:")]
                   ),
                   _vm._v(" "),
@@ -46146,7 +46186,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(4)
             ]
           )
         ])
@@ -46207,6 +46247,22 @@ var staticRenderFns = [
           [_vm._v("Choose File")]
         )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", { staticClass: "form-control" }, [
+      _c("option", [_vm._v("option 1")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("option 2")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("option 3")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("option 4")]),
+      _vm._v(" "),
+      _c("option", [_vm._v("option 5")])
     ])
   },
   function() {
