@@ -27,10 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 Route::group(['middlewire' => 'auth'], function () {
 
-    Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);
-    Route::get('/editecategory/{id}', [CategoryController::class, 'update']);
     Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit'])->name('fatch-category');
     Route::post('/update-category/{slug}', [CategoryController::class, 'update'])->name('update-category');
     #Tags
