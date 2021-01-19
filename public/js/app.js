@@ -46204,7 +46204,7 @@ var staticRenderFns = [
             staticClass: "custom-file-label",
             attrs: { for: "exampleInputFile" }
           },
-          [_vm._v("Chose File")]
+          [_vm._v("Choose File")]
         )
       ])
     ])
