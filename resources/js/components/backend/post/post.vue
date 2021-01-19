@@ -39,7 +39,7 @@
             <td>Name</td>
             <td>Status</td>
             <td>Action</td>
-            <td>Created At</td>
+            <td>Post Creator</td>
           </tr>
 
           <tr v-for="(post, index) in posts" :key="index">
@@ -78,7 +78,7 @@
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
-            <td>{{ post["created_at"] }}</td>
+            <td>{{ post["user"]['name'] }}</td>
           </tr>
           <tr>
             <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="6">

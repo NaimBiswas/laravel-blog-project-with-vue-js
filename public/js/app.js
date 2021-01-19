@@ -45830,7 +45830,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(post["created_at"]))])
+                _c("td", [_vm._v(_vm._s(post["user"]["name"]))])
               ])
             }),
             _vm._v(" "),
@@ -45881,7 +45881,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", [_vm._v("Action")]),
       _vm._v(" "),
-      _c("td", [_vm._v("Created At")])
+      _c("td", [_vm._v("Post Creator")])
     ])
   }
 ]
