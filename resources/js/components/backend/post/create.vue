@@ -75,9 +75,9 @@
                 >
                 <div class="col-sm-10">
                      <select class="form-control" id="category" >
-                          <option>Select A Category</option>
-                          <option v-for="(category, index) in posts" :key="index">
-                              {{ category['category']['name'] }}
+                          <option selected>Select A Category</option>
+                          <option >
+
                           </option>
                         </select>
                   <has-error :form="form" field="images"></has-error>

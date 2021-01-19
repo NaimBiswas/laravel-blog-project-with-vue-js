@@ -46118,27 +46118,7 @@ var render = function() {
                     "div",
                     { staticClass: "col-sm-10" },
                     [
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-control",
-                          attrs: { id: "category" }
-                        },
-                        [
-                          _c("option", [_vm._v("Select A Category")]),
-                          _vm._v(" "),
-                          _vm._l(_vm.posts, function(category, index) {
-                            return _c("option", { key: index }, [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(category["category"]["name"]) +
-                                  "\n                        "
-                              )
-                            ])
-                          })
-                        ],
-                        2
-                      ),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c("has-error", {
                         attrs: { form: _vm.form, field: "images" }
@@ -46213,7 +46193,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(4)
             ]
           )
         ])
@@ -46275,6 +46255,22 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      { staticClass: "form-control", attrs: { id: "category" } },
+      [
+        _c("option", { attrs: { selected: "" } }, [
+          _vm._v("Select A Category")
+        ]),
+        _vm._v(" "),
+        _c("option")
+      ]
+    )
   },
   function() {
     var _vm = this
