@@ -1,5 +1,5 @@
 import axios from "axios";
-import { get } from "jquery";
+
 
 
 export default {
@@ -20,6 +20,14 @@ export default {
         getTags(tag) {
             axios.get('/index-tag').then((response) => {
                 tag.commit('fetchTags', response.data.tags);
+            }).catch((error) => {
+                toastr.warning(error);
+            });
+        },
+        getPosts(posts) {
+            axios.get('/get-posts').then((response) => {
+                posts.commit('fetchPosts', response.data.posts);
+                console.log(response.data.posts);
             }).catch((error) => {
                 toastr.warning(error);
             });

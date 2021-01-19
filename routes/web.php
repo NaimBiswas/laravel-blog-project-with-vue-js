@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 Route::group(['middlewire' => 'auth'], function () {
 
-    Route::get('/get-post', [PostController::class, 'index'])->name('post');
+    Route::get('/get-posts', [PostController::class, 'index'])->name('post');
     Route::post('/savecategory', [CategoryController::class, 'store'])->name('savecategory');
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);

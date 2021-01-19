@@ -80,7 +80,7 @@
             </td>
             <td>{{ post["created_at"] }}</td>
           </tr>
-          <tr v-if="isShowing()">
+          <tr>
             <td class="text-center text-uppercase text-danger h4" colspan="6">
               No post Found!
             </td>
@@ -96,16 +96,19 @@ export default {
 data() {
     return {
 
-    }
+    };
 },
     mounted() {
-       this.$sote.dispatch('getPosts');
+       this.$store.dispatch("getPosts");
     },
     computed:{
         posts(){
          return this.$store.getters.AllPosts;
         },
-    }
+    },
+    isShowing(){
+
+    },
 };
 </script>
 
