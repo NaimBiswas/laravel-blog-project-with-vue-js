@@ -39,5 +39,6 @@ Route::group(['middlewire' => 'auth'], function () {
     #Posts
     Route::get('/get-posts', [PostController::class, 'index'])->name('post');
     Route::post('update-tag/{slug}', [TagController::class, 'update']);
+    Route::delete("/remove-post", [PostController::class, 'destroy']);
 });
 Route::get('/{anypath}', [DashboardController::class, 'index'])->where('path', '.*');
