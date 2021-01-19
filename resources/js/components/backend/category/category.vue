@@ -128,21 +128,6 @@ export default {
             );
           }
         });
-      axios
-        .delete("remove-category/" + id)
-        .then((response) => {
-          Toast.fire({
-            icon: "success",
-            title: "Category Deleted Success",
-          });
-          this.$store.dispatch("getCategories");
-        })
-        .catch((error) => {
-          Toast.fire({
-            icon: "warning",
-            title: error,
-          });
-        });
     },
 
     isShowing() {

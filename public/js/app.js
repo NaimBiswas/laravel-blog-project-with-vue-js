@@ -2118,19 +2118,6 @@ __webpack_require__.r(__webpack_exports__);
           swalWithBootstrapButtons.fire("Cancelled", "Thank You For Change Your decession :)", "error");
         }
       });
-      axios["delete"]("remove-category/" + id).then(function (response) {
-        Toast.fire({
-          icon: "success",
-          title: "Category Deleted Success"
-        });
-
-        _this.$store.dispatch("getCategories");
-      })["catch"](function (error) {
-        Toast.fire({
-          icon: "warning",
-          title: error
-        });
-      });
     },
     isShowing: function isShowing() {
       return this.categories.length < 1;
