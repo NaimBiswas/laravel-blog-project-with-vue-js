@@ -18,5 +18,5 @@ export const routes = [
     { path: "/update-tag/:slug", component: UpdateTag },
     {path: "/post", component: Post },
     {path: "/create-post", component: CreatePost },
-    {path: "/update-post/:slgu", component: UdatePost }
+    {path: "/update-post/:slug", component: UdatePost }
 ];
