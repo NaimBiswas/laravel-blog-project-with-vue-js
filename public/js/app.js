@@ -2474,8 +2474,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -46070,33 +46068,7 @@ var render = function() {
                     "div",
                     { staticClass: "col-sm-10" },
                     [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.images,
-                            expression: "form.images"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        class: { "is-invalid": _vm.form.errors.has("images") },
-                        attrs: {
-                          type: "text",
-                          id: "catname",
-                          placeholder: "Enter Your Category Name",
-                          name: "images"
-                        },
-                        domProps: { value: _vm.form.images },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "images", $event.target.value)
-                          }
-                        }
-                      }),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c("has-error", {
                         attrs: { form: _vm.form, field: "images" }
@@ -46171,7 +46143,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(3)
             ]
           )
         ])
@@ -46210,6 +46182,28 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title pt-2" }, [_vm._v("Enter Your Info")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group" }, [
+      _c("div", { staticClass: "custom-file" }, [
+        _c("input", {
+          staticClass: "custom-file-input",
+          attrs: { type: "file", id: "exampleInputFile" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "custom-file-label",
+            attrs: { for: "exampleInputFile" }
+          },
+          [_vm._v("Update")]
+        )
+      ])
     ])
   },
   function() {

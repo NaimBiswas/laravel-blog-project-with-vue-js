@@ -60,18 +60,16 @@
                   >Post Image:</label
                 >
                 <div class="col-sm-10">
-                  <input
-                    v-model="form.images"
-                    type="text"
-                    class="form-control"
-                    id="catname"
-                    placeholder="Enter Your Category Name"
-                    name="images"
-                    :class="{ 'is-invalid': form.errors.has('images') }"
-                  />
+                     <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Update</label>
+                      </div>
+                    </div>
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
+
                <div class="form-group row">
                 <label for="catname" class="col-sm-2 col-form-label"
                   >Post Description:</label
