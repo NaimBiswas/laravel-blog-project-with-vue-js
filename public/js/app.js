@@ -45803,7 +45803,7 @@ var render = function() {
                         { staticClass: "btn btn-outline-warning btn-lg" },
                         [
                           _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
-                          _vm._v("Deactive\n            ")
+                          _vm._v("Draft\n            ")
                         ]
                       )
                 ]),

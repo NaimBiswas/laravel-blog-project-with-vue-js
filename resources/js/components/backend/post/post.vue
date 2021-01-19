@@ -63,7 +63,7 @@
                 <i class="fas fa-eye mr-2"></i>Active
               </button>
               <button v-else class="btn btn-outline-warning btn-lg">
-                <i class="fas fa-eye-slash mr-2"></i>Deactive
+                <i class="fas fa-eye-slash mr-2"></i>Draft
               </button>
             </td>
             <td>
