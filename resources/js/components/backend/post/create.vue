@@ -74,12 +74,11 @@
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                     <select class="form-control" id="category">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
+                     <select class="form-control" id="category" >
+                          <option>Select A Category</option>
+                          <option v-for="(category, index) in posts" :key="index">
+                              {{ category['category']['name'] }}
+                          </option>
                         </select>
                   <has-error :form="form" field="images"></has-error>
                 </div>
@@ -149,6 +148,14 @@ export default {
       }),
     };
   },
+    mounted() {
+       this.$store.dispatch("getPosts");
+    },
+    computed:{
+        posts(){
+         return this.$store.getters.AllPosts;
+        },
+    },
   methods: {
     active() {
       this.form.status = true;
