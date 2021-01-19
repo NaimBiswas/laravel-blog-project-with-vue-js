@@ -36,7 +36,8 @@
               </div>
             </td>
             <td>ID.</td>
-            <td>Name</td>
+            <td>Title</td>
+            <td>Category</td>
             <td>Status</td>
             <td>Action</td>
             <td>Post Creator</td>
@@ -53,6 +54,7 @@
             </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ post["title"] }}</td>
+            <td class="h5">{{ post['category']['name'] }}</td>
             <td>
               <button
                 v-if="post['status'] == 1"
