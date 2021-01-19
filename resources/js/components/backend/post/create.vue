@@ -40,7 +40,7 @@
             <div class="card-body">
               <div class="form-group row">
                 <label for="catname" class="col-sm-2 col-form-label"
-                  >Category Name:</label
+                  >Post Title:</label
                 >
                 <div class="col-sm-10">
                   <input
@@ -53,6 +53,32 @@
                     :class="{ 'is-invalid': form.errors.has('name') }"
                   />
                   <has-error :form="form" field="name"></has-error>
+                </div>
+              </div>
+               <div class="form-group row">
+                <label for="catname" class="col-sm-2 col-form-label"
+                  >Post Image:</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    v-model="form.images"
+                    type="text"
+                    class="form-control"
+                    id="catname"
+                    placeholder="Enter Your Category Name"
+                    name="images"
+                    :class="{ 'is-invalid': form.errors.has('images') }"
+                  />
+                  <has-error :form="form" field="images"></has-error>
+                </div>
+              </div>
+               <div class="form-group row">
+                <label for="catname" class="col-sm-2 col-form-label"
+                  >Post Description:</label
+                >
+                <div class="col-sm-10">
+                  <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Enter Your Post Description"></textarea>
+                  <has-error :form="form" field="description"></has-error>
                 </div>
               </div>
               <div class="form-group row">
