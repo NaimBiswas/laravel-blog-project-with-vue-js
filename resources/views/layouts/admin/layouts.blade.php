@@ -151,6 +151,16 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
+                                <router-link to="/post"
+                                    class="nav-link">
+                                    <i class="nav-icon fas fa-clone"></i>
+                                    <p>
+                                        Posts
+
+                                    </p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
                                 <form action="{{ route('logout') }}"
                                     method="POST">
                                     @csrf
