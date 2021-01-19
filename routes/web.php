@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 Route::group(['middlewire' => 'auth'], function () {
-
+    #Categoires
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);
     Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit'])->name('fatch-category');
