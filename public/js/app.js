@@ -2470,8 +2470,8 @@ __webpack_require__.r(__webpack_exports__);
     this.$sote.dispatch('getPosts');
   },
   computed: {
-    post: function post() {
-      return $this.getters.AllPosts;
+    posts: function posts() {
+      return this.$store.getters.AllPosts;
     }
   }
 });
@@ -3129,16 +3129,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var laravel_mix__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! laravel-mix */ "./node_modules/laravel-mix/src/index.js");
-/* harmony import */ var laravel_mix__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(laravel_mix__WEBPACK_IMPORTED_MODULE_2__);
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
     categoires: [],
     tags: [],
-    poss: []
+    posts: []
   },
   actions: {
     getCategories: function getCategories(data) {
@@ -3149,13 +3146,6 @@ __webpack_require__.r(__webpack_exports__);
     getTags: function getTags(tag) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/index-tag').then(function (response) {
         tag.commit('fetchTags', response.data.tags);
-      })["catch"](function (error) {
-        toastr.warning(error);
-      });
-    },
-    getPosts: function getPosts(posts) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/get-posts').then(function (response) {
-        posts.commit('fetchPosts', response.data.posts);
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -3180,7 +3170,7 @@ __webpack_require__.r(__webpack_exports__);
       return state.tags;
     },
     AllPosts: function AllPosts(state) {
-      return state.tag;
+      return state.posts;
     }
   }
 });
@@ -18665,110 +18655,6 @@ if ( typeof noGlobal === "undefined" ) {
 
 return jQuery;
 } );
-
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/src/Mix.js":
-/*!*********************************************!*\
-  !*** ./node_modules/laravel-mix/src/Mix.js ***!
-  \*********************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected token (18:20)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| class Mix {\n|     /** @type {Mix|null} */\n>     static _primary = null;\n| \n|     /**");
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/src/helpers.js":
-/*!*************************************************!*\
-  !*** ./node_modules/laravel-mix/src/helpers.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-let objectValues = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js").values;
-
-/**
- * Generic tap function.
- *
- * @param {*}    val
- * @param {Function} callback
- */
-__webpack_require__.g.tap = function(val, callback) {
-    callback(val);
-
-    return val;
-};
-
-/**
- * Add tap to arrays.
- *
- * @param {*}    val
- * @param {Function} callback
- */
-Object.defineProperty(Array.prototype, 'tap', {
-    value: function(callback) {
-        if (this.length) {
-            callback(this);
-        }
-
-        return this;
-    }
-});
-
-/**
- * Add wrap to arrays.
- *
- * @param {*}    val
- * @param {Function} callback
- */
-Object.defineProperty(Array, 'wrap', {
-    value(value) {
-        if (Array.isArray(value)) {
-            return value;
-        }
-
-        return [value];
-    }
-});
-
-/**
- * Flatten the given array.
- *
- * @param {Array} arr
- */
-__webpack_require__.g.flatten = function(arr) {
-    return [].concat.apply([], objectValues(arr));
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/src/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/laravel-mix/src/index.js ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-const Mix = __webpack_require__(/*! ./Mix */ "./node_modules/laravel-mix/src/Mix.js");
-
-__webpack_require__(/*! ./helpers */ "./node_modules/laravel-mix/src/helpers.js");
-
-/*
- |--------------------------------------------------------------------------
- | Welcome to Laravel Mix!
- |--------------------------------------------------------------------------
- |
- | Laravel Mix provides a clean, fluent API for defining basic webpack
- | build steps for your Laravel application. Mix supports a variety
- | of common CSS and JavaScript pre-processors out of the box.
- |
- */
-
-let mix = Mix.primary;
-
-mix.boot();
-
-module.exports = mix.api;
 
 
 /***/ }),

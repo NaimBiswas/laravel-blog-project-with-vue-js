@@ -102,9 +102,9 @@ data() {
        this.$sote.dispatch('getPosts');
     },
     computed:{
-        post(){
-            return $this.getters.AllPosts;
-        }
+        posts(){
+         return this.$store.getters.AllPosts;
+        },
     }
 };
 </script>

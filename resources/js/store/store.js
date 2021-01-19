@@ -1,12 +1,12 @@
 import axios from "axios";
 import { get } from "jquery";
-import { postCss } from "laravel-mix";
+
 
 export default {
      state: {
         categoires: [],
         tags: [],
-         poss: [],
+        posts: [],
     },
     actions: {
         getCategories(data) {
@@ -24,13 +24,7 @@ export default {
                 toastr.warning(error);
             });
         },
-        getPosts(posts) {
-            axios.get('/get-posts').then((response) => {
-                posts.commit('fetchPosts', response.data.posts);
-            }).catch((error) => {
-                toastr.warning(error);
-            });
-        }
+
     },
     mutations: {
         fatchCategoires(state, data) {
@@ -52,7 +46,7 @@ export default {
             return state.tags;
         },
         AllPosts(state) {
-            return state.tag;
+            return state.posts;
         }
     },
 };
