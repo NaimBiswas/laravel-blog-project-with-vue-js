@@ -39,7 +39,7 @@
             <td>Title</td>
             <td>Category</td>
             <td>Status</td>
-            <td>Action</td>
+            <td style="width:148px;">Action</td>
             <td>Post Creator</td>
           </tr>
 
@@ -75,7 +75,7 @@
               </router-link>
               <button
                 @click="removepost(post['slug'])"
-                class="btn btn-outline-danger btn-lg mr-2"
+                class="btn btn-outline-danger btn-lg mr-2 mt-2"
               >
                 <i class="fas fa-trash-alt"></i>
               </button>

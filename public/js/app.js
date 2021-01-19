@@ -45823,7 +45823,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-outline-danger btn-lg mr-2",
+                        staticClass: "btn btn-outline-danger btn-lg mr-2 mt-2",
                         on: {
                           click: function($event) {
                             return _vm.removepost(post["slug"])
@@ -45887,7 +45887,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", [_vm._v("Status")]),
       _vm._v(" "),
-      _c("td", [_vm._v("Action")]),
+      _c("td", { staticStyle: { width: "148px" } }, [_vm._v("Action")]),
       _vm._v(" "),
       _c("td", [_vm._v("Post Creator")])
     ])
