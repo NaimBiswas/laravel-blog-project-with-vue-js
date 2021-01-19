@@ -45846,7 +45846,7 @@ var render = function() {
                     "td",
                     {
                       staticClass: "text-center text-uppercase text-danger h4",
-                      attrs: { colspan: "6" }
+                      attrs: { colspan: "7" }
                     },
                     [_vm._v("\n            No post Found!\n          ")]
                   )

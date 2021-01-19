@@ -83,7 +83,7 @@
             <td>{{ post["user"]['name'] }}</td>
           </tr>
           <tr>
-            <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="6">
+            <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="7">
               No post Found!
             </td>
           </tr>
