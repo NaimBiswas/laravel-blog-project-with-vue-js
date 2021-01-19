@@ -46028,7 +46028,7 @@ var render = function() {
                     "label",
                     {
                       staticClass: "col-sm-2 col-form-label",
-                      attrs: { for: "catname" }
+                      attrs: { for: "title" }
                     },
                     [_vm._v("Post Title:")]
                   ),
@@ -46050,7 +46050,7 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
-                          id: "catname",
+                          id: "title",
                           placeholder: "Enter Your Posst Title",
                           name: "title"
                         },
@@ -46078,7 +46078,7 @@ var render = function() {
                     "label",
                     {
                       staticClass: "col-sm-2 col-form-label",
-                      attrs: { for: "catname" }
+                      attrs: { for: "images" }
                     },
                     [_vm._v("Post Image:")]
                   ),
@@ -46102,7 +46102,7 @@ var render = function() {
                     "label",
                     {
                       staticClass: "col-sm-2 col-form-label",
-                      attrs: { for: "catname" }
+                      attrs: { for: "category" }
                     },
                     [_vm._v("Post Categroy:")]
                   ),
@@ -46126,7 +46126,7 @@ var render = function() {
                     "label",
                     {
                       staticClass: "col-sm-2 col-form-label",
-                      attrs: { for: "catname" }
+                      attrs: { for: "description" }
                     },
                     [_vm._v("Post Description:")]
                   ),
@@ -46139,7 +46139,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           name: "description",
-                          id: "",
+                          id: "description",
                           cols: "30",
                           rows: "10",
                           placeholder: "Enter Your Post Description"
@@ -46235,7 +46235,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "custom-file" }, [
         _c("input", {
           staticClass: "custom-file-input",
-          attrs: { type: "file", id: "exampleInputFile" }
+          attrs: { type: "file", id: "images" }
         }),
         _vm._v(" "),
         _c(
@@ -46253,17 +46253,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("select", { staticClass: "form-control" }, [
-      _c("option", [_vm._v("option 1")]),
-      _vm._v(" "),
-      _c("option", [_vm._v("option 2")]),
-      _vm._v(" "),
-      _c("option", [_vm._v("option 3")]),
-      _vm._v(" "),
-      _c("option", [_vm._v("option 4")]),
-      _vm._v(" "),
-      _c("option", [_vm._v("option 5")])
-    ])
+    return _c(
+      "select",
+      { staticClass: "form-control", attrs: { id: "category" } },
+      [
+        _c("option", [_vm._v("option 1")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("option 2")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("option 3")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("option 4")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("option 5")])
+      ]
+    )
   },
   function() {
     var _vm = this

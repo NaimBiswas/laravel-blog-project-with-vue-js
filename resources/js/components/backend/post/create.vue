@@ -39,7 +39,7 @@
           <form @submit.prevent="addPost" class="form-horizontal">
             <div class="card-body">
               <div class="form-group row">
-                <label for="catname" class="col-sm-2 col-form-label"
+                <label for="title" class="col-sm-2 col-form-label"
                   >Post Title:</label
                 >
                 <div class="col-sm-10">
@@ -47,7 +47,7 @@
                     v-model="form.name"
                     type="text"
                     class="form-control"
-                    id="catname"
+                    id="title"
                     placeholder="Enter Your Posst Title"
                     name="title"
                     :class="{ 'is-invalid': form.errors.has('title') }"
@@ -56,13 +56,13 @@
                 </div>
               </div>
                <div class="form-group row">
-                <label for="catname" class="col-sm-2 col-form-label"
+                <label for="images" class="col-sm-2 col-form-label"
                   >Post Image:</label
                 >
                 <div class="col-sm-10">
                      <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="images">
                         <label class="custom-file-label" for="exampleInputFile">Choose File</label>
                       </div>
                     </div>
@@ -70,11 +70,11 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="catname" class="col-sm-2 col-form-label"
+                <label for="category" class="col-sm-2 col-form-label"
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                     <select class="form-control">
+                     <select class="form-control" id="category">
                           <option>option 1</option>
                           <option>option 2</option>
                           <option>option 3</option>
@@ -87,11 +87,11 @@
 
 
                <div class="form-group row">
-                <label for="catname" class="col-sm-2 col-form-label"
+                <label for="description" class="col-sm-2 col-form-label"
                   >Post Description:</label
                 >
                 <div class="col-sm-10">
-                  <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Enter Your Post Description"></textarea>
+                  <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="Enter Your Post Description"></textarea>
                   <has-error :form="form" field="description"></has-error>
                 </div>
               </div>
