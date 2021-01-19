@@ -24,9 +24,9 @@ export default {
                 toastr.warning(error);
             });
         },
-        getPosts() {
+        getPosts(posts) {
             axios.get('/get-posts').then((response) => {
-                postCss.commit('fetchPosts', response.data.posts);
+                posts.commit('fetchPosts', response.data.posts);
             }).catch((error) => {
                 toastr.warning(error);
             });
@@ -38,6 +38,9 @@ export default {
         },
         fetchTags(state,tag){
             return state.tags = tag;
+        },
+        fetchPosts(state, posts) {
+            return state.posts = posts;
         }
     },
 

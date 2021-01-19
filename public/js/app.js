@@ -3153,9 +3153,9 @@ __webpack_require__.r(__webpack_exports__);
         toastr.warning(error);
       });
     },
-    getPosts: function getPosts() {
+    getPosts: function getPosts(posts) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/get-posts').then(function (response) {
-        laravel_mix__WEBPACK_IMPORTED_MODULE_2__.postCss.commit('fetchPosts', response.data.posts);
+        posts.commit('fetchPosts', response.data.posts);
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -3167,6 +3167,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     fetchTags: function fetchTags(state, tag) {
       return state.tags = tag;
+    },
+    fetchPosts: function fetchPosts(state, posts) {
+      return state.posts = posts;
     }
   },
   getters: {
