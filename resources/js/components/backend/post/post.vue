@@ -21,7 +21,7 @@
       <div class="card-header flex card-tools">
         <h5 class="text-uppercase" style="display: inline">Posts</h5>
         <router-link
-          to="/create-tag"
+          to="/create-post"
           class="text-uppercase btn btn-outline-danger btn-md float-right text-white"
           >Add New Post</router-link
         >
@@ -42,20 +42,20 @@
             <td>Created At</td>
           </tr>
 
-          <!-- <tr v-for="(tag, index) in tags" :key="index">
+          <tr v-for="(post, index) in posts" :key="index">
             <td class="">
               <input
                 type="checkbox"
-                :value="tag.id"
-                v-model="TagIDS"
+                :value="post.id"
+                v-model="postIDS"
                 id="checkboxSuccess1"
               />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ tag["name"] }}</td>
+            <td class="h5">{{ post["name"] }}</td>
             <td>
               <button
-                v-if="tag['status'] == 1"
+                v-if="post['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
                 <i class="fas fa-eye mr-2"></i>Active
@@ -66,23 +66,23 @@
             </td>
             <td>
               <router-link
-                :to="`/update-tag/${tag.slug}`"
+                :to="`/update-post/${post.slug}`"
                 class="btn btn-outline-warning btn-lg mr-2"
               >
                 <i class="fas fa-pen"></i>
               </router-link>
               <button
-                @click="removeTag(tag['slug'])"
+                @click="removepost(post['slug'])"
                 class="btn btn-outline-danger btn-lg mr-2"
               >
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
-            <td>{{ tag["created_at"] }}</td>
-          </tr> -->
+            <td>{{ post["created_at"] }}</td>
+          </tr>
           <tr v-if="isShowing()">
             <td class="text-center text-uppercase text-danger h4" colspan="6">
-              No Tag Found!
+              No post Found!
             </td>
           </tr>
         </table>

@@ -45708,7 +45708,7 @@ var render = function() {
             {
               staticClass:
                 "text-uppercase btn btn-outline-danger btn-md float-right text-white",
-              attrs: { to: "/create-tag" }
+              attrs: { to: "/create-post" }
             },
             [_vm._v("Add New Post")]
           )
@@ -45723,6 +45723,105 @@ var render = function() {
           [
             _vm._m(1),
             _vm._v(" "),
+            _vm._l(_vm.posts, function(post, index) {
+              return _c("tr", { key: index }, [
+                _c("td", {}, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.postIDS,
+                        expression: "postIDS"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkboxSuccess1" },
+                    domProps: {
+                      value: post.id,
+                      checked: Array.isArray(_vm.postIDS)
+                        ? _vm._i(_vm.postIDS, post.id) > -1
+                        : _vm.postIDS
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.postIDS,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = post.id,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.postIDS = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.postIDS = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.postIDS = $$c
+                        }
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", { staticClass: "h5" }, [_vm._v(_vm._s(post["name"]))]),
+                _vm._v(" "),
+                _c("td", [
+                  post["status"] == 1
+                    ? _c(
+                        "button",
+                        { staticClass: "btn btn-outline-success btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye mr-2" }),
+                          _vm._v("Active\n            ")
+                        ]
+                      )
+                    : _c(
+                        "button",
+                        { staticClass: "btn btn-outline-warning btn-lg" },
+                        [
+                          _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
+                          _vm._v("Deactive\n            ")
+                        ]
+                      )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-outline-warning btn-lg mr-2",
+                        attrs: { to: "/update-post/" + post.slug }
+                      },
+                      [_c("i", { staticClass: "fas fa-pen" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-danger btn-lg mr-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.removepost(post["slug"])
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fas fa-trash-alt" })]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(post["created_at"]))])
+              ])
+            }),
+            _vm._v(" "),
             _vm.isShowing()
               ? _c("tr", [
                   _c(
@@ -45731,11 +45830,12 @@ var render = function() {
                       staticClass: "text-center text-uppercase text-danger h4",
                       attrs: { colspan: "6" }
                     },
-                    [_vm._v("\n            No Tag Found!\n          ")]
+                    [_vm._v("\n            No post Found!\n          ")]
                   )
                 ])
               : _vm._e()
-          ]
+          ],
+          2
         )
       ])
     ])
