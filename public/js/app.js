@@ -2102,9 +2102,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     deleteAll: function deleteAll(select) {
-      axios["delete"]('/delete-caregories' + {
-        ids: select
-      }).then(function (response) {})["catch"](function (error) {
+      axios.post('/delete-categories', {
+        data: select
+      }).then(function (response) {
+        console.log(response.data);
+      })["catch"](function (error) {
         toastr.warning(error);
       });
     },

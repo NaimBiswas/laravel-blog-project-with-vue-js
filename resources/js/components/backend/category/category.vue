@@ -104,8 +104,8 @@ export default {
   },
   methods: {
       deleteAll(select){
-        axios.delete('/delete-caregories' + {ids: select}).then((response) =>{
-
+        axios.post('/delete-categories', { data: select }).then((response) =>{
+            console.log(response.data);
         }).catch((error) =>{
             toastr.warning(error)
         });
