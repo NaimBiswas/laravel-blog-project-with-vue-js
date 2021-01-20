@@ -123,4 +123,12 @@ class CategoryController extends Controller
             $categories->save();
         }
     }
+    public function deactiveCategories(Request $request)
+    {
+        foreach ($request->data as $row) {
+            $categories = Category::find($row);
+            $categories->status = false;
+            $categories->save();
+        }
+    }
 }
