@@ -2133,12 +2133,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    activeOne: function activeOne(id) {
+    deactiveOne: function deactiveOne(id) {
       var _this = this;
 
-      axios.post("/active-category", {
-        data: id
-      }).then(function (response) {
+      axios.post("/active-category/" + id).then(function (response) {
         toastr.success("Categoires Deactive success");
 
         _this.$store.dispatch("getCategories");
@@ -2146,11 +2144,11 @@ __webpack_require__.r(__webpack_exports__);
         toastr.warning(error);
       });
     },
-    deActiveAll: function deActiveAll(select) {
+    activeOne: function activeOne(id) {
       var _this2 = this;
 
-      axios.post("/deactive-categories", {
-        data: select
+      axios.post("/active-category", {
+        data: id
       }).then(function (response) {
         toastr.success("Categoires Deactive success");
 
@@ -2159,45 +2157,58 @@ __webpack_require__.r(__webpack_exports__);
         toastr.warning(error);
       });
     },
-    activeAll: function activeAll(select) {
+    deActiveAll: function deActiveAll(select) {
       var _this3 = this;
 
-      axios.post("/active-categories", {
+      axios.post("/deactive-categories", {
         data: select
       }).then(function (response) {
-        toastr.success("Categoires active success");
+        toastr.success("Categoires Deactive success");
 
         _this3.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
-    deleteAll: function deleteAll(select) {
+    activeAll: function activeAll(select) {
       var _this4 = this;
 
-      axios.post("/delete-categories", {
+      axios.post("/active-categories", {
         data: select
       }).then(function (response) {
-        toastr.info("Categories Deleted Success");
+        toastr.success("Categoires active success");
 
         _this4.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
-    selectTotall: function selectTotall(event) {
+    deleteAll: function deleteAll(select) {
       var _this5 = this;
+
+      axios.post("/delete-categories", {
+        data: select
+      }).then(function (response) {
+        toastr.info("Categories Deleted Success");
+
+        _this5.$store.dispatch("getCategories");
+      })["catch"](function (error) {
+        toastr.warning(error);
+      });
+    },
+    selectTotall: function selectTotall(event) {
+      var _this6 = this;
 
       if (event.target.checked == false) {
         this.select = [];
       } else {
         this.categories.forEach(function (category) {
-          _this5.select.push(category.id);
+          _this6.select.push(category.id);
         });
       }
     },
     removeCategory: function removeCategory(id) {
-      var _this6 = this;
+      var _this7 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2214,7 +2225,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this6.$store.dispatch("getCategories");
+          _this7.$store.dispatch("getCategories");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -45766,7 +45777,14 @@ var render = function() {
                       )
                     : _c(
                         "button",
-                        { staticClass: "btn btn-outline-warning btn-lg" },
+                        {
+                          staticClass: "btn btn-outline-warning btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.deactiveOne(category.id)
+                            }
+                          }
+                        },
                         [
                           _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
                           _vm._v("Deactive\n            ")

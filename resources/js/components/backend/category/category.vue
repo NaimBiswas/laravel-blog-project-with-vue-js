@@ -66,7 +66,7 @@
               >
                 <i class="fas fa-eye mr-2"></i>Active
               </button>
-              <button v-else class="btn btn-outline-warning btn-lg">
+              <button @click="deactiveOne(category.id)" v-else class="btn btn-outline-warning btn-lg">
                 <i class="fas fa-eye-slash mr-2"></i>Deactive
               </button>
             </td>
@@ -135,6 +135,17 @@ export default {
     };
   },
   methods: {
+      deactiveOne(id){
+           axios
+        .post("/active-category/" + id)
+        .then((response) => {
+          toastr.success("Categoires Deactive success");
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          toastr.warning(error);
+        });
+      },
     activeOne(id) {
       axios
         .post("/active-category", { data: id })
