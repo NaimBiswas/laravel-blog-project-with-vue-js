@@ -87,6 +87,12 @@
           </tr>
           <tr v-if="isSelected">
             <td class="text-left text-uppercase text-danger h4" colspan="6">
+
+            <!-- Active Button  -->
+             <button @click="ActiveAllSelectedTag(TagIDS)" class="btn btn-outline-success btn-lg"> <i class="fas fa-eye    "></i></button>
+             <!-- Deactive Button  -->
+             <button @click="DeactiveAllSelectedTag(TagIDS)" class="btn btn-outline-warning btn-lg"> <i class="fas fa-eye-slash    "></i></button>
+             <!-- Delete Button  -->
              <button @click="DeleteAllSelectedTags(TagIDS)" class="btn btn-outline-danger btn-lg"> <i class="fas fa-trash    "></i></button>
             </td>
           </tr>

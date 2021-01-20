@@ -3064,6 +3064,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -47315,6 +47321,32 @@ var render = function() {
                       attrs: { colspan: "6" }
                     },
                     [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-success btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.ActiveAllSelectedTag(_vm.TagIDS)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-eye    " })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-warning btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.DeactiveAllSelectedTag(_vm.TagIDS)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-eye-slash    " })]
+                      ),
+                      _vm._v(" "),
                       _c(
                         "button",
                         {
