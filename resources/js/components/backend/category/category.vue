@@ -84,7 +84,7 @@
             <td class="text-left text-uppercase text-danger h4" colspan="6">
               <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
 
-              <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash"></i></button>
+              <button @click="deActiveAll(select)" :disabled="!isSelected"  class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash"></i></button>
 
               <button @click="deleteAll(select)"  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
             </td>
@@ -106,6 +106,14 @@ export default {
     }
   },
   methods: {
+      deActiveAll(select){
+        axios.post('/deactive-categories', {data: select}).then((response) =>{
+              toastr.success('Categoires active success');
+              this.$store.dispatch('getCategories');
+          }).catch((error) =>{
+             toastr.warning(error);
+          });
+      },
       activeAll(select){
           axios.post('/active-categories', {data: select}).then((response) =>{
               toastr.success('Categoires active success');
