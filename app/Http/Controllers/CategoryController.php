@@ -115,4 +115,7 @@ class CategoryController extends Controller
             Category::find($row)->delete();
         }
     }
+    public function activeCategories(Request $request)
+    {
+    }
 }
