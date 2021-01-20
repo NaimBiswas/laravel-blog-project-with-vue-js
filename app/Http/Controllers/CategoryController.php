@@ -135,13 +135,13 @@ class CategoryController extends Controller
     {
         $id = $request->data;
         $category = Category::find($id);
-        $category->status = false;
+        $category->status = true;
         $category->save();
     }
     public function deactiveCategory($id)
     {
         $category = Category::find($id);
-        $category->status = true;
+        $category->status = false;
         $category->save();
     }
 }

@@ -2150,7 +2150,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/active-category", {
         data: id
       }).then(function (response) {
-        toastr.success("Categoires Deactive success");
+        toastr.success("Categoires Active success");
 
         _this2.$store.dispatch("getCategories");
       })["catch"](function (error) {
@@ -45766,7 +45766,7 @@ var render = function() {
                           staticClass: "btn btn-outline-success btn-lg",
                           on: {
                             click: function($event) {
-                              return _vm.activeOne(category["id"])
+                              return _vm.deactiveOne(category["id"])
                             }
                           }
                         },
@@ -45781,7 +45781,7 @@ var render = function() {
                           staticClass: "btn btn-outline-warning btn-lg",
                           on: {
                             click: function($event) {
-                              return _vm.deactiveOne(category.id)
+                              return _vm.activeOne(category.id)
                             }
                           }
                         },

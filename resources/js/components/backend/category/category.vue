@@ -60,13 +60,13 @@
             <td class="h5">{{ category["name"] }}</td>
             <td>
               <button
-                @click="activeOne(category['id'])"
+                @click="deactiveOne(category['id'])"
                 v-if="category['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
                 <i class="fas fa-eye mr-2"></i>Active
               </button>
-              <button @click="deactiveOne(category.id)" v-else class="btn btn-outline-warning btn-lg">
+              <button @click="activeOne(category.id)" v-else class="btn btn-outline-warning btn-lg">
                 <i class="fas fa-eye-slash mr-2"></i>Deactive
               </button>
             </td>
@@ -150,7 +150,7 @@ export default {
       axios
         .post("/active-category", { data: id })
         .then((response) => {
-          toastr.success("Categoires Deactive success");
+          toastr.success("Categoires Active success");
           this.$store.dispatch("getCategories");
         })
         .catch((error) => {
