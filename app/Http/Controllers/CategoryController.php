@@ -138,4 +138,10 @@ class CategoryController extends Controller
         $category->status = false;
         $category->save();
     }
+    public function deactiveCategory($id)
+    {
+        $category = Category::find($id);
+        $category->status = true;
+        $category->save();
+    }
 }

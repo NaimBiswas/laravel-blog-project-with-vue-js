@@ -137,7 +137,7 @@ export default {
   methods: {
       deactiveOne(id){
            axios
-        .post("/active-category/" + id)
+        .post("/deactive-category/" + id)
         .then((response) => {
           toastr.success("Categoires Deactive success");
           this.$store.dispatch("getCategories");

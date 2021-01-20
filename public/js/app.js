@@ -2136,7 +2136,7 @@ __webpack_require__.r(__webpack_exports__);
     deactiveOne: function deactiveOne(id) {
       var _this = this;
 
-      axios.post("/active-category/" + id).then(function (response) {
+      axios.post("/deactive-category/" + id).then(function (response) {
         toastr.success("Categoires Deactive success");
 
         _this.$store.dispatch("getCategories");
