@@ -96,8 +96,14 @@ export default {
     }
   },
   methods: {
-      selectTotall(){
-
+      selectTotall(event){
+          if(event.target.checked == false){
+              this.select = [];
+          }else{
+              this.categories.forEach(category => {
+                  this.select.push(category.id);
+              });
+          }
       },
     removeCategory(id) {
       swalWithBootstrapButtons

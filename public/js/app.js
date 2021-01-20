@@ -2094,9 +2094,19 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    selectTotall: function selectTotall() {},
-    removeCategory: function removeCategory(id) {
+    selectTotall: function selectTotall(event) {
       var _this = this;
+
+      if (event.target.checked == false) {
+        this.select = [];
+      } else {
+        this.categories.forEach(function (category) {
+          _this.select.push(category.id);
+        });
+      }
+    },
+    removeCategory: function removeCategory(id) {
+      var _this2 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2113,7 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this.$store.dispatch("getCategories");
+          _this2.$store.dispatch("getCategories");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
