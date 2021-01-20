@@ -2085,11 +2085,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
     return {
       select: [],
+      isSelected: false,
       selectAll: false
     };
   },
@@ -2146,6 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     select: function select(_select) {
+      this.isSelected = _select.length > 0;
       this.selectAll = _select.length == this.categories.length;
     }
   },
@@ -45713,12 +45721,41 @@ var render = function() {
                     "td",
                     {
                       staticClass: "text-center text-uppercase text-danger h4",
-                      attrs: { colspan: "5" }
+                      attrs: { colspan: "6" }
                     },
                     [_vm._v("\n            No category Found!\n          ")]
                   )
                 ])
-              : _vm._e()
+              : _vm._e(),
+            _vm._v(" "),
+            _c("tr", [
+              _c(
+                "td",
+                {
+                  staticClass: "text-left text-uppercase text-danger h4",
+                  attrs: { colspan: "6" }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-outline-success btn-lg",
+                      attrs: { disabled: !_vm.isSelected }
+                    },
+                    [_c("i", { staticClass: "fas fa-eye    " })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-outline-danger btn-lg",
+                      attrs: { disabled: !_vm.isSelected }
+                    },
+                    [_c("i", { staticClass: "fas fa-trash    " })]
+                  )
+                ]
+              )
+            ])
           ],
           2
         )

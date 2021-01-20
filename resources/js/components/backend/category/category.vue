@@ -76,8 +76,14 @@
             <td>{{ category["created_at"] }}</td>
           </tr>
           <tr v-if="isShowing()">
-            <td class="text-center text-uppercase text-danger h4" colspan="5">
+            <td class="text-center text-uppercase text-danger h4" colspan="6">
               No category Found!
+            </td>
+          </tr>
+          <tr >
+            <td class="text-left text-uppercase text-danger h4" colspan="6">
+              <button :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
+              <button  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
             </td>
           </tr>
         </table>
@@ -92,6 +98,7 @@ export default {
   data() {
       return {
           select:[],
+          isSelected:false,
           selectAll:false,
     }
   },
@@ -105,6 +112,7 @@ export default {
               });
           }
       },
+
     removeCategory(id) {
       swalWithBootstrapButtons
         .fire({
@@ -155,9 +163,11 @@ export default {
     },
     watch:{
           select(select){
+              this.isSelected = select.length > 0;
               this.selectAll = ((select.length) == (this.categories.length));
 
-          }
+          },
+
     },
 
   computed: {
