@@ -3059,11 +3059,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       TagIDS: [],
-      AllTagIds: false
+      AllTagIds: false,
+      isSelected: false
     };
   },
   mounted: function mounted() {
@@ -3076,6 +3082,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     TagIDS: function TagIDS(_TagIDS) {
+      this.isSelected = _TagIDS.length > 0;
       this.AllTagIds = _TagIDS.length == this.SelectAllTag.length;
     }
   },
@@ -47284,7 +47291,9 @@ var render = function() {
                     [_vm._v("\n            No Tag Found!\n          ")]
                   )
                 ])
-              : _vm._e()
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.isSelected ? _c("tr", [_vm._m(1)]) : _vm._e()
           ],
           2
         )
@@ -47298,6 +47307,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Tags")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticClass: "text-left text-uppercase text-danger h4",
+        attrs: { colspan: "6" }
+      },
+      [
+        _c("button", { staticClass: "btn btn-outline-danger btn-lg" }, [
+          _c("i", { staticClass: "fas fa-trash    " })
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true

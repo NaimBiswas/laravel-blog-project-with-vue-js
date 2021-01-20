@@ -85,6 +85,11 @@
               No Tag Found!
             </td>
           </tr>
+          <tr v-if="isSelected">
+            <td class="text-left text-uppercase text-danger h4" colspan="6">
+             <button  class="btn btn-outline-danger btn-lg"> <i class="fas fa-trash    "></i></button>
+            </td>
+          </tr>
         </table>
       </div>
     </div>
@@ -97,6 +102,7 @@ export default {
     return {
         TagIDS: [],
         AllTagIds:false,
+        isSelected:false,
     };
   },
   mounted() {
@@ -109,6 +115,7 @@ export default {
   },
   watch:{
       TagIDS(TagIDS){
+          this.isSelected = TagIDS.length >0;
           this.AllTagIds  = (TagIDS.length == this.SelectAllTag.length);
       }
   },
