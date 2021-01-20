@@ -3087,6 +3087,15 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    DeleteAllSelectedTags: function DeleteAllSelectedTags(TagIDS) {
+      axios.post("/delete-tags", {
+        data: TagIDS
+      }).then(function (response) {
+        toastr.success('Tags Deleted Success');
+      })["catch"](function (error) {
+        toastr.warning(error);
+      });
+    },
     SelectAllTag: function SelectAllTag(event) {
       var _this = this;
 
@@ -47293,7 +47302,31 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.isSelected ? _c("tr", [_vm._m(1)]) : _vm._e()
+            _vm.isSelected
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    {
+                      staticClass: "text-left text-uppercase text-danger h4",
+                      attrs: { colspan: "6" }
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-danger btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.DeleteAllSelectedTags(_vm.TagIDS)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-trash    " })]
+                      )
+                    ]
+                  )
+                ])
+              : _vm._e()
           ],
           2
         )
@@ -47307,23 +47340,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Tags")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticClass: "text-left text-uppercase text-danger h4",
-        attrs: { colspan: "6" }
-      },
-      [
-        _c("button", { staticClass: "btn btn-outline-danger btn-lg" }, [
-          _c("i", { staticClass: "fas fa-trash    " })
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true

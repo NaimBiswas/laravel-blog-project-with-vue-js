@@ -87,7 +87,7 @@
           </tr>
           <tr v-if="isSelected">
             <td class="text-left text-uppercase text-danger h4" colspan="6">
-             <button  class="btn btn-outline-danger btn-lg"> <i class="fas fa-trash    "></i></button>
+             <button @click="DeleteAllSelectedTags(TagIDS)" class="btn btn-outline-danger btn-lg"> <i class="fas fa-trash    "></i></button>
             </td>
           </tr>
         </table>
@@ -120,6 +120,13 @@ export default {
       }
   },
   methods: {
+      DeleteAllSelectedTags(TagIDS){
+          axios.post("/delete-tags",{data:TagIDS}).then((response) =>{
+             toastr.success('Tags Deleted Success');
+          }).catch((error) =>{
+              toastr.warning(error);
+          });
+      },
       SelectAllTag(event){
         if(event.target.checked == false){
             this.TagIDS = [];
