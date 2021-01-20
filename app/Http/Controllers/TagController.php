@@ -117,4 +117,10 @@ class TagController extends Controller
         $tag->status = false;
         $tag->save();
     }
+    public function deleteTags(Request $request)
+    {
+        foreach ($request->data as $row) {
+            Tag::find($row)->delete();
+        }
+    }
 }
