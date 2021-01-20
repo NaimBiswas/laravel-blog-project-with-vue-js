@@ -83,6 +83,9 @@
           <tr v-if="isSelected">
             <td class="text-left text-uppercase text-danger h4" colspan="6">
               <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
+
+              <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash"></i></button>
+
               <button @click="deleteAll(select)"  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
             </td>
           </tr>
