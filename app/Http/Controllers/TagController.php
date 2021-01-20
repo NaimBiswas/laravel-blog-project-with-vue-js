@@ -123,4 +123,20 @@ class TagController extends Controller
             Tag::find($row)->delete();
         }
     }
+    public function ActiveTags(Request $request)
+    {
+        foreach ($request->data as $row) {
+            $tags = Tag::find($row);
+            $tags->status = true;
+            $tags->save();
+        }
+    }
+    public function DeactiveTags(Request $request)
+    {
+        foreach ($request->data as $row) {
+            $tags = Tag::find($row);
+            $tags->status = false;
+            $tags->save();
+        }
+    }
 }
