@@ -2101,28 +2101,33 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    activeAll: function activeAll(select) {},
     deleteAll: function deleteAll(select) {
+      var _this = this;
+
       axios.post('/delete-categories', {
         data: select
       }).then(function (response) {
-        console.log(response.data);
+        toastr.info('Categories Deleted Success');
+
+        _this.$store.dispatch('getCategories');
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
     selectTotall: function selectTotall(event) {
-      var _this = this;
+      var _this2 = this;
 
       if (event.target.checked == false) {
         this.select = [];
       } else {
         this.categories.forEach(function (category) {
-          _this.select.push(category.id);
+          _this2.select.push(category.id);
         });
       }
     },
     removeCategory: function removeCategory(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2139,7 +2144,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this2.$store.dispatch("getCategories");
+          _this3.$store.dispatch("getCategories");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -45737,39 +45742,46 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _c("tr", [
-              _c(
-                "td",
-                {
-                  staticClass: "text-left text-uppercase text-danger h4",
-                  attrs: { colspan: "6" }
-                },
-                [
+            _vm.isSelected
+              ? _c("tr", [
                   _c(
-                    "button",
+                    "td",
                     {
-                      staticClass: "btn btn-outline-success btn-lg",
-                      attrs: { disabled: !_vm.isSelected }
+                      staticClass: "text-left text-uppercase text-danger h4",
+                      attrs: { colspan: "6" }
                     },
-                    [_c("i", { staticClass: "fas fa-eye    " })]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-outline-danger btn-lg",
-                      attrs: { disabled: !_vm.isSelected },
-                      on: {
-                        click: function($event) {
-                          return _vm.deleteAll(_vm.select)
-                        }
-                      }
-                    },
-                    [_c("i", { staticClass: "fas fa-trash    " })]
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-success btn-lg",
+                          attrs: { disabled: !_vm.isSelected },
+                          on: {
+                            click: function($event) {
+                              return _vm.activeAll(_vm.select)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-eye    " })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-danger btn-lg",
+                          attrs: { disabled: !_vm.isSelected },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteAll(_vm.select)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-trash    " })]
+                      )
+                    ]
                   )
-                ]
-              )
-            ])
+                ])
+              : _vm._e()
           ],
           2
         )

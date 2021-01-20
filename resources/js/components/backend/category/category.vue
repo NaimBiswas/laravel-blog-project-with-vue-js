@@ -80,9 +80,9 @@
               No category Found!
             </td>
           </tr>
-          <tr >
+          <tr v-if="isSelected">
             <td class="text-left text-uppercase text-danger h4" colspan="6">
-              <button :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
+              <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
               <button @click="deleteAll(select)"  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
             </td>
           </tr>
@@ -103,9 +103,13 @@ export default {
     }
   },
   methods: {
+      activeAll(select){
+
+      },
       deleteAll(select){
         axios.post('/delete-categories', { data: select }).then((response) =>{
-            console.log(response.data);
+            toastr.info('Categories Deleted Success');
+            this.$store.dispatch('getCategories');
         }).catch((error) =>{
             toastr.warning(error)
         });

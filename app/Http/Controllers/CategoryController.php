@@ -111,6 +111,8 @@ class CategoryController extends Controller
     }
     public function deleteCategories(Request $request)
     {
-        return $request;
+        foreach ($request->data as $row) {
+            Category::find($row)->delete();
+        }
     }
 }
