@@ -104,4 +104,17 @@ class TagController extends Controller
         $tag = Tag::where('slug', $slug)->first();
         return $tag->delete();
     }
+    public function activeTag($id)
+    {
+        $tag = Tag::find($id);
+        $tag->status = true;
+        $tag->save();
+    }
+
+    public function deactiveTag($id)
+    {
+        $tag = Tag::find($id);
+        $tag->status = false;
+        $tag->save();
+    }
 }
