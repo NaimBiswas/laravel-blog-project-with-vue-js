@@ -104,7 +104,12 @@ export default {
   },
   methods: {
       activeAll(select){
-
+          axios.post('/active-categories', {data: select}).then((response) =>{
+              toastr.success('Categoires active success');
+              this.$store.dispatch('getCategories');
+          }).catch((error) =>{
+             toastr.warning(error);
+          });
       },
       deleteAll(select){
         axios.post('/delete-categories', { data: select }).then((response) =>{

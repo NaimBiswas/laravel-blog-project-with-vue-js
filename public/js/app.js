@@ -2101,33 +2101,45 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    activeAll: function activeAll(select) {},
-    deleteAll: function deleteAll(select) {
+    activeAll: function activeAll(select) {
       var _this = this;
 
-      axios.post('/delete-categories', {
+      axios.post('/active-categories', {
         data: select
       }).then(function (response) {
-        toastr.info('Categories Deleted Success');
+        toastr.success('Categoires active success');
 
         _this.$store.dispatch('getCategories');
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
-    selectTotall: function selectTotall(event) {
+    deleteAll: function deleteAll(select) {
       var _this2 = this;
+
+      axios.post('/delete-categories', {
+        data: select
+      }).then(function (response) {
+        toastr.info('Categories Deleted Success');
+
+        _this2.$store.dispatch('getCategories');
+      })["catch"](function (error) {
+        toastr.warning(error);
+      });
+    },
+    selectTotall: function selectTotall(event) {
+      var _this3 = this;
 
       if (event.target.checked == false) {
         this.select = [];
       } else {
         this.categories.forEach(function (category) {
-          _this2.select.push(category.id);
+          _this3.select.push(category.id);
         });
       }
     },
     removeCategory: function removeCategory(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2144,7 +2156,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this3.$store.dispatch("getCategories");
+          _this4.$store.dispatch("getCategories");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
