@@ -31,7 +31,7 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input :disabled="isShowing()" @click="selectTotall" v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
+                <input  :disabled="isShowing()" @click="selectTotall" v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
 
               </div>
             </td>
@@ -95,9 +95,6 @@ export default {
           selectAll:false,
     }
   },
-  watch:{
-
-  },
   methods: {
       selectTotall(event){
           if(event.target.checked == false){
@@ -146,15 +143,29 @@ export default {
     isShowing() {
       return this.categories.length < 1;
     },
+    seletedCategoryLength(){
+      return this.select.length;
+    },
+    allCategoryLength(){
+        return this.categories.length;
+    }
   },
-  mounted() {
-    this.$store.dispatch("getCategories");
-  },
+    mounted() {
+        this.$store.dispatch("getCategories");
+    },
+    watch:{
+          select(select){
+              this.selectAll = ((select.length) == (this.categories.length));
+
+          }
+    },
+
   computed: {
     categories() {
       return this.$store.getters.allCategory;
     },
   },
+
 };
 </script>
 

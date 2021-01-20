@@ -2093,7 +2093,6 @@ __webpack_require__.r(__webpack_exports__);
       selectAll: false
     };
   },
-  watch: {},
   methods: {
     selectTotall: function selectTotall(event) {
       var _this = this;
@@ -2134,10 +2133,21 @@ __webpack_require__.r(__webpack_exports__);
     },
     isShowing: function isShowing() {
       return this.categories.length < 1;
+    },
+    seletedCategoryLength: function seletedCategoryLength() {
+      return this.select.length;
+    },
+    allCategoryLength: function allCategoryLength() {
+      return this.categories.length;
     }
   },
   mounted: function mounted() {
     this.$store.dispatch("getCategories");
+  },
+  watch: {
+    select: function select(_select) {
+      this.selectAll = _select.length == this.categories.length;
+    }
   },
   computed: {
     categories: function categories() {
