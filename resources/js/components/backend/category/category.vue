@@ -104,7 +104,7 @@ export default {
   },
   methods: {
       deleteAll(select){
-        axios.delete('/delete-caregories' ).then((response) =>{
+        axios.delete('/delete-caregories' + {ids: select}).then((response) =>{
 
         }).catch((error) =>{
             toastr.warning(error)
