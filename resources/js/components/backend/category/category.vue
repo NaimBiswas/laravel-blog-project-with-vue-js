@@ -31,8 +31,13 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input  :disabled="isShowing()" @click="selectTotall" v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
-
+                <input
+                  :disabled="isShowing()"
+                  @click="selectTotall"
+                  v-model="selectAll"
+                  type="checkbox"
+                  id="checkboxSuccess1"
+                />
               </div>
             </td>
             <td>ID.</td>
@@ -44,12 +49,18 @@
 
           <tr v-for="(category, index) in categories" :key="index">
             <td class="">
-              <input v-model="select" type="checkbox" :value="category.id" id="checkboxSuccess1" />
+              <input
+                v-model="select"
+                type="checkbox"
+                :value="category.id"
+                id="checkboxSuccess1"
+              />
             </td>
             <td>{{ index + 1 }}</td>
-            <td class="h5">{{ category["name"]}}</td>
+            <td class="h5">{{ category["name"] }}</td>
             <td>
-              <button @click="activeOne(category['id'])"
+              <button
+                @click="activeOne(category['id'])"
                 v-if="category['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
@@ -82,11 +93,29 @@
           </tr>
           <tr v-if="isSelected">
             <td class="text-left text-uppercase text-danger h4" colspan="6">
-              <button @click="activeAll(select)" :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
+              <button
+                @click="activeAll(select)"
+                :disabled="!isSelected"
+                class="btn btn-outline-success btn-lg"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
 
-              <button @click="deActiveAll(select)" :disabled="!isSelected"  class="btn btn-outline-warning btn-lg"><i class="fas fa-eye-slash"></i></button>
+              <button
+                @click="deActiveAll(select)"
+                :disabled="!isSelected"
+                class="btn btn-outline-warning btn-lg"
+              >
+                <i class="fas fa-eye-slash"></i>
+              </button>
 
-              <button @click="deleteAll(select)"  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
+              <button
+                @click="deleteAll(select)"
+                :disabled="!isSelected"
+                class="btn btn-outline-danger btn-lg"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
             </td>
           </tr>
         </table>
@@ -99,55 +128,66 @@
 export default {
   name: "category",
   data() {
-      return {
-          select:[],
-          isSelected:false,
-          selectAll:false,
-    }
+    return {
+      select: [],
+      isSelected: false,
+      selectAll: false,
+    };
   },
   methods: {
-      activeOne(id){
-        axios.post('/active-category', {data: id}).then((response) =>{
-
-                    toastr.success('Categoires Deactive success');
-                    this.$store.dispatch('getCategories');
-                }).catch((error) =>{
-                    toastr.warning(error);
-                });
-      },
-      deActiveAll(select){
-        axios.post('/deactive-categories', {data: select}).then((response) =>{
-              toastr.success('Categoires Deactive success');
-              this.$store.dispatch('getCategories');
-          }).catch((error) =>{
-             toastr.warning(error);
-          });
-      },
-      activeAll(select){
-          axios.post('/active-categories', {data: select}).then((response) =>{
-              toastr.success('Categoires active success');
-              this.$store.dispatch('getCategories');
-          }).catch((error) =>{
-             toastr.warning(error);
-          });
-      },
-      deleteAll(select){
-        axios.post('/delete-categories', { data: select }).then((response) =>{
-            toastr.info('Categories Deleted Success');
-            this.$store.dispatch('getCategories');
-        }).catch((error) =>{
-            toastr.warning(error)
+    activeOne(id) {
+      axios
+        .post("/active-category", { data: id })
+        .then((response) => {
+          toastr.success("Categoires Deactive success");
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          toastr.warning(error);
         });
-      },
-      selectTotall(event){
-          if(event.target.checked == false){
-              this.select = [];
-          }else{
-              this.categories.forEach(category => {
-                  this.select.push(category.id);
-              });
-          }
-      },
+    },
+    deActiveAll(select) {
+      axios
+        .post("/deactive-categories", { data: select })
+        .then((response) => {
+          toastr.success("Categoires Deactive success");
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          toastr.warning(error);
+        });
+    },
+    activeAll(select) {
+      axios
+        .post("/active-categories", { data: select })
+        .then((response) => {
+          toastr.success("Categoires active success");
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          toastr.warning(error);
+        });
+    },
+    deleteAll(select) {
+      axios
+        .post("/delete-categories", { data: select })
+        .then((response) => {
+          toastr.info("Categories Deleted Success");
+          this.$store.dispatch("getCategories");
+        })
+        .catch((error) => {
+          toastr.warning(error);
+        });
+    },
+    selectTotall(event) {
+      if (event.target.checked == false) {
+        this.select = [];
+      } else {
+        this.categories.forEach((category) => {
+          this.select.push(category.id);
+        });
+      }
+    },
 
     removeCategory(id) {
       swalWithBootstrapButtons
@@ -187,31 +227,28 @@ export default {
     isShowing() {
       return this.categories.length < 1;
     },
-    seletedCategoryLength(){
+    seletedCategoryLength() {
       return this.select.length;
     },
-    allCategoryLength(){
-        return this.categories.length;
-    }
+    allCategoryLength() {
+      return this.categories.length;
+    },
   },
-    mounted() {
-        this.$store.dispatch("getCategories");
+  mounted() {
+    this.$store.dispatch("getCategories");
+  },
+  watch: {
+    select(select) {
+      this.isSelected = select.length > 0;
+      this.selectAll = select.length == this.categories.length;
     },
-    watch:{
-          select(select){
-              this.isSelected = select.length > 0;
-              this.selectAll = ((select.length) == (this.categories.length));
-
-          },
-
-    },
+  },
 
   computed: {
     categories() {
       return this.$store.getters.allCategory;
     },
   },
-
 };
 </script>
 
@@ -232,8 +269,8 @@ button.swal2-cancel.btn.btn-danger {
   color: #e9ecef;
   padding-bottom: 40px;
 }
-#checkboxSuccess1{
-    height:22px;
-    width: 25px;
+#checkboxSuccess1 {
+  height: 22px;
+  width: 25px;
 }
 </style>

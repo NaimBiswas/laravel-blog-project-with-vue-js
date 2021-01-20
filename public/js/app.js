@@ -2094,6 +2094,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -2107,12 +2136,12 @@ __webpack_require__.r(__webpack_exports__);
     activeOne: function activeOne(id) {
       var _this = this;
 
-      axios.post('/active-category', {
+      axios.post("/active-category", {
         data: id
       }).then(function (response) {
-        toastr.success('Categoires Deactive success');
+        toastr.success("Categoires Deactive success");
 
-        _this.$store.dispatch('getCategories');
+        _this.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2120,12 +2149,12 @@ __webpack_require__.r(__webpack_exports__);
     deActiveAll: function deActiveAll(select) {
       var _this2 = this;
 
-      axios.post('/deactive-categories', {
+      axios.post("/deactive-categories", {
         data: select
       }).then(function (response) {
-        toastr.success('Categoires Deactive success');
+        toastr.success("Categoires Deactive success");
 
-        _this2.$store.dispatch('getCategories');
+        _this2.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2133,12 +2162,12 @@ __webpack_require__.r(__webpack_exports__);
     activeAll: function activeAll(select) {
       var _this3 = this;
 
-      axios.post('/active-categories', {
+      axios.post("/active-categories", {
         data: select
       }).then(function (response) {
-        toastr.success('Categoires active success');
+        toastr.success("Categoires active success");
 
-        _this3.$store.dispatch('getCategories');
+        _this3.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2146,12 +2175,12 @@ __webpack_require__.r(__webpack_exports__);
     deleteAll: function deleteAll(select) {
       var _this4 = this;
 
-      axios.post('/delete-categories', {
+      axios.post("/delete-categories", {
         data: select
       }).then(function (response) {
-        toastr.info('Categories Deleted Success');
+        toastr.info("Categories Deleted Success");
 
-        _this4.$store.dispatch('getCategories');
+        _this4.$store.dispatch("getCategories");
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -7952,7 +7981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n  margin-left: 10px;\n\n  font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger {\n  font-size: 20px;\n}\n.swal2-container.swal2-noanimation {\n  background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n  background-color: #343a40e6;\n  color: #e9ecef;\n  padding-bottom: 40px;\n}\n#checkboxSuccess1{\n    height:22px;\n    width: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n  margin-left: 10px;\n\n  font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger {\n  font-size: 20px;\n}\n.swal2-container.swal2-noanimation {\n  background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n  background-color: #343a40e6;\n  color: #e9ecef;\n  padding-bottom: 40px;\n}\n#checkboxSuccess1 {\n  height: 22px;\n  width: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45810,7 +45839,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_c("i", { staticClass: "fas fa-eye    " })]
+                        [_c("i", { staticClass: "fas fa-eye" })]
                       ),
                       _vm._v(" "),
                       _c(
@@ -45838,7 +45867,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_c("i", { staticClass: "fas fa-trash    " })]
+                        [_c("i", { staticClass: "fas fa-trash" })]
                       )
                     ]
                   )
