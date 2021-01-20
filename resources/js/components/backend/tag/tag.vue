@@ -54,13 +54,13 @@
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ tag["name"] }}</td>
             <td>
-              <button
+              <button @click="deactiveOne(tag.id)"
                 v-if="tag['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >
                 <i class="fas fa-eye mr-2"></i>Active
               </button>
-              <button v-else class="btn btn-outline-warning btn-lg">
+              <button @click="activeOne(tag.id)" v-else class="btn btn-outline-warning btn-lg">
                 <i class="fas fa-eye-slash mr-2"></i>Deactive
               </button>
             </td>
@@ -107,6 +107,22 @@ export default {
     },
   },
   methods: {
+      activeOne(id){
+        axios.post("/active-tag" + id).then((response) =>{
+           toastr.success('Tag SuccessFully Actived');
+           this.$store.dispatch('getTags') ;
+        }).catch((error) =>{
+
+        });
+      },
+      deactiveOne(id){
+        axios.post("/active-tag" + id).then((response) =>{
+           toastr.success('Tag SuccessFully Actived');
+           this.$store.dispatch('getTags') ;
+        }).catch((error) =>{
+
+        });
+      },
     isShowing() {
       return this.tags.length < 1;
     },

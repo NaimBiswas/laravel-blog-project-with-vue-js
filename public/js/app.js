@@ -3074,11 +3074,29 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    activeOne: function activeOne(id) {
+      var _this = this;
+
+      axios.post("/active-tag" + id).then(function (response) {
+        toastr.success('Tag SuccessFully Actived');
+
+        _this.$store.dispatch('getTags');
+      })["catch"](function (error) {});
+    },
+    deactiveOne: function deactiveOne(id) {
+      var _this2 = this;
+
+      axios.post("/active-tag" + id).then(function (response) {
+        toastr.success('Tag SuccessFully Actived');
+
+        _this2.$store.dispatch('getTags');
+      })["catch"](function (error) {});
+    },
     isShowing: function isShowing() {
       return this.tags.length < 1;
     },
     removeTag: function removeTag(slug) {
-      var _this = this;
+      var _this3 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -3095,7 +3113,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this.$store.dispatch("getTags");
+          _this3.$store.dispatch("getTags");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -47123,7 +47141,14 @@ var render = function() {
                   tag["status"] == 1
                     ? _c(
                         "button",
-                        { staticClass: "btn btn-outline-success btn-lg" },
+                        {
+                          staticClass: "btn btn-outline-success btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.deactiveOne(tag.id)
+                            }
+                          }
+                        },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-2" }),
                           _vm._v("Active\n            ")
@@ -47131,7 +47156,14 @@ var render = function() {
                       )
                     : _c(
                         "button",
-                        { staticClass: "btn btn-outline-warning btn-lg" },
+                        {
+                          staticClass: "btn btn-outline-warning btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.activeOne(tag.id)
+                            }
+                          }
+                        },
                         [
                           _c("i", { staticClass: "fas fa-eye-slash mr-2" }),
                           _vm._v("Deactive\n            ")
