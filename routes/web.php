@@ -30,6 +30,7 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::get('/get-categoy', [CategoryController::class, 'index'])->name('get-categories');
     Route::post('/savecategory', [CategoryController::class, 'store']);
     Route::delete('/remove-category/{id}', [CategoryController::class, 'destroy']);
+    Route::delete('/delete-categories/{id}', [CategoryController::class, 'deleteCategories']);
     Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit'])->name('fatch-category');
     Route::post('/update-category/{slug}', [CategoryController::class, 'update'])->name('update-category');
     #Tags
