@@ -3062,7 +3062,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      TagIDS: []
+      TagIDS: [],
+      AllTagIds: false
     };
   },
   mounted: function mounted() {
@@ -3074,29 +3075,40 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    activeOne: function activeOne(id) {
+    SelectAllTag: function SelectAllTag(event) {
       var _this = this;
+
+      if (event.target.checked == false) {
+        this.TagIDS == [];
+      } else {
+        this.tags.forEach(function (tag) {
+          _this.TagIDS.push(tag.id);
+        });
+      }
+    },
+    activeOne: function activeOne(id) {
+      var _this2 = this;
 
       axios.post("/active-tag/" + id).then(function (response) {
         toastr.success('Tag SuccessFully Actived');
 
-        _this.$store.dispatch('getTags');
+        _this2.$store.dispatch('getTags');
       })["catch"](function (error) {});
     },
     deactiveOne: function deactiveOne(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post("/deactive-tag/" + id).then(function (response) {
         toastr.success('Tag SuccessFully Deactive');
 
-        _this2.$store.dispatch('getTags');
+        _this3.$store.dispatch('getTags');
       })["catch"](function (error) {});
     },
     isShowing: function isShowing() {
       return this.tags.length < 1;
     },
     removeTag: function removeTag(slug) {
-      var _this3 = this;
+      var _this4 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -3113,7 +3125,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this3.$store.dispatch("getTags");
+          _this4.$store.dispatch("getTags");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -47088,7 +47100,60 @@ var render = function() {
           "table",
           { staticClass: "table table-control table-bordered text-center" },
           [
-            _vm._m(1),
+            _c("tr", [
+              _c("td", [
+                _c("div", { staticClass: "icheck-success d-inline" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.AllTagIds,
+                        expression: "AllTagIds"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkboxSuccess1" },
+                    domProps: {
+                      checked: Array.isArray(_vm.AllTagIds)
+                        ? _vm._i(_vm.AllTagIds, null) > -1
+                        : _vm.AllTagIds
+                    },
+                    on: {
+                      click: _vm.SelectAllTag,
+                      change: function($event) {
+                        var $$a = _vm.AllTagIds,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.AllTagIds = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.AllTagIds = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.AllTagIds = $$c
+                        }
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v("ID.")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Name")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Status")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Action")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Created At")])
+            ]),
             _vm._v(" "),
             _vm._l(_vm.tags, function(tag, index) {
               return _c("tr", { key: index }, [
@@ -47228,30 +47293,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Tags")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [
-        _c("div", { staticClass: "icheck-success d-inline" }, [
-          _c("input", { attrs: { type: "checkbox", id: "checkboxSuccess1" } }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "checkboxSuccess1" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("ID.")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Status")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Action")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Created At")])
-    ])
   }
 ]
 render._withStripped = true

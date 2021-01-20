@@ -31,8 +31,8 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input type="checkbox" id="checkboxSuccess1" />
-                <label for="checkboxSuccess1"> </label>
+                <input @click="SelectAllTag" v-model="AllTagIds" type="checkbox" id="checkboxSuccess1" />
+
               </div>
             </td>
             <td>ID.</td>
@@ -96,6 +96,7 @@ export default {
   data() {
     return {
         TagIDS: [],
+        AllTagIds:false,
     };
   },
   mounted() {
@@ -107,6 +108,15 @@ export default {
     },
   },
   methods: {
+      SelectAllTag(event){
+        if(event.target.checked == false){
+            this.TagIDS == [];
+        } else{
+           this.tags.forEach((tag) => {
+               this.TagIDS.push(tag.id)
+           });
+        }
+      },
       activeOne(id){
         axios.post("/active-tag/" + id).then((response) =>{
            toastr.success('Tag SuccessFully Actived');
