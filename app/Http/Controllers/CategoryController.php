@@ -131,4 +131,11 @@ class CategoryController extends Controller
             $categories->save();
         }
     }
+    public function activeCategory(Request $request)
+    {
+        $id = $request->data;
+        $category = Category::find($id);
+        $category->status = false;
+        $category->save();
+    }
 }
