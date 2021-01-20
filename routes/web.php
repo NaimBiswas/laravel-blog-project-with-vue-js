@@ -43,6 +43,8 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::delete('/delete-tag/{slug}', [TagController::class, 'destroy']);
     Route::get('fetch-tag/{slug}', [TagController::class, 'edit']);
     Route::post('update-tag/{slug}', [TagController::class, 'update']);
+    Route::post('/active-tag/{id}', [TagController::class, 'activeTag']);
+    Route::post('/deactive-tag/{id}', [TagController::class, 'deactiveTag']);
     #Posts
     Route::get('/get-posts', [PostController::class, 'index'])->name('post');
     Route::delete("/remove-post/{slug}", [PostController::class, 'destroy']);
