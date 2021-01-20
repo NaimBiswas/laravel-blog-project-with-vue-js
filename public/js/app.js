@@ -3077,7 +3077,7 @@ __webpack_require__.r(__webpack_exports__);
     activeOne: function activeOne(id) {
       var _this = this;
 
-      axios.post("/active-tag" + id).then(function (response) {
+      axios.post("/active-tag/" + id).then(function (response) {
         toastr.success('Tag SuccessFully Actived');
 
         _this.$store.dispatch('getTags');
@@ -3086,8 +3086,8 @@ __webpack_require__.r(__webpack_exports__);
     deactiveOne: function deactiveOne(id) {
       var _this2 = this;
 
-      axios.post("/active-tag" + id).then(function (response) {
-        toastr.success('Tag SuccessFully Actived');
+      axios.post("/deactive-tag/" + id).then(function (response) {
+        toastr.success('Tag SuccessFully Deactive');
 
         _this2.$store.dispatch('getTags');
       })["catch"](function (error) {});

@@ -108,7 +108,7 @@ export default {
   },
   methods: {
       activeOne(id){
-        axios.post("/active-tag" + id).then((response) =>{
+        axios.post("/active-tag/" + id).then((response) =>{
            toastr.success('Tag SuccessFully Actived');
            this.$store.dispatch('getTags') ;
         }).catch((error) =>{
@@ -116,8 +116,8 @@ export default {
         });
       },
       deactiveOne(id){
-        axios.post("/active-tag" + id).then((response) =>{
-           toastr.success('Tag SuccessFully Actived');
+        axios.post("/deactive-tag/" + id).then((response) =>{
+           toastr.success('Tag SuccessFully Deactive');
            this.$store.dispatch('getTags') ;
         }).catch((error) =>{
 
