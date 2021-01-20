@@ -2110,7 +2110,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/deactive-categories', {
         data: select
       }).then(function (response) {
-        toastr.success('Categoires active success');
+        toastr.success('Categoires Deactive success');
 
         _this.$store.dispatch('getCategories');
       })["catch"](function (error) {

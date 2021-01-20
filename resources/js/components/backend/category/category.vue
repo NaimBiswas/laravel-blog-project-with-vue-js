@@ -108,7 +108,7 @@ export default {
   methods: {
       deActiveAll(select){
         axios.post('/deactive-categories', {data: select}).then((response) =>{
-              toastr.success('Categoires active success');
+              toastr.success('Categoires Deactive success');
               this.$store.dispatch('getCategories');
           }).catch((error) =>{
              toastr.warning(error);
