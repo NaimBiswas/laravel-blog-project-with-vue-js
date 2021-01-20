@@ -126,6 +126,24 @@ export default {
       }
   },
   methods: {
+      ActiveAllSelectedTag(TagIDS){
+           axios.post("/active-tags",{data:TagIDS}).then((response) =>{
+             toastr.success('Tags Actived Success');
+             this.$store.dispatch('getTags')
+          }).catch((error) =>{
+              toastr.warning(error);
+          });
+      },
+
+      DeactiveAllSelectedTag(TagIDS){
+           axios.post("/deactive-tags",{data:TagIDS}).then((response) =>{
+             toastr.success('Tags Deactived Success');
+             this.$store.dispatch('getTags')
+          }).catch((error) =>{
+              toastr.warning(error);
+          });
+      },
+
       DeleteAllSelectedTags(TagIDS){
           axios.post("/delete-tags",{data:TagIDS}).then((response) =>{
              toastr.success('Tags Deleted Success');
