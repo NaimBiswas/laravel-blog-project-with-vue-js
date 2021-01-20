@@ -49,7 +49,7 @@
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"]}}</td>
             <td>
-              <button
+              <button @click="activeOne(category['id'])"
                 v-if="category['status'] == 1"
                 class="btn btn-outline-success btn-lg"
               >

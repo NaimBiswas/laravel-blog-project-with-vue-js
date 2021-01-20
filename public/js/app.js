@@ -45709,7 +45709,14 @@ var render = function() {
                   category["status"] == 1
                     ? _c(
                         "button",
-                        { staticClass: "btn btn-outline-success btn-lg" },
+                        {
+                          staticClass: "btn btn-outline-success btn-lg",
+                          on: {
+                            click: function($event) {
+                              return _vm.activeOne(category["id"])
+                            }
+                          }
+                        },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-2" }),
                           _vm._v("Active\n            ")
