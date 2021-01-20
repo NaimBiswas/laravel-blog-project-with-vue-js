@@ -95,6 +95,9 @@ export default {
           selectAll:false,
     }
   },
+  watch:{
+
+  },
   methods: {
       selectTotall(event){
           if(event.target.checked == false){

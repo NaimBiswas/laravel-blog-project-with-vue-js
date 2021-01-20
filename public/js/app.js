@@ -2093,6 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
       selectAll: false
     };
   },
+  watch: {},
   methods: {
     selectTotall: function selectTotall(event) {
       var _this = this;
