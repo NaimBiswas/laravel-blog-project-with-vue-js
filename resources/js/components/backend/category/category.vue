@@ -31,7 +31,7 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
+                <input @click="selectTotall" v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
 
               </div>
             </td>
@@ -92,10 +92,13 @@ export default {
   data() {
       return {
           select:[],
-          selectAll:'',
-      }
+          selectAll:false,
+    }
   },
   methods: {
+      selectTotall(){
+
+      },
     removeCategory(id) {
       swalWithBootstrapButtons
         .fire({

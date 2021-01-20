@@ -2090,10 +2090,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       select: [],
-      selectAll: ''
+      selectAll: false
     };
   },
   methods: {
+    selectTotall: function selectTotall() {},
     removeCategory: function removeCategory(id) {
       var _this = this;
 
@@ -45544,6 +45545,7 @@ var render = function() {
                         : _vm.selectAll
                     },
                     on: {
+                      click: _vm.selectTotall,
                       change: function($event) {
                         var $$a = _vm.selectAll,
                           $$el = $event.target,
