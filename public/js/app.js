@@ -2101,6 +2101,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    deleteAll: function deleteAll(select) {
+      axios["delete"]('/delete-caregories').then(function (response) {})["catch"](function (error) {
+        toastr.warning(error);
+      });
+    },
     selectTotall: function selectTotall(event) {
       var _this = this;
 
@@ -45749,7 +45754,12 @@ var render = function() {
                     "button",
                     {
                       staticClass: "btn btn-outline-danger btn-lg",
-                      attrs: { disabled: !_vm.isSelected }
+                      attrs: { disabled: !_vm.isSelected },
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteAll(_vm.select)
+                        }
+                      }
                     },
                     [_c("i", { staticClass: "fas fa-trash    " })]
                   )

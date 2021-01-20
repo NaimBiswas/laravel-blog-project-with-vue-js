@@ -83,7 +83,7 @@
           <tr >
             <td class="text-left text-uppercase text-danger h4" colspan="6">
               <button :disabled="!isSelected"  class="btn btn-outline-success btn-lg"><i class="fas fa-eye    "></i></button>
-              <button  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
+              <button @click="deleteAll(select)"  :disabled="!isSelected" class="btn btn-outline-danger btn-lg"><i class="fas fa-trash    "></i></button>
             </td>
           </tr>
         </table>
@@ -103,6 +103,13 @@ export default {
     }
   },
   methods: {
+      deleteAll(select){
+        axios.delete('/delete-caregories' ).then((response) =>{
+
+        }).catch((error) =>{
+            toastr.warning(error)
+        });
+      },
       selectTotall(event){
           if(event.target.checked == false){
               this.select = [];
