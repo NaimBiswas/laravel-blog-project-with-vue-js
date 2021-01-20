@@ -117,5 +117,10 @@ class CategoryController extends Controller
     }
     public function activeCategories(Request $request)
     {
+        foreach ($request->data as $row) {
+            $categories = Category::find($row);
+            $categories->status = true;
+            $categories->save();
+        }
     }
 }
