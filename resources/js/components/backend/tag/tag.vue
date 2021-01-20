@@ -123,6 +123,7 @@ export default {
       DeleteAllSelectedTags(TagIDS){
           axios.post("/delete-tags",{data:TagIDS}).then((response) =>{
              toastr.success('Tags Deleted Success');
+             this.$store.dispatch('getTags')
           }).catch((error) =>{
               toastr.warning(error);
           });

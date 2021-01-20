@@ -3088,48 +3088,52 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     DeleteAllSelectedTags: function DeleteAllSelectedTags(TagIDS) {
+      var _this = this;
+
       axios.post("/delete-tags", {
         data: TagIDS
       }).then(function (response) {
         toastr.success('Tags Deleted Success');
+
+        _this.$store.dispatch('getTags');
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
     SelectAllTag: function SelectAllTag(event) {
-      var _this = this;
+      var _this2 = this;
 
       if (event.target.checked == false) {
         this.TagIDS = [];
       } else {
         this.tags.forEach(function (tag) {
-          _this.TagIDS.push(tag.id);
+          _this2.TagIDS.push(tag.id);
         });
       }
     },
     activeOne: function activeOne(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post("/active-tag/" + id).then(function (response) {
         toastr.success('Tag SuccessFully Actived');
 
-        _this2.$store.dispatch('getTags');
+        _this3.$store.dispatch('getTags');
       })["catch"](function (error) {});
     },
     deactiveOne: function deactiveOne(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post("/deactive-tag/" + id).then(function (response) {
         toastr.success('Tag SuccessFully Deactive');
 
-        _this3.$store.dispatch('getTags');
+        _this4.$store.dispatch('getTags');
       })["catch"](function (error) {});
     },
     isShowing: function isShowing() {
       return this.tags.length < 1;
     },
     removeTag: function removeTag(slug) {
-      var _this4 = this;
+      var _this5 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -3146,7 +3150,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this4.$store.dispatch("getTags");
+          _this5.$store.dispatch("getTags");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
