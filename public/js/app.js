@@ -3074,12 +3074,17 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.AllTags;
     }
   },
+  watch: {
+    TagIDS: function TagIDS(_TagIDS) {
+      this.AllTagIds = _TagIDS.length == this.SelectAllTag.length;
+    }
+  },
   methods: {
     SelectAllTag: function SelectAllTag(event) {
       var _this = this;
 
       if (event.target.checked == false) {
-        this.TagIDS == [];
+        this.TagIDS = [];
       } else {
         this.tags.forEach(function (tag) {
           _this.TagIDS.push(tag.id);

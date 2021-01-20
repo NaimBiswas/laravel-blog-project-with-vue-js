@@ -107,10 +107,15 @@ export default {
       return this.$store.getters.AllTags;
     },
   },
+  watch:{
+      TagIDS(TagIDS){
+          this.AllTagIds  = (TagIDS.length == this.SelectAllTag.length);
+      }
+  },
   methods: {
       SelectAllTag(event){
         if(event.target.checked == false){
-            this.TagIDS == [];
+            this.TagIDS = [];
         } else{
            this.tags.forEach((tag) => {
                this.TagIDS.push(tag.id)
