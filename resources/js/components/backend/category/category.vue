@@ -31,8 +31,8 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input type="checkbox" id="checkboxSuccess1" />
-                <label for="checkboxSuccess1"> </label>
+                <input v-model="selectAll" type="checkbox" id="checkboxSuccess1" />
+
               </div>
             </td>
             <td>ID.</td>
@@ -44,7 +44,7 @@
 
           <tr v-for="(category, index) in categories" :key="index">
             <td class="">
-              <input type="checkbox" :value="category.id" v-model="categoryIds" id="checkboxSuccess1" />
+              <input v-model="select" type="checkbox" :value="category.id" id="checkboxSuccess1" />
             </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ category["name"]}}</td>
@@ -91,7 +91,8 @@ export default {
   name: "category",
   data() {
       return {
-          categoryIds:[],
+          select:[],
+          selectAll:'',
       }
   },
   methods: {

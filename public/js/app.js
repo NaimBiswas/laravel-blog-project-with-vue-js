@@ -2089,7 +2089,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "category",
   data: function data() {
     return {
-      categoryIds: []
+      select: [],
+      selectAll: ''
     };
   },
   methods: {
@@ -45524,7 +45525,59 @@ var render = function() {
           "table",
           { staticClass: "table table-control table-bordered text-center" },
           [
-            _vm._m(1),
+            _c("tr", [
+              _c("td", [
+                _c("div", { staticClass: "icheck-success d-inline" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selectAll,
+                        expression: "selectAll"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkboxSuccess1" },
+                    domProps: {
+                      checked: Array.isArray(_vm.selectAll)
+                        ? _vm._i(_vm.selectAll, null) > -1
+                        : _vm.selectAll
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.selectAll,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.selectAll = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.selectAll = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.selectAll = $$c
+                        }
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v("ID.")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Name")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Status")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Action")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Created At")])
+            ]),
             _vm._v(" "),
             _vm._l(_vm.categories, function(category, index) {
               return _c("tr", { key: index }, [
@@ -45534,35 +45587,35 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.categoryIds,
-                        expression: "categoryIds"
+                        value: _vm.select,
+                        expression: "select"
                       }
                     ],
                     attrs: { type: "checkbox", id: "checkboxSuccess1" },
                     domProps: {
                       value: category.id,
-                      checked: Array.isArray(_vm.categoryIds)
-                        ? _vm._i(_vm.categoryIds, category.id) > -1
-                        : _vm.categoryIds
+                      checked: Array.isArray(_vm.select)
+                        ? _vm._i(_vm.select, category.id) > -1
+                        : _vm.select
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.categoryIds,
+                        var $$a = _vm.select,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
                           var $$v = category.id,
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
-                            $$i < 0 && (_vm.categoryIds = $$a.concat([$$v]))
+                            $$i < 0 && (_vm.select = $$a.concat([$$v]))
                           } else {
                             $$i > -1 &&
-                              (_vm.categoryIds = $$a
+                              (_vm.select = $$a
                                 .slice(0, $$i)
                                 .concat($$a.slice($$i + 1)))
                           }
                         } else {
-                          _vm.categoryIds = $$c
+                          _vm.select = $$c
                         }
                       }
                     }
@@ -45653,30 +45706,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [
       _c("h1", [_vm._v("Categories")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [
-        _c("div", { staticClass: "icheck-success d-inline" }, [
-          _c("input", { attrs: { type: "checkbox", id: "checkboxSuccess1" } }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "checkboxSuccess1" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("ID.")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Status")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Action")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Created At")])
     ])
   }
 ]
