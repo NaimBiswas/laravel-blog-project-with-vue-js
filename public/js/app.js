@@ -2164,8 +2164,9 @@ __webpack_require__.r(__webpack_exports__);
         data: select
       }).then(function (response) {
         toastr.success(response.data.total + ' ' + "Categoires Deactive success");
-
-        _this3.$store.dispatch("getCategories");
+        _this3.select = [];
+        _this3.isSelecte = false;
+        _this3.selectAll = false;
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2179,6 +2180,10 @@ __webpack_require__.r(__webpack_exports__);
         toastr.success(response.data.total + ' ' + "Categoires active success");
 
         _this4.$store.dispatch("getCategories");
+
+        _this4.select = [];
+        _this4.isSelecte = false;
+        _this4.selectAll = false;
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2192,6 +2197,12 @@ __webpack_require__.r(__webpack_exports__);
         toastr.info(response.data.total + ' ' + "Category Has Been Successfully Deleted ");
 
         _this5.$store.dispatch("getCategories");
+
+        _this5.$store.dispatch("getCategories");
+
+        _this5.select = [];
+        _this5.isSelecte = false;
+        _this5.selectAll = false;
       })["catch"](function (error) {
         toastr.warning(error);
       });
