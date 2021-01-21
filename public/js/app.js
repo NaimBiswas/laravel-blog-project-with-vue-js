@@ -2163,7 +2163,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/deactive-categories", {
         data: select
       }).then(function (response) {
-        toastr.success("Categoires Deactive success");
+        toastr.success(response.data.total + ' ' + "Categoires Deactive success");
 
         _this3.$store.dispatch("getCategories");
       })["catch"](function (error) {
@@ -2176,7 +2176,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/active-categories", {
         data: select
       }).then(function (response) {
-        toastr.success("Categoires active success");
+        toastr.success(response.data.total + ' ' + "Categoires active success");
 
         _this4.$store.dispatch("getCategories");
       })["catch"](function (error) {

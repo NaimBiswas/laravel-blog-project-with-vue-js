@@ -122,19 +122,30 @@ class CategoryController extends Controller
     }
     public function activeCategories(Request $request)
     {
+        $total = 0;
         foreach ($request->data as $row) {
             $categories = Category::find($row);
             $categories->status = true;
             $categories->save();
+
+            $total++;
         }
+        return response()->json([
+            'total' => $total,
+        ]);
     }
     public function deactiveCategories(Request $request)
     {
+        $total = 0;
         foreach ($request->data as $row) {
             $categories = Category::find($row);
             $categories->status = false;
             $categories->save();
+            $total++;
         }
+        return response()->json([
+            'total' => $total,
+        ]);
     }
     public function activeCategory(Request $request)
     {

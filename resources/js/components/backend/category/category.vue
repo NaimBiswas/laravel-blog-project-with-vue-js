@@ -161,7 +161,7 @@ export default {
       axios
         .post("/deactive-categories", { data: select })
         .then((response) => {
-          toastr.success("Categoires Deactive success");
+          toastr.success(response.data.total + ' ' + "Categoires Deactive success");
           this.$store.dispatch("getCategories");
         })
         .catch((error) => {
@@ -172,7 +172,7 @@ export default {
       axios
         .post("/active-categories", { data: select })
         .then((response) => {
-          toastr.success("Categoires active success");
+          toastr.success(response.data.total + ' ' + "Categoires active success");
           this.$store.dispatch("getCategories");
         })
         .catch((error) => {
