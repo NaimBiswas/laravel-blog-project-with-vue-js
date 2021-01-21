@@ -2189,7 +2189,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/delete-categories", {
         data: select
       }).then(function (response) {
-        toastr.info("Categories Deleted Success");
+        toastr.info(response.data.total + ' ' + "Category Has Been Successfully Deleted ");
 
         _this5.$store.dispatch("getCategories");
       })["catch"](function (error) {

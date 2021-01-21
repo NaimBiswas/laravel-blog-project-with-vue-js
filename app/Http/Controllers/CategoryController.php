@@ -111,9 +111,14 @@ class CategoryController extends Controller
     }
     public function deleteCategories(Request $request)
     {
+        $total = 0;
         foreach ($request->data as $row) {
-            Category::find($row)->delete();
+            $delete = Category::find($row)->delete();
+            $total++;
         }
+        return response()->json([
+            'total' => $total,
+        ]);
     }
     public function activeCategories(Request $request)
     {

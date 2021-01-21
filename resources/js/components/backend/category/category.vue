@@ -183,7 +183,7 @@ export default {
       axios
         .post("/delete-categories", { data: select })
         .then((response) => {
-          toastr.info("Categories Deleted Success");
+          toastr.info(response.data.total + ' ' + "Category Has Been Successfully Deleted ");
           this.$store.dispatch("getCategories");
         })
         .catch((error) => {
