@@ -162,6 +162,7 @@ export default {
         .post("/deactive-categories", { data: select })
         .then((response) => {
           toastr.success(response.data.total + ' ' + "Categoires Deactive success");
+          this.$store.dispatch('getCategories');
            this.select= [];
           this.isSelecte= false;
           this.selectAll= false;

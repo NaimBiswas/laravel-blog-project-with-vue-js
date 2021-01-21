@@ -2164,6 +2164,9 @@ __webpack_require__.r(__webpack_exports__);
         data: select
       }).then(function (response) {
         toastr.success(response.data.total + ' ' + "Categoires Deactive success");
+
+        _this3.$store.dispatch('getCategories');
+
         _this3.select = [];
         _this3.isSelecte = false;
         _this3.selectAll = false;
