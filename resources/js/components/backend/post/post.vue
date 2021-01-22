@@ -155,8 +155,12 @@ export default {
       return this.posts.length < 1;
     },
     // Active Multiple Category
-    ActiveALLPost(postIDS){
-
+    ActiveALLPost(postIDS , status){
+        axios.post("/active-posts", {data: postIDS, status}).then((response) =>{
+            toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+        }).catch((error) =>{
+           toastr.warning(error);
+        });
     },
     // Delete All Post
     deleteAllPosts(postIDS) {

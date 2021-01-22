@@ -2850,7 +2850,16 @@ __webpack_require__.r(__webpack_exports__);
       return this.posts.length < 1;
     },
     // Active Multiple Category
-    ActiveALLPost: function ActiveALLPost(postIDS) {},
+    ActiveALLPost: function ActiveALLPost(postIDS, status) {
+      axios.post("/active-posts", {
+        data: postIDS,
+        status: status
+      }).then(function (response) {
+        toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+      })["catch"](function (error) {
+        toastr.warning(error);
+      });
+    },
     // Delete All Post
     deleteAllPosts: function deleteAllPosts(postIDS) {
       var _this2 = this;
