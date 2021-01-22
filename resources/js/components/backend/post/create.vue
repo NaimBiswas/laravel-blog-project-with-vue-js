@@ -36,31 +36,33 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form @submit.prevent="addPost" class="form-horizontal"  enctype="multipart/form-data">
+          <form
+            @submit.prevent="addPost"
+            class="form-horizontal"
+            enctype="multipart/form-data"
+          >
             <div class="card-body">
-                <!-- post title  -->
+              <!-- post title  -->
               <div class="form-group row">
-                <label for="title" class="col-sm-2 col-form-label"
-                  >Post Title:</label
-                >
+                <label for="title" class="col-sm-2 col-form-label">Post Title:</label>
                 <div class="col-sm-10">
                   <input
-                    v-model="form.name"
+                    v-model="form.title"
                     type="text"
                     class="form-control"
                     id="title"
                     placeholder="Enter Your Posst Title"
                     name="title"
-                    :class="{ 'is-invalid': form.errors.has('title') }"
+                    :class="{
+                      'is-invalid': form.errors.has('title'),
+                    }"
                   />
                   <has-error :form="form" field="title"></has-error>
                 </div>
               </div>
               <!-- post images -->
               <div class="form-group row">
-                <label for="images" class="col-sm-2 col-form-label"
-                  >Post Image:</label
-                >
+                <label for="images" class="col-sm-2 col-form-label">Post Image:</label>
                 <div class="col-sm-10">
                   <div class="input-group">
                     <div class="custom-file">
@@ -68,6 +70,10 @@
                         type="file"
                         class="custom-file-input"
                         id="images"
+                        name="images"
+                        :class="{
+                          'is-invalid': form.errors.has('images'),
+                        }"
                       />
                       <label class="custom-file-label" for="exampleInputFile"
                         >Choose File</label
@@ -83,11 +89,11 @@
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                  <select class="form-control" id="category_id">
+                  <select class="form-control" id="category_id" v-model="form.category_id" :class="{ 'is-invalid': form.errors.has('category_id') }">
                     <option selected>Select A Category</option>
                     <option></option>
                   </select>
-                  <has-error :form="form" field="images"></has-error>
+                  <has-error :form="form" field="category_id"></has-error>
                 </div>
               </div>
 
@@ -108,33 +114,21 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="catname" class="col-sm-2 col-form-label"
-                  >Status:</label
-                >
+                <label for="catname" class="col-sm-2 col-form-label">Status:</label>
                 <div class="col-sm-10 flex">
-                  <a
-                    v-if="form.status"
-                    @click="deactive"
-                    class="btn btn-success btn-md"
+                  <a v-if="form.status" @click="deactive" class="btn btn-success btn-md"
                     >Active</a
                   >
-                  <a v-else @click="active" class="btn btn-warning btn-md"
-                    >Deactive</a
-                  >
+                  <a v-else @click="active" class="btn btn-warning btn-md">Deactive</a>
                 </div>
               </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-              <button
-                type="submit"
-                class="btn btn-outline-success btn-md text-uppercase"
-              >
+              <button type="submit" class="btn btn-outline-success btn-md text-uppercase">
                 AdD New Post
               </button>
-              <button type="reset" class="btn btn-default float-right">
-                Cancel
-              </button>
+              <button type="reset" class="btn btn-default float-right">Cancel</button>
             </div>
             <!-- /.card-footer -->
           </form>
@@ -155,7 +149,7 @@ export default {
         status: false,
         description: "",
         images: "",
-        category: "",
+        category_id: "",
       }),
     };
   },

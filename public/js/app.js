@@ -2636,12 +2636,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
   data: function data() {
@@ -2651,7 +2645,7 @@ __webpack_require__.r(__webpack_exports__);
         status: false,
         description: "",
         images: "",
-        category: ""
+        category_id: ""
       })
     };
   },
@@ -46495,25 +46489,27 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.name,
-                            expression: "form.name"
+                            value: _vm.form.title,
+                            expression: "form.title"
                           }
                         ],
                         staticClass: "form-control",
-                        class: { "is-invalid": _vm.form.errors.has("title") },
+                        class: {
+                          "is-invalid": _vm.form.errors.has("title")
+                        },
                         attrs: {
                           type: "text",
                           id: "title",
                           placeholder: "Enter Your Posst Title",
                           name: "title"
                         },
-                        domProps: { value: _vm.form.name },
+                        domProps: { value: _vm.form.title },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.form, "name", $event.target.value)
+                            _vm.$set(_vm.form, "title", $event.target.value)
                           }
                         }
                       }),
@@ -46540,7 +46536,30 @@ var render = function() {
                     "div",
                     { staticClass: "col-sm-10" },
                     [
-                      _vm._m(2),
+                      _c("div", { staticClass: "input-group" }, [
+                        _c("div", { staticClass: "custom-file" }, [
+                          _c("input", {
+                            staticClass: "custom-file-input",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("images")
+                            },
+                            attrs: {
+                              type: "file",
+                              id: "images",
+                              name: "images"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-file-label",
+                              attrs: { for: "exampleInputFile" }
+                            },
+                            [_vm._v("Choose File")]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("has-error", {
                         attrs: { form: _vm.form, field: "images" }
@@ -46564,10 +46583,53 @@ var render = function() {
                     "div",
                     { staticClass: "col-sm-10" },
                     [
-                      _vm._m(3),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.category_id,
+                              expression: "form.category_id"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("category_id")
+                          },
+                          attrs: { id: "category_id" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "category_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { selected: "" } }, [
+                            _vm._v("Select A Category")
+                          ]),
+                          _vm._v(" "),
+                          _c("option")
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("has-error", {
-                        attrs: { form: _vm.form, field: "images" }
+                        attrs: { form: _vm.form, field: "category_id" }
                       })
                     ],
                     1
@@ -46639,7 +46701,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(4)
+              _vm._m(2)
             ]
           )
         ])
@@ -46684,44 +46746,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group" }, [
-      _c("div", { staticClass: "custom-file" }, [
-        _c("input", {
-          staticClass: "custom-file-input",
-          attrs: { type: "file", id: "images" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-file-label",
-            attrs: { for: "exampleInputFile" }
-          },
-          [_vm._v("Choose File")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      { staticClass: "form-control", attrs: { id: "category_id" } },
-      [
-        _c("option", { attrs: { selected: "" } }, [
-          _vm._v("Select A Category")
-        ]),
-        _vm._v(" "),
-        _c("option")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-footer" }, [
       _c(
         "button",
@@ -46738,7 +46762,7 @@ var staticRenderFns = [
           staticClass: "btn btn-default float-right",
           attrs: { type: "reset" }
         },
-        [_vm._v("\n              Cancel\n            ")]
+        [_vm._v("Cancel")]
       )
     ])
   }
