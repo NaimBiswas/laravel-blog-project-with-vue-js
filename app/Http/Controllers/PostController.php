@@ -104,4 +104,8 @@ class PostController extends Controller
             'total' => $total,
         ]);
     }
+
+    public function ActivePosts(Request $request)
+    {
+    }
 }
