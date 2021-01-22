@@ -2849,6 +2849,7 @@ __webpack_require__.r(__webpack_exports__);
     isShowing: function isShowing() {
       return this.posts.length < 1;
     },
+    // Active Multiple Category
     // Delete All Post
     deleteAllPosts: function deleteAllPosts(postIDS) {
       var _this2 = this;
