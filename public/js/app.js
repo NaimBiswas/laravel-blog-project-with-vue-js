@@ -46620,14 +46620,16 @@ var render = function() {
                           }
                         },
                         [
-                          _c("option", { attrs: { selected: "" } }, [
+                          _c("option", { attrs: { value: "", selected: "" } }, [
                             _vm._v("Select A Category")
                           ]),
                           _vm._v(" "),
                           _vm._l(_vm.categories, function(category, index) {
-                            return _c("option", { key: index }, [
-                              _vm._v(_vm._s(category.name))
-                            ])
+                            return _c(
+                              "option",
+                              { key: index, attrs: { value: "" } },
+                              [_vm._v(_vm._s(category.name))]
+                            )
                           })
                         ],
                         2

@@ -90,8 +90,8 @@
                 >
                 <div class="col-sm-10">
                   <select class="form-control" id="category_id" v-model="form.category_id" :class="{ 'is-invalid': form.errors.has('category_id') }">
-                    <option selected>Select A Category</option>
-                    <option v-for="(category, index ) in categories" :key="index">{{ category.name }}</option>
+                    <option value="" selected>Select A Category</option>
+                    <option  value="" v-for="(category, index ) in categories" :key="index">{{ category.name }}</option>
                   </select>
                   <has-error :form="form" field="category_id"></has-error>
                 </div>
