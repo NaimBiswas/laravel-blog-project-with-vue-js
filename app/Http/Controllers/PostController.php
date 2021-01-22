@@ -107,10 +107,15 @@ class PostController extends Controller
 
     public function ActivePosts(Request $request)
     {
+        $total = 0;
         foreach ($request->data as $row) {
             $post = Post::find($row);
             $post->status = $request->status;
             $post->save();
+            $total++;
         }
+        return response()->json([
+            'total' => $total,
+        ]);
     }
 }
