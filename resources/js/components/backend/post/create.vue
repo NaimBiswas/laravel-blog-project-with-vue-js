@@ -154,11 +154,11 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch("getPosts");
+    this.$store.dispatch("getCategories");
   },
   computed: {
     posts() {
-      return this.$store.getters.AllPosts;
+      return this.$store.getters.allCategory;
     },
   },
   methods: {

@@ -2650,11 +2650,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.$store.dispatch("getPosts");
+    this.$store.dispatch("getCategories");
   },
   computed: {
     posts: function posts() {
-      return this.$store.getters.AllPosts;
+      return this.$store.getters.allCategory;
     }
   },
   methods: {
