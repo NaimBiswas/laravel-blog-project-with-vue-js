@@ -89,7 +89,7 @@
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                  <select class="form-control" id="category_id" v-model="form.category_id" :class="{ 'is-invalid': form.errors.has('category_id') }">
+                  <select   class="form-control" id="category_id" v-model="form.category_id" :class="{ 'is-invalid': form.errors.has('category_id') }">
                     <option value="" selected>Select A Category</option>
                     <option  :value="category.id" v-for="(category, index ) in categories" :key="index">{{ category.name }}</option>
                   </select>
@@ -151,11 +151,14 @@ export default {
         images: "",
         category_id: "",
       }),
+
     };
   },
   mounted() {
+
     this.$store.dispatch("getActiveCategories");
   },
+
   computed: {
     categories() {
       return this.$store.getters.allActiveCategory;
