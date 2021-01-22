@@ -46624,8 +46624,13 @@ var render = function() {
                             _vm._v("Select A Category")
                           ]),
                           _vm._v(" "),
-                          _c("option")
-                        ]
+                          _vm._l(_vm.categories, function(category, index) {
+                            return _c("option", { key: index }, [
+                              _vm._v(_vm._s(category.name))
+                            ])
+                          })
+                        ],
+                        2
                       ),
                       _vm._v(" "),
                       _c("has-error", {
