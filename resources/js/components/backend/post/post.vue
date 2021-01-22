@@ -158,6 +158,7 @@ export default {
     ActiveALLPost(postIDS , status){
         axios.post("/active-posts", {data: postIDS, status}).then((response) =>{
             toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+            this.$store.dispatch('getPosts');
         }).catch((error) =>{
            toastr.warning(error);
         });

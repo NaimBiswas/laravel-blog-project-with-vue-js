@@ -2851,18 +2851,22 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Active Multiple Category
     ActiveALLPost: function ActiveALLPost(postIDS, status) {
+      var _this2 = this;
+
       axios.post("/active-posts", {
         data: postIDS,
         status: status
       }).then(function (response) {
         toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+
+        _this2.$store.dispatch('getPosts');
       })["catch"](function (error) {
         toastr.warning(error);
       });
     },
     // Delete All Post
     deleteAllPosts: function deleteAllPosts(postIDS) {
-      var _this2 = this;
+      var _this3 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2883,7 +2887,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this2.$store.dispatch("getPosts");
+          _this3.$store.dispatch("getPosts");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -2892,7 +2896,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     removepost: function removepost(slug) {
-      var _this3 = this;
+      var _this4 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2909,7 +2913,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this3.$store.dispatch("getPosts");
+          _this4.$store.dispatch("getPosts");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
