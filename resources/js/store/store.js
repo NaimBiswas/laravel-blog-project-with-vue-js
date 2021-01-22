@@ -62,7 +62,7 @@ export default {
         allCategory(state) {
             return state.categoires;
         },
-        allCategory(state) {
+        allActiveCategory(state) {
             return state.ActiveCategories;
         },
         AllTags(state) {
