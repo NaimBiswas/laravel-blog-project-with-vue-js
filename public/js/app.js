@@ -46463,6 +46463,7 @@ var render = function() {
             "form",
             {
               staticClass: "form-horizontal",
+              attrs: { enctype: "multipart/form-data" },
               on: {
                 submit: function($event) {
                   $event.preventDefault()

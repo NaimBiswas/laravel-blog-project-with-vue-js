@@ -36,7 +36,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form @submit.prevent="addPost" class="form-horizontal">
+          <form @submit.prevent="addPost" class="form-horizontal"  enctype="multipart/form-data">
             <div class="card-body">
               <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label"
