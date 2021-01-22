@@ -46989,9 +46989,31 @@ var render = function() {
                     "td",
                     { staticClass: "text-left", attrs: { colspan: "7" } },
                     [
-                      _vm._m(1),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-success btn-lg ml-2",
+                          on: {
+                            click: function($event) {
+                              return _vm.ActiveALLPost(_vm.postIDS, 1)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-eye" })]
+                      ),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-warning btn-lg ml-2",
+                          on: {
+                            click: function($event) {
+                              return _vm.ActiveALLPost(_vm.postIDS, 0)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-eye-slash" })]
+                      ),
                       _vm._v(" "),
                       _c(
                         "button",
@@ -47022,26 +47044,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Posts")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-outline-success btn-lg ml-2" },
-      [_c("i", { staticClass: "fas fa-eye" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-outline-warning btn-lg ml-2" },
-      [_c("i", { staticClass: "fas fa-eye-slash" })]
-    )
   }
 ]
 render._withStripped = true

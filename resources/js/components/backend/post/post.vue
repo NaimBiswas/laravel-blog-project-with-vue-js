@@ -98,10 +98,10 @@
           </tr>
           <tr v-if="IsSelected">
             <td colspan="7" class="text-left">
-              <button class="btn btn-outline-success btn-lg ml-2">
+              <button @click="ActiveALLPost(postIDS, 1)" class="btn btn-outline-success btn-lg ml-2">
                 <i class="fas fa-eye"></i>
               </button>
-              <button class="btn btn-outline-warning btn-lg ml-2">
+              <button @click="ActiveALLPost(postIDS, 0)" class="btn btn-outline-warning btn-lg ml-2">
                 <i class="fas fa-eye-slash"></i>
               </button>
               <button
