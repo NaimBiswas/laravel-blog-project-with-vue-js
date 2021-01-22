@@ -29,9 +29,14 @@
       <div class="card-body">
         <table class="table table-control table-bordered text-center">
           <tr>
-            <td>
+            <td :disable="isShowing">
               <div class="icheck-success d-inline">
-                <input @click="SelectAllPost"  v-model="SelectAll" type="checkbox" id="checkboxSuccess1" />
+                <input
+                  @click="SelectAllPost"
+                  v-model="SelectAll"
+                  type="checkbox"
+                  id="checkboxSuccess1"
+                />
                 <label for="checkboxSuccess1"> </label>
               </div>
             </td>
@@ -39,7 +44,7 @@
             <td>Title</td>
             <td>Category</td>
             <td>Status</td>
-            <td style="width:148px;">Action</td>
+            <td style="width: 148px">Action</td>
             <td>Post Creator</td>
           </tr>
 
@@ -54,7 +59,7 @@
             </td>
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ post["title"] }}</td>
-            <td class="h5">{{ post['category']['name'] }}</td>
+            <td class="h5">{{ post["category"]["name"] }}</td>
             <td>
               <button
                 v-if="post['status'] == 1"
@@ -80,21 +85,32 @@
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
-            <td>{{ post["user"]['name'] }}</td>
+            <td>{{ post["user"]["name"] }}</td>
           </tr>
           <tr>
-            <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="7">
+            <td
+              v-if="isShowing()"
+              class="text-center text-uppercase text-danger h4"
+              colspan="7"
+            >
               No post Found!
             </td>
-
           </tr>
           <tr v-if="IsSelected">
-              <td colspan="7" class="text-left">
-
-                <button class="btn btn-outline-success btn-lg ml-2"><i class="fas fa-eye    "></i></button>
-                <button class="btn btn-outline-warning btn-lg ml-2"><i class="fas fa-eye-slash    "></i></button>
-                <button class="btn btn-outline-danger btn-lg ml-2"><i class="fas fa-trash    "></i></button>
-              </td>
+            <td colspan="7" class="text-left">
+              <button class="btn btn-outline-success btn-lg ml-2">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn btn-outline-warning btn-lg ml-2">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+              <button
+                @click="deleteAllPosts(postIDS)"
+                class="btn btn-outline-danger btn-lg ml-2"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
           </tr>
         </table>
       </div>
@@ -104,42 +120,84 @@
 
 <script>
 export default {
-data() {
+  data() {
     return {
-        postIDS: [],
-        SelectAll: false,
-        IsSelected: false,
+      postIDS: [],
+      SelectAll: false,
+      IsSelected: false,
     };
-},
-    mounted() {
-       this.$store.dispatch("getPosts");
+  },
+  mounted() {
+    this.$store.dispatch("getPosts");
+  },
+  watch: {
+    postIDS(value) {
+      this.IsSelected = value.length > 0;
+      this.SelectAll = this.posts.length == value.length;
     },
-    watch:{
-        postIDS(value){
-            this.IsSelected = value.length > 0;
-           this.SelectAll = this.posts.length == value.length;
-        }
+  },
+  computed: {
+    posts() {
+      return this.$store.getters.AllPosts;
     },
-    computed:{
-        posts(){
-         return this.$store.getters.AllPosts;
-        },
+  },
+  methods: {
+    SelectAllPost(event) {
+      if (event.target.checked == false) {
+        this.postIDS = [];
+      } else {
+        this.posts.forEach((post) => {
+          this.postIDS.push(post.id);
+        });
+      }
     },
-   methods: {
-       SelectAllPost(event){
-           if(event.target.checked == false){
-               this.postIDS = [];
-           }else{
-               this.posts.forEach((post) => {
-                   this.postIDS.push(post.id);
-               });
-           }
-       },
-        isShowing(){
-        return this.posts.length < 1;
+    isShowing() {
+      return this.posts.length < 1;
     },
-    removepost(slug){
-        swalWithBootstrapButtons
+    // Delete All Post
+    deleteAllPosts(postIDS) {
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true,
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            axios
+              .post("/delete-posts", { data: postIDS })
+              .then((response) => {
+                toastr.info(
+                  response.data.total + " " + "Post Has Been Deleted"
+                );
+              })
+              .catch((message) => {
+                toastr.warning(message);
+              });
+            swalWithBootstrapButtons.fire(
+              "Deleted!",
+              "Category Has Been Deleted.",
+              "success"
+            );
+            this.$store.dispatch("getPosts");
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              "Cancelled",
+              "Thank You For Change Your decession :)",
+              "error"
+            );
+          }
+        });
+    },
+    removepost(slug) {
+      swalWithBootstrapButtons
         .fire({
           title: "Are you sure?",
           text: "You won't be able to revert this!",
@@ -171,8 +229,8 @@ data() {
             );
           }
         });
-    }
-   },
+    },
+  },
 };
 </script>
 
@@ -185,7 +243,8 @@ button.swal2-confirm.btn.btn-success {
 button.swal2-cancel.btn.btn-danger {
   font-size: 20px;
 }
-.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
   background: rgb(0 71 202 / 38%);
 }
 .dark-mode .swal2-popup {
@@ -193,8 +252,8 @@ button.swal2-cancel.btn.btn-danger {
   color: #e9ecef;
   padding-bottom: 40px;
 }
-#checkboxSuccess1{
-    height:22px;
-    width: 25px;
+#checkboxSuccess1 {
+  height: 22px;
+  width: 25px;
 }
 </style>

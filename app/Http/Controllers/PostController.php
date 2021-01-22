@@ -91,4 +91,17 @@ class PostController extends Controller
         $post = Post::where('slug', $slug)->first();
         $post->delete();
     }
+    public function DeletePosts(Request $request)
+    {
+
+        $total = 0;
+        foreach ($request->data as $row) {
+
+            $post = Post::find($row)->delete();
+            $total++;
+        }
+        return response()->json([
+            'total' => $total,
+        ]);
+    }
 }

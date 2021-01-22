@@ -2796,6 +2796,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2833,8 +2849,39 @@ __webpack_require__.r(__webpack_exports__);
     isShowing: function isShowing() {
       return this.posts.length < 1;
     },
-    removepost: function removepost(slug) {
+    // Delete All Post
+    deleteAllPosts: function deleteAllPosts(postIDS) {
       var _this2 = this;
+
+      swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios.post("/delete-posts", {
+            data: postIDS
+          }).then(function (response) {
+            toastr.info(response.data.total + " " + "Post Has Been Deleted");
+          })["catch"](function (message) {
+            toastr.warning(message);
+          });
+          swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
+
+          _this2.$store.dispatch("getPosts");
+        } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire("Cancelled", "Thank You For Change Your decession :)", "error");
+        }
+      });
+    },
+    removepost: function removepost(slug) {
+      var _this3 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2851,7 +2898,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this2.$store.dispatch("getPosts");
+          _this3.$store.dispatch("getPosts");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -8171,7 +8218,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n  margin-left: 10px;\n\n  font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger {\n  font-size: 20px;\n}\n.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {\n  background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n  background-color: #343a40e6;\n  color: #e9ecef;\n  padding-bottom: 40px;\n}\n#checkboxSuccess1{\n    height:22px;\n    width: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbutton.swal2-confirm.btn.btn-success {\n  margin-left: 10px;\n\n  font-size: 20px;\n}\nbutton.swal2-cancel.btn.btn-danger {\n  font-size: 20px;\n}\n.swal2-container.swal2-backdrop-show,\n.swal2-container.swal2-noanimation {\n  background: rgb(0 71 202 / 38%);\n}\n.dark-mode .swal2-popup {\n  background-color: #343a40e6;\n  color: #e9ecef;\n  padding-bottom: 40px;\n}\n#checkboxSuccess1 {\n  height: 22px;\n  width: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -46745,7 +46792,7 @@ var render = function() {
           { staticClass: "table table-control table-bordered text-center" },
           [
             _c("tr", [
-              _c("td", [
+              _c("td", { attrs: { disable: _vm.isShowing } }, [
                 _c("div", { staticClass: "icheck-success d-inline" }, [
                   _c("input", {
                     directives: [
@@ -46921,7 +46968,32 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _vm.IsSelected ? _c("tr", [_vm._m(1)]) : _vm._e()
+            _vm.IsSelected
+              ? _c("tr", [
+                  _c(
+                    "td",
+                    { staticClass: "text-left", attrs: { colspan: "7" } },
+                    [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-danger btn-lg ml-2",
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteAllPosts(_vm.postIDS)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-trash" })]
+                      )
+                    ]
+                  )
+                ])
+              : _vm._e()
           ],
           2
         )
@@ -46940,19 +47012,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", { staticClass: "text-left", attrs: { colspan: "7" } }, [
-      _c("button", { staticClass: "btn btn-outline-success btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-eye    " })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-warning btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-eye-slash    " })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-danger btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-trash    " })
-      ])
-    ])
+    return _c(
+      "button",
+      { staticClass: "btn btn-outline-success btn-lg ml-2" },
+      [_c("i", { staticClass: "fas fa-eye" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-outline-warning btn-lg ml-2" },
+      [_c("i", { staticClass: "fas fa-eye-slash" })]
+    )
   }
 ]
 render._withStripped = true
