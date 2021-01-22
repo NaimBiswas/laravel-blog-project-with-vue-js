@@ -2653,7 +2653,7 @@ __webpack_require__.r(__webpack_exports__);
     this.$store.dispatch("getCategories");
   },
   computed: {
-    posts: function posts() {
+    categories: function categories() {
       return this.$store.getters.allCategory;
     }
   },

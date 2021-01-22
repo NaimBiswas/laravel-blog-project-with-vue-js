@@ -157,7 +157,7 @@ export default {
     this.$store.dispatch("getCategories");
   },
   computed: {
-    posts() {
+    categories() {
       return this.$store.getters.allCategory;
     },
   },
