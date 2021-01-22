@@ -2800,11 +2800,18 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       postIDS: [],
-      SelectAll: false
+      SelectAll: false,
+      IsSelected: false
     };
   },
   mounted: function mounted() {
     this.$store.dispatch("getPosts");
+  },
+  watch: {
+    postIDS: function postIDS(value) {
+      this.IsSelected = value.length > 0;
+      this.SelectAll = this.posts.length == value.length;
+    }
   },
   computed: {
     posts: function posts() {
@@ -46914,7 +46921,7 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _vm.IsSelected ? _c("tr", [_vm._m(1)]) : _vm._e()
           ],
           2
         )
@@ -46933,19 +46940,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "text-left", attrs: { colspan: "7" } }, [
-        _c("button", { staticClass: "btn btn-outline-success btn-lg ml-2" }, [
-          _c("i", { staticClass: "fas fa-eye    " })
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-outline-warning btn-lg ml-2" }, [
-          _c("i", { staticClass: "fas fa-eye-slash    " })
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-outline-danger btn-lg ml-2" }, [
-          _c("i", { staticClass: "fas fa-trash    " })
-        ])
+    return _c("td", { staticClass: "text-left", attrs: { colspan: "7" } }, [
+      _c("button", { staticClass: "btn btn-outline-success btn-lg ml-2" }, [
+        _c("i", { staticClass: "fas fa-eye    " })
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-outline-warning btn-lg ml-2" }, [
+        _c("i", { staticClass: "fas fa-eye-slash    " })
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-outline-danger btn-lg ml-2" }, [
+        _c("i", { staticClass: "fas fa-trash    " })
       ])
     ])
   }

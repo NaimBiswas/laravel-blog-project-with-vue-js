@@ -88,7 +88,7 @@
             </td>
 
           </tr>
-          <tr >
+          <tr v-if="IsSelected">
               <td colspan="7" class="text-left">
 
                 <button class="btn btn-outline-success btn-lg ml-2"><i class="fas fa-eye    "></i></button>
@@ -108,10 +108,17 @@ data() {
     return {
         postIDS: [],
         SelectAll: false,
+        IsSelected: false,
     };
 },
     mounted() {
        this.$store.dispatch("getPosts");
+    },
+    watch:{
+        postIDS(value){
+            this.IsSelected = value.length > 0;
+           this.SelectAll = this.posts.length == value.length;
+        }
     },
     computed:{
         posts(){
