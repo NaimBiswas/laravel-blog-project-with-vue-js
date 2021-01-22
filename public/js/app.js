@@ -2650,7 +2650,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.$store.dispatch("getCategories");
+    this.$store.dispatch("getActiveCategories");
   },
   computed: {
     categories: function categories() {
