@@ -163,6 +163,9 @@ export default {
         axios.post("/active-posts", {data: postIDS, status}).then((response) =>{
             toastr.info(response.data.total + ' ' + 'Action Has Been Success');
             this.$store.dispatch('getPosts');
+            this.postIDS= [];
+             this.SelectAll= false;
+             this.IsSelected= false;
         }).catch((error) =>{
            toastr.warning(error);
         });
@@ -187,6 +190,9 @@ export default {
                 toastr.info(
                   response.data.total + " " + "Post Has Been Deleted"
                 );
+                this.postIDS= [];
+                this.SelectAll= false;
+                this.IsSelected= false;
               })
               .catch((message) => {
                 toastr.warning(message);

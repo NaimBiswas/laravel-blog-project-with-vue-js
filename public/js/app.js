@@ -2864,6 +2864,10 @@ __webpack_require__.r(__webpack_exports__);
         toastr.info(response.data.total + ' ' + 'Action Has Been Success');
 
         _this2.$store.dispatch('getPosts');
+
+        _this2.postIDS = [];
+        _this2.SelectAll = false;
+        _this2.IsSelected = false;
       })["catch"](function (error) {
         toastr.warning(error);
       });
@@ -2886,6 +2890,9 @@ __webpack_require__.r(__webpack_exports__);
             data: postIDS
           }).then(function (response) {
             toastr.info(response.data.total + " " + "Post Has Been Deleted");
+            _this3.postIDS = [];
+            _this3.SelectAll = false;
+            _this3.IsSelected = false;
           })["catch"](function (message) {
             toastr.warning(message);
           });
