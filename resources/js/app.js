@@ -59,7 +59,9 @@ import StoreData from './store/store';
 const store = new Vuex.Store(
     StoreData,
 );
+import CKEditor from '@ckeditor/ckeditor5-vue2';
 
+Vue.use( CKEditor );
 
 
 const app = new Vue({
