@@ -127,7 +127,6 @@ data() {
                    this.postIDS.push(post.id);
                });
            }
-
        },
         isShowing(){
         return this.posts.length < 1;
