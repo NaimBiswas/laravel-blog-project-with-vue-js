@@ -110,7 +110,7 @@
                     rows="10"
                     placeholder="Enter Your Post Description"
                   ></textarea> -->
-                   <ckeditor class="form-control" :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+                   <ckeditor class="form-control" :editor="editor" v-model="form.description" :config="editorConfig"></ckeditor>
                   <has-error :form="form" field="description"></has-error>
                 </div>
               </div>
@@ -146,7 +146,6 @@ export default {
   data() {
     return {
          editor: ClassicEditor,
-                editorData: '<p>Content of the editor.</p>',
                 editorConfig: {
                     // The configuration of the editor.
                 },
@@ -203,5 +202,9 @@ export default {
 }
 .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
     background: #343A40;
+}
+.ck.ck-editor__main>.ck-editor__editable {
+    background: #666;
+    border-radius: 0;
 }
 </style>
