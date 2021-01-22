@@ -43,6 +43,7 @@
             <td>ID.</td>
             <td>Title</td>
             <td>Category</td>
+            <td>Image</td>
             <td>Status</td>
             <td style="width: 148px">Action</td>
             <td>Post Creator</td>
@@ -60,6 +61,9 @@
             <td>{{ index + 1 }}</td>
             <td class="h5">{{ post["title"] }}</td>
             <td class="h5">{{ post["category"]["name"] }}</td>
+            <td class="h5">
+                <img style="cursor:pointer" class=" img-fluid max-width: 100%" :src="post.images" alt="">
+            </td>
             <td>
               <button
                 v-if="post['status'] == 1"
@@ -91,13 +95,13 @@
             <td
               v-if="isShowing()"
               class="text-center text-uppercase text-danger h4"
-              colspan="7"
+              colspan="8"
             >
               No post Found!
             </td>
           </tr>
           <tr v-if="IsSelected">
-            <td colspan="7" class="text-left">
+            <td colspan="8" class="text-left">
               <button @click="ActiveALLPost(postIDS, 1)" class="btn btn-outline-success btn-lg ml-2">
                 <i class="fas fa-eye"></i>
               </button>
@@ -157,7 +161,7 @@ export default {
     // Active Multiple Category
     ActiveALLPost(postIDS , status){
         axios.post("/active-posts", {data: postIDS, status}).then((response) =>{
-            toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+            toastr.info(response.data.total + ' ' + 'Action Has Been Success');
             this.$store.dispatch('getPosts');
         }).catch((error) =>{
            toastr.warning(error);

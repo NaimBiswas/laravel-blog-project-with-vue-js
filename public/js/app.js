@@ -2812,6 +2812,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2857,7 +2861,7 @@ __webpack_require__.r(__webpack_exports__);
         data: postIDS,
         status: status
       }).then(function (response) {
-        toastr.info(response.data.total + ' ' + 'Post Has Been Deleted');
+        toastr.info(response.data.total + ' ' + 'Action Has Been Success');
 
         _this2.$store.dispatch('getPosts');
       })["catch"](function (error) {
@@ -46858,6 +46862,8 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v("Category")]),
               _vm._v(" "),
+              _c("td", [_vm._v("Image")]),
+              _vm._v(" "),
               _c("td", [_vm._v("Status")]),
               _vm._v(" "),
               _c("td", { staticStyle: { width: "148px" } }, [_vm._v("Action")]),
@@ -46918,6 +46924,14 @@ var render = function() {
                   _vm._v(_vm._s(post["category"]["name"]))
                 ]),
                 _vm._v(" "),
+                _c("td", { staticClass: "h5" }, [
+                  _c("img", {
+                    staticClass: " img-fluid max-width: 100%",
+                    staticStyle: { cursor: "pointer" },
+                    attrs: { src: post.images, alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
                 _c("td", [
                   post["status"] == 1
                     ? _c(
@@ -46976,7 +46990,7 @@ var render = function() {
                     "td",
                     {
                       staticClass: "text-center text-uppercase text-danger h4",
-                      attrs: { colspan: "7" }
+                      attrs: { colspan: "8" }
                     },
                     [_vm._v("\n            No post Found!\n          ")]
                   )
@@ -46987,7 +47001,7 @@ var render = function() {
               ? _c("tr", [
                   _c(
                     "td",
-                    { staticClass: "text-left", attrs: { colspan: "7" } },
+                    { staticClass: "text-left", attrs: { colspan: "8" } },
                     [
                       _c(
                         "button",
