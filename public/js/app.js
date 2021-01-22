@@ -3670,6 +3670,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+var _actions;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
@@ -3677,28 +3681,30 @@ __webpack_require__.r(__webpack_exports__);
     tags: [],
     posts: []
   },
-  actions: {
+  actions: (_actions = {
     getCategories: function getCategories(data) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
         data.commit("fatchCategoires", response.data.categories);
       })["catch"](function (error) {});
-    },
-    getTags: function getTags(tag) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/index-tag').then(function (response) {
-        tag.commit('fetchTags', response.data.tags);
-      })["catch"](function (error) {
-        toastr.warning(error);
-      });
-    },
-    getPosts: function getPosts(posts) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/get-posts').then(function (response) {
-        posts.commit('fetchPosts', response.data.posts);
-        console.log(response.data.posts);
-      })["catch"](function (error) {
-        toastr.warning(error);
-      });
     }
-  },
+  }, _defineProperty(_actions, "getCategories", function getCategories(data) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
+      data.commit("fatchCategoires", response.data.categories);
+    })["catch"](function (error) {});
+  }), _defineProperty(_actions, "getTags", function getTags(tag) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/index-tag').then(function (response) {
+      tag.commit('fetchTags', response.data.tags);
+    })["catch"](function (error) {
+      toastr.warning(error);
+    });
+  }), _defineProperty(_actions, "getPosts", function getPosts(posts) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/get-posts').then(function (response) {
+      posts.commit('fetchPosts', response.data.posts);
+      console.log(response.data.posts);
+    })["catch"](function (error) {
+      toastr.warning(error);
+    });
+  }), _actions),
   mutations: {
     fatchCategoires: function fatchCategoires(state, data) {
       return state.categoires = data;

@@ -16,6 +16,13 @@ export default {
                 }).catch((error) => {
 
                 });
+        },   getCategories(data) {
+            axios.get("/get-categoy")
+                .then(function(response){
+                    data.commit("fatchCategoires", response.data.categories);
+                }).catch((error) => {
+
+                });
         },
         getTags(tag) {
             axios.get('/index-tag').then((response) => {
