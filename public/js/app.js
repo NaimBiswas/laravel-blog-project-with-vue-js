@@ -2850,6 +2850,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.posts.length < 1;
     },
     // Active Multiple Category
+    ActiveALLPost: function ActiveALLPost(postIDS) {},
     // Delete All Post
     deleteAllPosts: function deleteAllPosts(postIDS) {
       var _this2 = this;

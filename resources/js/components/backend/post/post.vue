@@ -155,6 +155,9 @@ export default {
       return this.posts.length < 1;
     },
     // Active Multiple Category
+    ActiveALLPost(postIDS){
+
+    },
     // Delete All Post
     deleteAllPosts(postIDS) {
       swalWithBootstrapButtons
