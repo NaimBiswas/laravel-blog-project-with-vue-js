@@ -2654,7 +2654,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     categories: function categories() {
-      return this.$store.getters.allCategory;
+      return this.$store.getters.ActiveCategories;
     }
   },
   methods: {
@@ -3670,12 +3670,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+var _getters;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
     categoires: [],
     tags: [],
-    posts: []
+    posts: [],
+    ActiveCategories: []
   },
   actions: {
     getCategories: function getCategories(data) {
@@ -3684,8 +3689,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {});
     },
     getActiveCategories: function getActiveCategories(data) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-categoy").then(function (response) {
-        data.commit("fatchCategoires", response.data.categories);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-active-categoy").then(function (response) {
+        data.commit("fatchActiveCategoires", response.data.categories);
       })["catch"](function (error) {});
     },
     getTags: function getTags(tag) {
@@ -3708,6 +3713,9 @@ __webpack_require__.r(__webpack_exports__);
     fatchCategoires: function fatchCategoires(state, data) {
       return state.categoires = data;
     },
+    fatcActivehCategoires: function fatcActivehCategoires(state, data) {
+      return state.ActiveCategories = data;
+    },
     fetchTags: function fetchTags(state, tag) {
       return state.tags = tag;
     },
@@ -3715,17 +3723,17 @@ __webpack_require__.r(__webpack_exports__);
       return state.posts = posts;
     }
   },
-  getters: {
+  getters: (_getters = {
     allCategory: function allCategory(state) {
       return state.categoires;
-    },
-    AllTags: function AllTags(state) {
-      return state.tags;
-    },
-    AllPosts: function AllPosts(state) {
-      return state.posts;
     }
-  }
+  }, _defineProperty(_getters, "allCategory", function allCategory(state) {
+    return state.ActiveCategories;
+  }), _defineProperty(_getters, "AllTags", function AllTags(state) {
+    return state.tags;
+  }), _defineProperty(_getters, "AllPosts", function AllPosts(state) {
+    return state.posts;
+  }), _getters)
 });
 
 /***/ }),

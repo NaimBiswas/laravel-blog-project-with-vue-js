@@ -7,6 +7,7 @@ export default {
         categoires: [],
         tags: [],
         posts: [],
+        ActiveCategories: [],
     },
     actions: {
         getCategories(data) {
@@ -18,9 +19,9 @@ export default {
                 });
         },
         getActiveCategories(data) {
-            axios.get("/get-categoy")
+            axios.get("/get-active-categoy")
                 .then(function(response){
-                    data.commit("fatchCategoires", response.data.categories);
+                    data.commit("fatchActiveCategoires", response.data.categories);
                 }).catch((error) => {
 
                 });
@@ -46,6 +47,9 @@ export default {
         fatchCategoires(state, data) {
             return state.categoires = data;
         },
+        fatcActivehCategoires(state, data) {
+            return state.ActiveCategories = data;
+        },
         fetchTags(state,tag){
             return state.tags = tag;
         },
@@ -57,6 +61,9 @@ export default {
     getters: {
         allCategory(state) {
             return state.categoires;
+        },
+        allCategory(state) {
+            return state.ActiveCategories;
         },
         AllTags(state) {
             return state.tags;

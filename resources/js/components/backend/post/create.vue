@@ -158,7 +158,7 @@ export default {
   },
   computed: {
     categories() {
-      return this.$store.getters.allCategory;
+      return this.$store.getters.ActiveCategories;
     },
   },
   methods: {
