@@ -46708,7 +46708,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "select",
-      { staticClass: "form-control", attrs: { id: "category" } },
+      { staticClass: "form-control", attrs: { id: "category_id" } },
       [
         _c("option", { attrs: { selected: "" } }, [
           _vm._v("Select A Category")

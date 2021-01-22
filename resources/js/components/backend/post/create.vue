@@ -83,7 +83,7 @@
                   >Post Categroy:</label
                 >
                 <div class="col-sm-10">
-                  <select class="form-control" id="category">
+                  <select class="form-control" id="category_id">
                     <option selected>Select A Category</option>
                     <option></option>
                   </select>
