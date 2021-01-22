@@ -31,7 +31,7 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input type="checkbox" id="checkboxSuccess1" />
+                <input @click="SelectAllPost" type="checkbox" id="checkboxSuccess1" />
                 <label for="checkboxSuccess1"> </label>
               </div>
             </td>

@@ -46714,7 +46714,30 @@ var render = function() {
           "table",
           { staticClass: "table table-control table-bordered text-center" },
           [
-            _vm._m(1),
+            _c("tr", [
+              _c("td", [
+                _c("div", { staticClass: "icheck-success d-inline" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", id: "checkboxSuccess1" },
+                    on: { click: _vm.SelectAllPost }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkboxSuccess1" } })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v("ID.")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Title")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Category")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Status")]),
+              _vm._v(" "),
+              _c("td", { staticStyle: { width: "148px" } }, [_vm._v("Action")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Post Creator")])
+            ]),
             _vm._v(" "),
             _vm._l(_vm.posts, function(post, index) {
               return _c("tr", { key: index }, [
@@ -46846,32 +46869,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6" }, [_c("h1", [_vm._v("Posts")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [
-        _c("div", { staticClass: "icheck-success d-inline" }, [
-          _c("input", { attrs: { type: "checkbox", id: "checkboxSuccess1" } }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "checkboxSuccess1" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("ID.")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Title")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Category")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Status")]),
-      _vm._v(" "),
-      _c("td", { staticStyle: { width: "148px" } }, [_vm._v("Action")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Post Creator")])
-    ])
   }
 ]
 render._withStripped = true
