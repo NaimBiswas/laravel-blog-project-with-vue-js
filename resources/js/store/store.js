@@ -16,7 +16,8 @@ export default {
                 }).catch((error) => {
 
                 });
-        },   getCategories(data) {
+        },
+        getActiveCategories(data) {
             axios.get("/get-categoy")
                 .then(function(response){
                     data.commit("fatchCategoires", response.data.categories);
