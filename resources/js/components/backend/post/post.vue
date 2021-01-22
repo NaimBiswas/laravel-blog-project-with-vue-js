@@ -97,7 +97,7 @@
 export default {
 data() {
     return {
-
+        postIDS: [],
     };
 },
     mounted() {
