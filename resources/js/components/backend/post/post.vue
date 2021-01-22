@@ -31,7 +31,7 @@
           <tr>
             <td>
               <div class="icheck-success d-inline">
-                <input @click="SelectAllPost" type="checkbox" id="checkboxSuccess1" />
+                <input @click="SelectAllPost"  v-model="SelectAll" type="checkbox" id="checkboxSuccess1" />
                 <label for="checkboxSuccess1"> </label>
               </div>
             </td>
@@ -47,8 +47,8 @@
             <td class="">
               <input
                 type="checkbox"
-                :value="post.id"
                 v-model="postIDS"
+                :value="post.id"
                 id="checkboxSuccess1"
               />
             </td>
@@ -88,11 +88,14 @@
             </td>
 
           </tr>
-          <tr colspan="7">
+          <tr >
+              <td colspan="7" class="text-left">
+
                 <button class="btn btn-outline-success btn-lg ml-2"><i class="fas fa-eye    "></i></button>
                 <button class="btn btn-outline-warning btn-lg ml-2"><i class="fas fa-eye-slash    "></i></button>
                 <button class="btn btn-outline-danger btn-lg ml-2"><i class="fas fa-trash    "></i></button>
-            </tr>
+              </td>
+          </tr>
         </table>
       </div>
     </div>
@@ -104,6 +107,7 @@ export default {
 data() {
     return {
         postIDS: [],
+        SelectAll: false,
     };
 },
     mounted() {
@@ -115,6 +119,16 @@ data() {
         },
     },
    methods: {
+       SelectAllPost(event){
+           if(event.target.checked == false){
+               this.postIDS = [];
+           }else{
+               this.posts.forEach((post) => {
+                   this.postIDS.push(post.id);
+               });
+           }
+
+       },
         isShowing(){
         return this.posts.length < 1;
     },

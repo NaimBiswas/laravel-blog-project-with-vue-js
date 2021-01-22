@@ -2793,10 +2793,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      postIDS: []
+      postIDS: [],
+      SelectAll: false
     };
   },
   mounted: function mounted() {
@@ -2808,11 +2812,22 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    SelectAllPost: function SelectAllPost(event) {
+      var _this = this;
+
+      if (event.target.checked == false) {
+        this.postIDS = [];
+      } else {
+        this.posts.forEach(function (post) {
+          _this.postIDS.push(post.id);
+        });
+      }
+    },
     isShowing: function isShowing() {
       return this.posts.length < 1;
     },
     removepost: function removepost(slug) {
-      var _this = this;
+      var _this2 = this;
 
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
@@ -2829,7 +2844,7 @@ __webpack_require__.r(__webpack_exports__);
           });
           swalWithBootstrapButtons.fire("Deleted!", "Category Has Been Deleted.", "success");
 
-          _this.$store.dispatch("getPosts");
+          _this2.$store.dispatch("getPosts");
         } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel) {
@@ -46726,8 +46741,42 @@ var render = function() {
               _c("td", [
                 _c("div", { staticClass: "icheck-success d-inline" }, [
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.SelectAll,
+                        expression: "SelectAll"
+                      }
+                    ],
                     attrs: { type: "checkbox", id: "checkboxSuccess1" },
-                    on: { click: _vm.SelectAllPost }
+                    domProps: {
+                      checked: Array.isArray(_vm.SelectAll)
+                        ? _vm._i(_vm.SelectAll, null) > -1
+                        : _vm.SelectAll
+                    },
+                    on: {
+                      click: _vm.SelectAllPost,
+                      change: function($event) {
+                        var $$a = _vm.SelectAll,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.SelectAll = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.SelectAll = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.SelectAll = $$c
+                        }
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "checkboxSuccess1" } })
@@ -46884,17 +46933,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", { attrs: { colspan: "7" } }, [
-      _c("button", { staticClass: "btn btn-outline-success btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-eye    " })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-warning btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-eye-slash    " })
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-danger btn-lg ml-2" }, [
-        _c("i", { staticClass: "fas fa-trash    " })
+    return _c("tr", [
+      _c("td", { staticClass: "text-left", attrs: { colspan: "7" } }, [
+        _c("button", { staticClass: "btn btn-outline-success btn-lg ml-2" }, [
+          _c("i", { staticClass: "fas fa-eye    " })
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-outline-warning btn-lg ml-2" }, [
+          _c("i", { staticClass: "fas fa-eye-slash    " })
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-outline-danger btn-lg ml-2" }, [
+          _c("i", { staticClass: "fas fa-trash    " })
+        ])
       ])
     ])
   }
