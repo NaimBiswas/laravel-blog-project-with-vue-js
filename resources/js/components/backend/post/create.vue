@@ -38,6 +38,7 @@
           <!-- form start -->
           <form @submit.prevent="addPost" class="form-horizontal"  enctype="multipart/form-data">
             <div class="card-body">
+                <!-- post title  -->
               <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label"
                   >Post Title:</label
@@ -55,6 +56,7 @@
                   <has-error :form="form" field="title"></has-error>
                 </div>
               </div>
+              <!-- post images -->
               <div class="form-group row">
                 <label for="images" class="col-sm-2 col-form-label"
                   >Post Image:</label
@@ -75,6 +77,7 @@
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
+              <!-- post category  -->
               <div class="form-group row">
                 <label for="category" class="col-sm-2 col-form-label"
                   >Post Categroy:</label
