@@ -22,6 +22,14 @@ class CategoryController extends Controller
             'categories' => $categories,
         ]);
     }
+    public function FetchActiveCategories()
+    {
+        $categories = Category::where('status', true)->get()->all();
+
+        return response()->json([
+            'ActiveCategories' => $categories,
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

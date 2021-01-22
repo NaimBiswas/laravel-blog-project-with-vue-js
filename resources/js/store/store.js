@@ -21,7 +21,7 @@ export default {
         getActiveCategories(data) {
             axios.get("/get-active-categoy")
                 .then(function(response){
-                    data.commit("fatchActiveCategoires", response.data.categories);
+                    data.commit("fatchActiveCategoires", response.data.ActiveCategories);
                 }).catch((error) => {
 
                 });
@@ -47,7 +47,7 @@ export default {
         fatchCategoires(state, data) {
             return state.categoires = data;
         },
-        fatcActivehCategoires(state, data) {
+        fatchActiveCategoires(state, data) {
             return state.ActiveCategories = data;
         },
         fetchTags(state,tag){

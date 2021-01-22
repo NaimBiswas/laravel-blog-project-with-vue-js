@@ -3690,7 +3690,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     getActiveCategories: function getActiveCategories(data) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get-active-categoy").then(function (response) {
-        data.commit("fatchActiveCategoires", response.data.categories);
+        data.commit("fatchActiveCategoires", response.data.ActiveCategories);
       })["catch"](function (error) {});
     },
     getTags: function getTags(tag) {
@@ -3713,7 +3713,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     fatchCategoires: function fatchCategoires(state, data) {
       return state.categoires = data;
     },
-    fatcActivehCategoires: function fatcActivehCategoires(state, data) {
+    fatchActiveCategoires: function fatchActiveCategoires(state, data) {
       return state.ActiveCategories = data;
     },
     fetchTags: function fetchTags(state, tag) {

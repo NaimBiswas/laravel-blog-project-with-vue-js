@@ -37,7 +37,7 @@ Route::group(['middlewire' => 'auth'], function () {
     Route::post('/deactive-categories', [CategoryController::class, 'deactiveCategories']);
     Route::get('/fatch-category/{slug}', [CategoryController::class, 'edit'])->name('fatch-category');
     Route::post('/update-category/{slug}', [CategoryController::class, 'update'])->name('update-category');
-    Route::get("/getActiveCategories", [CategoryController::class, 'FetchActiveCategories']);
+    Route::get("/get-active-categoy", [CategoryController::class, 'FetchActiveCategories']);
     #Tags
     Route::post('/store-tag', [TagController::class, 'store']);
     Route::get('/index-tag', [TagController::class, 'index']);
