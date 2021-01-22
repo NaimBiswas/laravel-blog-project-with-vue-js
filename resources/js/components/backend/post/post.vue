@@ -86,7 +86,13 @@
             <td v-if="isShowing()" class="text-center text-uppercase text-danger h4" colspan="7">
               No post Found!
             </td>
+
           </tr>
+          <tr colspan="7">
+                <button class="btn btn-outline-success btn-lg ml-2"><i class="fas fa-eye    "></i></button>
+                <button class="btn btn-outline-warning btn-lg ml-2"><i class="fas fa-eye-slash    "></i></button>
+                <button class="btn btn-outline-danger btn-lg ml-2"><i class="fas fa-trash    "></i></button>
+            </tr>
         </table>
       </div>
     </div>
