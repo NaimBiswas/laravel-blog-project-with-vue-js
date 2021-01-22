@@ -46627,7 +46627,7 @@ var render = function() {
                           _vm._l(_vm.categories, function(category, index) {
                             return _c(
                               "option",
-                              { key: index, attrs: { value: "" } },
+                              { key: index, domProps: { value: category.id } },
                               [_vm._v(_vm._s(category.name))]
                             )
                           })
