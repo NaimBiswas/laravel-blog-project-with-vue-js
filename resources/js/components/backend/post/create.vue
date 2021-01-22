@@ -102,14 +102,15 @@
                   >Post Description:</label
                 >
                 <div class="col-sm-10">
-                  <textarea
+                  <!-- <textarea
                     name="description"
                     class="form-control"
                     id="description"
                     cols="30"
                     rows="10"
                     placeholder="Enter Your Post Description"
-                  ></textarea>
+                  ></textarea> -->
+                   <ckeditor class="form-control" :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
                   <has-error :form="form" field="description"></has-error>
                 </div>
               </div>
@@ -139,11 +140,16 @@
 </template>
 
 <script>
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default {
   name: "category",
-
   data() {
     return {
+         editor: ClassicEditor,
+                editorData: '<p>Content of the editor.</p>',
+                editorConfig: {
+                    // The configuration of the editor.
+                },
       form: new Form({
         title: "",
         status: false,
@@ -194,5 +200,8 @@ export default {
   border-color: #a1cbef;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+    background: #343A40;
 }
 </style>
