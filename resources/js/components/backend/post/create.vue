@@ -68,7 +68,7 @@
                     <div class="custom-file">
                       <input
                         type="file"
-                        @change="LoadImage"
+                        @change="LoadImage($event)"
                         class="custom-file-input"
                         id="images"
                         name="images"

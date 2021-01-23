@@ -46606,7 +46606,11 @@ var render = function() {
                               id: "images",
                               name: "images"
                             },
-                            on: { change: _vm.LoadImage }
+                            on: {
+                              change: function($event) {
+                                return _vm.LoadImage($event)
+                              }
+                            }
                           }),
                           _vm._v(" "),
                           _c(
