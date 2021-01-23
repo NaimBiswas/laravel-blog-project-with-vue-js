@@ -2704,12 +2704,13 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //   For Thumbail load
     LoadImage: function LoadImage(event) {
-      var a = this;
+      var _this = this;
+
       var file = event.target.files[0];
       var fileReader = new FileReader();
 
       fileReader.onload = function (event) {
-        a.form.image = event.target.result;
+        _this.form.image = event.target.result;
       };
 
       fileReader.readAsDataURL(file);

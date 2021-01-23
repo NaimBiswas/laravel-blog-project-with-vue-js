@@ -180,11 +180,11 @@ categories() {
   methods: {
     //   For Thumbail load
       LoadImage(event){
-          const a = this;
+
           const file = event.target.files[0];
          const fileReader = new FileReader();
-         fileReader.onload = function(event){
-              a.form.image = event.target.result;
+         fileReader.onload = event => {
+              this.form.image = event.target.result;
          };
          fileReader.readAsDataURL(file);
 
