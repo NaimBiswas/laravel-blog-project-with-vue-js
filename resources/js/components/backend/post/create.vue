@@ -76,9 +76,13 @@
                           'is-invalid': form.errors.has('images'),
                         }"
                       />
+
+
                       <label class="custom-file-label" for="exampleInputFile"
                         >Choose File</label
                       >
+                      <!-- priview images  -->
+                      <img style="height:60px; width:100px" class="img-fluid max-width: 100%" :src="form.image" alt="">
                     </div>
                   </div>
                   <has-error :form="form" field="images"></has-error>
@@ -154,7 +158,7 @@ export default {
         title: "",
         status: false,
         description: "",
-        images: "",
+        image: "",
         category_id: "",
       }),
 
@@ -176,6 +180,13 @@ categories() {
   methods: {
     //   For Thumbail load
       LoadImage(event){
+          const a = this;
+          const file = event.target.files[0];
+         const fileReader = new FileReader();
+         fileReader.onload = function(event){
+              a.form.image = event.target.result;
+         };
+         fileReader.readAsDataURL(file);
 
       },
     active() {

@@ -2670,6 +2670,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
@@ -2682,7 +2686,7 @@ __webpack_require__.r(__webpack_exports__);
         title: "",
         status: false,
         description: "",
-        images: "",
+        image: "",
         category_id: ""
       })
     };
@@ -2699,7 +2703,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     //   For Thumbail load
-    LoadImage: function LoadImage(event) {},
+    LoadImage: function LoadImage(event) {
+      var a = this;
+      var file = event.target.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onload = function (event) {
+        a.form.image = event.target.result;
+      };
+
+      fileReader.readAsDataURL(file);
+    },
     active: function active() {
       this.form.status = true;
     },
@@ -46620,7 +46634,13 @@ var render = function() {
                               attrs: { for: "exampleInputFile" }
                             },
                             [_vm._v("Choose File")]
-                          )
+                          ),
+                          _vm._v(" "),
+                          _c("img", {
+                            staticClass: "img-fluid max-width: 100%",
+                            staticStyle: { height: "60px", width: "100px" },
+                            attrs: { src: _vm.form.image, alt: "" }
+                          })
                         ])
                       ]),
                       _vm._v(" "),
