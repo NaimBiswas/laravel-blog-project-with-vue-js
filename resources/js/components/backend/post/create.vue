@@ -161,16 +161,20 @@ export default {
     };
   },
   mounted() {
+//   fetch Active Categories
 
     this.$store.dispatch("getActiveCategories");
   },
 
   computed: {
-    categories() {
+//   fetch Active Categories
+
+categories() {
       return this.$store.getters.allActiveCategory;
     },
   },
   methods: {
+    //   For Thumbail load
       LoadImage(event){
 
       },

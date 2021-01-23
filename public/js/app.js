@@ -2688,14 +2688,17 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    //   fetch Active Categories
     this.$store.dispatch("getActiveCategories");
   },
   computed: {
+    //   fetch Active Categories
     categories: function categories() {
       return this.$store.getters.allActiveCategory;
     }
   },
   methods: {
+    //   For Thumbail load
     LoadImage: function LoadImage(event) {},
     active: function active() {
       this.form.status = true;
