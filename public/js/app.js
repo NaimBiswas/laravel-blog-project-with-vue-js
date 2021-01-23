@@ -46634,15 +46634,18 @@ var render = function() {
                               attrs: { for: "exampleInputFile" }
                             },
                             [_vm._v("Choose File")]
-                          ),
-                          _vm._v(" "),
-                          _c("img", {
+                          )
+                        ]),
+                        _c("br")
+                      ]),
+                      _vm._v(" "),
+                      _vm.form.image
+                        ? _c("img", {
                             staticClass: "img-fluid max-width: 100%",
-                            staticStyle: { height: "60px", width: "100px" },
+                            staticStyle: { height: "300px", width: "250px" },
                             attrs: { src: _vm.form.image, alt: "" }
                           })
-                        ])
-                      ]),
+                        : _vm._e(),
                       _vm._v(" "),
                       _c("has-error", {
                         attrs: { form: _vm.form, field: "images" }

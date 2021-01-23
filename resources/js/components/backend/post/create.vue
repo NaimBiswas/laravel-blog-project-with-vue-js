@@ -81,10 +81,10 @@
                       <label class="custom-file-label" for="exampleInputFile"
                         >Choose File</label
                       >
-                      <!-- priview images  -->
-                      <img style="height:60px; width:100px" class="img-fluid max-width: 100%" :src="form.image" alt="">
-                    </div>
+                    </div><br>
                   </div>
+                      <!-- priview images  -->
+                      <img v-if="form.image" style="height:300px; width:250px" class="img-fluid max-width: 100%" :src="form.image" alt="">
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
