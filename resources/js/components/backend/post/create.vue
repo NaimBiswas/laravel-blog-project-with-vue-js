@@ -68,6 +68,7 @@
                     <div class="custom-file">
                       <input
                         type="file"
+                        @change="LoadImage"
                         class="custom-file-input"
                         id="images"
                         name="images"
@@ -170,6 +171,9 @@ export default {
     },
   },
   methods: {
+      LoadImage(event){
+
+      },
     active() {
       this.form.status = true;
     },

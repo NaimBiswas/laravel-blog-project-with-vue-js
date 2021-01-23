@@ -2669,6 +2669,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
@@ -2695,6 +2696,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    LoadImage: function LoadImage(event) {},
     active: function active() {
       this.form.status = true;
     },
@@ -46600,7 +46602,8 @@ var render = function() {
                               type: "file",
                               id: "images",
                               name: "images"
-                            }
+                            },
+                            on: { change: _vm.LoadImage }
                           }),
                           _vm._v(" "),
                           _c(
