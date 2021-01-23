@@ -8270,7 +8270,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n  color: #fdfeff;\n  background-color: #394046;\n  border-color: #a1cbef;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {\n    background: #343A40;\n}\n.ck.ck-editor__main>.ck-editor__editable {\n    background: #666;\n    border-radius: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control:focus {\n  color: #fdfeff;\n  background-color: #394046;\n  border-color: #a1cbef;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);\n}\n.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {\n    background: #343A40;\n}\n.ck.ck-editor__main>.ck-editor__editable {\n    background: #343A40;\n    border-radius: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

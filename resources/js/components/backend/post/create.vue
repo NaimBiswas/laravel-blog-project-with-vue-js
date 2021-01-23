@@ -204,7 +204,7 @@ export default {
     background: #343A40;
 }
 .ck.ck-editor__main>.ck-editor__editable {
-    background: #666;
+    background: #343A40;
     border-radius: 0;
 }
 </style>
