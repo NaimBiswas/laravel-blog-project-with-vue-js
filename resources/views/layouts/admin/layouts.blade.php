@@ -18,6 +18,12 @@
                 background: #af0000;
             }
 
+            .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+            .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+                background-color: #09b0a8bd;
+                color: #fff;
+            }
+
             .main-header {
                 box-shadow: 4px 5px 18px 1px #151515c4;
             }
@@ -132,7 +138,8 @@
                             </li>
                             <li class="nav-item">
                                 <router-link to="/category"
-                                    class="nav-link">
+                                    class="nav-link"
+                                    active-class="active">
                                     <i class="nav-icon fas fa-feather-alt"></i>
                                     <p>
                                         Catgories
