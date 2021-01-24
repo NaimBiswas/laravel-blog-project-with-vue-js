@@ -128,7 +128,8 @@
                with font-awesome or any other icon font library -->
                             <li class="nav-item">
                                 <router-link to="/dashboard"
-                                    class="nav-link">
+                                    class="nav-link"
+                                    active-class="active">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Dashboard
@@ -149,7 +150,8 @@
                             </li>
                             <li class="nav-item">
                                 <router-link to="/tag"
-                                    class="nav-link">
+                                    class="nav-link"
+                                    active-class="active">
                                     <i class="nav-icon fas fa-at"></i>
                                     <p>
                                         Tags
@@ -159,7 +161,8 @@
                             </li>
                             <li class="nav-item">
                                 <router-link to="/post"
-                                    class="nav-link">
+                                    class="nav-link"
+                                    active-class="active">
                                     <i class="nav-icon fas fa-clone"></i>
                                     <p>
                                         Posts
