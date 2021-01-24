@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Image;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -46,6 +47,7 @@ class PostController extends Controller
         $imageFormate = end($imagesTwo);
         $OurImage = Str::slug($request->title) . '.' . $imageFormate;
 
+
         $request->validate([
             'title' => 'required|unique:posts,title|min:10|max:120',
             'description' => 'required|min:150',
@@ -54,7 +56,7 @@ class PostController extends Controller
         ]);
 
 
-        Post::create([
+        $success =  Post::create([
             'user_id' => Auth::user()->id,
             'title' => $request->title,
             'slug' => Str::slug($request->title),
