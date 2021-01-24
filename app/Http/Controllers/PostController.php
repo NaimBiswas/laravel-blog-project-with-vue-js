@@ -44,7 +44,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|unique:posts,title|min:10|max:120',
             'description' => 'required|min:150',
-            // 'images' => 'required|image',
+            'images' => 'required|image',
             'category_id' => 'required',
         ]);
         Post::create([
