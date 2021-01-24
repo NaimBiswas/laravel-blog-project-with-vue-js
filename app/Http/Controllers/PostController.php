@@ -41,7 +41,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $images =  explode(';', $request->image);
+        $images =  explode(';', $request->images);
         $imagesTwo = explode('/', $images[0]);
         $imageFormate = end($imagesTwo);
         $OurImage = Str::slug($request->title) . '.' . $imageFormate;
