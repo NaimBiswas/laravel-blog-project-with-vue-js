@@ -2717,13 +2717,15 @@ __webpack_require__.r(__webpack_exports__);
       this.form.status = false;
     },
     addPost: function addPost() {
+      var _this2 = this;
+
       this.form.post("/store-post").then(function (response) {
         toastr.info("Post successfully created");
+        _this2.form.title = "";
+        _this2.form.status = false;
       })["catch"](function (error) {
         toastr.info(error);
       });
-      this.form.title = "";
-      this.form.status = false;
     }
   }
 });

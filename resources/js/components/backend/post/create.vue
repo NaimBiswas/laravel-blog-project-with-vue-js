@@ -195,13 +195,14 @@ categories() {
         .post("/store-post")
         .then((response) => {
           toastr.info("Post successfully created");
+               this.form.title = "";
+               this.form.status = false;
         })
         .catch((error) => {
               toastr.info(error);
 
         });
-      this.form.title = "";
-      this.form.status = false;
+
     },
   },
 };
