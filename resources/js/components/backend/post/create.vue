@@ -52,6 +52,7 @@
                     class="form-control"
                     id="title"
                     placeholder="Enter Your Posst Title"
+
                     name="title"
                     :class="{
                       'is-invalid': form.errors.has('title'),
@@ -71,13 +72,7 @@
                         @change="LoadImage($event)"
                         class="custom-file-input"
                         id="images"
-                        name="images"
-                        :class="{
-                          'is-invalid': form.errors.has('images'),
-                        }"
-                      />
-
-
+                        name="images"/>
                       <label class="custom-file-label" for="exampleInputFile"
                         >Choose File</label
                       >
@@ -195,14 +190,15 @@ categories() {
     deactive() {
       this.form.status = false;
     },
-    addCategory() {
+    addPost() {
       this.form
         .post("/store-post")
         .then((response) => {
-          toastr.info("Category successfully created");
+          toastr.info("Post successfully created");
         })
         .catch((error) => {
-          toastr.info(error);
+              toastr.info(error);
+
         });
       this.form.title = "";
       this.form.status = false;

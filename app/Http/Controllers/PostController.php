@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -42,7 +44,17 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|unique:posts,title|min:10|max:120',
             'description' => 'required|min:150',
-            'images' => 'required|image',
+            // 'images' => 'required|image',
+            'category_id' => 'required',
+        ]);
+        Post::create([
+            'user_id' => Auth::user()->id,
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'category_id' => $request->category_id,
+            'images' => 'images.png',
+            'description' => $request->description,
+            'status' => $request->status,
         ]);
     }
 

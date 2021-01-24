@@ -2669,11 +2669,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "category",
@@ -2721,9 +2716,9 @@ __webpack_require__.r(__webpack_exports__);
     deactive: function deactive() {
       this.form.status = false;
     },
-    addCategory: function addCategory() {
+    addPost: function addPost() {
       this.form.post("/store-post").then(function (response) {
-        toastr.info("Category successfully created");
+        toastr.info("Post successfully created");
       })["catch"](function (error) {
         toastr.info(error);
       });
@@ -46613,9 +46608,6 @@ var render = function() {
                         _c("div", { staticClass: "custom-file" }, [
                           _c("input", {
                             staticClass: "custom-file-input",
-                            class: {
-                              "is-invalid": _vm.form.errors.has("images")
-                            },
                             attrs: {
                               type: "file",
                               id: "images",
