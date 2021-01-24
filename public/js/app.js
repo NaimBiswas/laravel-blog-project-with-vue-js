@@ -2702,13 +2702,22 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var file = event.target.files[0];
-      var fileReader = new FileReader();
 
-      fileReader.onload = function (event) {
-        _this.form.image = event.target.result;
-      };
+      if (file.size <= 2098152) {
+        if (file.type === 'image/png') {
+          var fileReader = new FileReader();
 
-      fileReader.readAsDataURL(file);
+          fileReader.onload = function (event) {
+            _this.form.image = event.target.result;
+          };
+
+          fileReader.readAsDataURL(file);
+        } else {
+          toastr.error('Images Must Be PNG Formated');
+        }
+      } else {
+        toastr.error('Images Size Must Me lower Than 2048kb');
+      }
     },
     active: function active() {
       this.form.status = true;

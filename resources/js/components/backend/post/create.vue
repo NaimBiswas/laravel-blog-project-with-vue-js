@@ -177,11 +177,19 @@ categories() {
       LoadImage(event){
 
           const file = event.target.files[0];
-         const fileReader = new FileReader();
-         fileReader.onload = event => {
-              this.form.image = event.target.result;
-         };
-         fileReader.readAsDataURL(file);
+          if(file.size <= 2098152){
+              if(file.type === 'image/png'){
+                    const fileReader = new FileReader();
+                    fileReader.onload = event => {
+                        this.form.image = event.target.result;
+                    };
+                fileReader.readAsDataURL(file);
+              }else{
+                  toastr.error('Images Must Be PNG Formated');
+              }
+          }else{
+              toastr.error('Images Size Must Me lower Than 2048kb');
+          }
 
       },
     active() {
