@@ -2681,7 +2681,7 @@ __webpack_require__.r(__webpack_exports__);
         title: "",
         status: false,
         description: "",
-        image: "",
+        images: "",
         category_id: ""
       })
     };
@@ -2708,7 +2708,7 @@ __webpack_require__.r(__webpack_exports__);
           var fileReader = new FileReader();
 
           fileReader.onload = function (event) {
-            _this.form.image = event.target.result;
+            _this.form.images = event.target.result;
           };
 
           fileReader.readAsDataURL(file);
@@ -46643,11 +46643,11 @@ var render = function() {
                         _c("br")
                       ]),
                       _vm._v(" "),
-                      _vm.form.image
+                      _vm.form.images
                         ? _c("img", {
                             staticClass: "img-fluid max-width: 100%",
                             staticStyle: { height: "300px", width: "250px" },
-                            attrs: { src: _vm.form.image, alt: "" }
+                            attrs: { src: _vm.form.images, alt: "" }
                           })
                         : _vm._e(),
                       _vm._v(" "),

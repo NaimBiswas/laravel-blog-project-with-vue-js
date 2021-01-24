@@ -79,7 +79,7 @@
                     </div><br>
                   </div>
                       <!-- priview images  -->
-                      <img v-if="form.image" style="height:300px; width:250px" class="img-fluid max-width: 100%" :src="form.image" alt="">
+                      <img v-if="form.images" style="height:300px; width:250px" class="img-fluid max-width: 100%" :src="form.images" alt="">
                   <has-error :form="form" field="images"></has-error>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default {
         title: "",
         status: false,
         description: "",
-        image: "",
+        images: "",
         category_id: "",
       }),
 
@@ -181,7 +181,7 @@ categories() {
               if(file.type === 'image/png'){
                     const fileReader = new FileReader();
                     fileReader.onload = event => {
-                        this.form.image = event.target.result;
+                        this.form.images = event.target.result;
                     };
                 fileReader.readAsDataURL(file);
               }else{

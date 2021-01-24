@@ -41,18 +41,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $images =  explode(';', $request->image);
+        $imagesTwo = explode('/', $images[0]);
+        $imageFormate = end($imagesTwo);
+        $OurImage = Str::slug($request->title) . '.' . $imageFormate;
+
         $request->validate([
             'title' => 'required|unique:posts,title|min:10|max:120',
             'description' => 'required|min:150',
-            'images' => 'required|image',
+            'images' => 'required',
             'category_id' => 'required',
         ]);
+
+
         Post::create([
             'user_id' => Auth::user()->id,
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'category_id' => $request->category_id,
-            'images' => 'images.png',
+            'images' => $OurImage,
             'description' => $request->description,
             'status' => $request->status,
         ]);
