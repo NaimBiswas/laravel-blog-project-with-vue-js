@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Image;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -65,6 +66,8 @@ class PostController extends Controller
             'description' => $request->description,
             'status' => $request->status,
         ]);
+        \Image::make($request->avatar)->save(public_path('img/profile/') . $OurImage);
+        $request->merge(['avatar' => $OurImage]);
     }
 
     /**
