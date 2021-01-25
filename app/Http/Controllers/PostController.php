@@ -32,7 +32,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        // this is our test
     }
 
     /**
@@ -43,10 +43,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $images =  explode(';', $request->images);
         $imagesTwo = explode('/', $images[0]);
         $imageFormate = end($imagesTwo);
         $OurImage = Str::slug($request->title) . '.' . $imageFormate;
+
 
 
         $request->validate([
@@ -66,8 +70,6 @@ class PostController extends Controller
             'description' => $request->description,
             'status' => $request->status,
         ]);
-        \Image::make($request->avatar)->save(public_path('img/profile/') . $OurImage);
-        $request->merge(['avatar' => $OurImage]);
     }
 
     /**
